@@ -1,0 +1,23 @@
+[package]
+name = "wow_dbc_manager_rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# The wow_cdbc and wow_mpq crates live in the wowemulation‑dev/warcraft-rs repository.
+# They provide parsing and writing support for World of Warcraft DBC files and
+# creating MPQ archives respectively.  When building this crate yourself you
+# should ensure that these dependencies are resolvable either via crates.io or
+# by pointing the `git` URL at the appropriate revision.  The entries below
+# assume that crates.io exposes these crates; if not you can replace them with
+# a git dependency, e.g.:
+# wow-cdbc = { git = "https://github.com/wowemulation-dev/warcraft-rs", package = "wow-cdbc" }
+# wow-mpq  = { git = "https://github.com/wowemulation-dev/warcraft-rs", package = "wow-mpq" }
+
+wow-cdbc = { version = "0.2", features = ["yaml"] }
+wow-mpq  = "0.2"
+
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+serde_yaml = "0.9"
+anyhow = "1.0"

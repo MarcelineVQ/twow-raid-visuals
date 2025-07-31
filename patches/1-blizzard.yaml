@@ -1,0 +1,23 @@
+# enemy blizzard given new visual id 8000, uses growing flames (668) state kit for red color, and ground effect 4706
+
+SpellVisual.dbc:
+  - type: copy
+    key: 259
+    updates:
+      Id: 8000
+      StateKit: 668
+      AreaModel: 4706
+
+Spell.dbc:
+  - type: update
+    key: 51180 #incantagos(51180)
+    updates:
+      SpellVisualID_1: 8000
+  - type: update
+    key: 57657 #arcanist(57657)
+    updates:
+      SpellVisualID_1: 8000
+  - type: update
+    key: 26607 #vek'lor(26607)
+    updates:
+      SpellVisualID_1: 8000

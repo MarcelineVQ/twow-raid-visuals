@@ -1,0 +1,8 @@
+# Default schema for SpellVisualEffectName.dbc (WoW 1.12.1 5875)
+# Specifies the fields of the SpellVisualEffectName table.
+fields:
+  - ID
+  - Name
+  - FileName
+  - AreaEffectSize
+  - Scale

@@ -1,0 +1,41 @@
+# Default schema for SpellVisualKit.dbc (WoW 1.12.1 5875)
+#
+# Array fields in this table are expanded with numeric suffixes.  The
+# order matches the column order in the DBC.
+fields:
+  - ID
+  - StartAnimID
+  - AnimID
+#  - AnimKitID
+  - HeadEffect
+  - ChestEffect
+  - BaseEffect
+  - LeftHandEffect
+  - RightHandEffect
+  - BreathEffect
+  - LeftWeaponEffect
+  - RightWeaponEffect
+  - Unknown_1 # seems needed for padding, nothing uses it?
+  - SpecialEffect_1
+  - SpecialEffect_2
+  - SpecialEffect_3
+  - WorldEffect
+  - SoundID
+  - ShakeID
+  - CharProc_1
+  - CharProc_2
+  - CharProc_3
+  - CharProc_4
+  - CharParamZero_1
+  - CharParamZero_2
+  - CharParamZero_3
+  - CharParamZero_4
+  - CharParamOne_1
+  - CharParamOne_2
+  - CharParamOne_3
+  - CharParamOne_4
+  - CharParamTwo_1
+  - CharParamTwo_2
+  - CharParamTwo_3
+  - CharParamTwo_4
+  - Flags
