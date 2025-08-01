@@ -550,10 +550,52 @@ fn apply_command(
                                 println!("Warning: no record found with key {} in {}", key, file_name);
                             }
                         }
-                        PatchEntry::Insert { values } => {
+                        PatchEntry::Insert { key, key_column, values } => {
+                            // Determine the key column index once so we can apply it consistently
+                            let key_col_index: usize = match key_column {
+                                Some(ref col_name) => {
+                                    if let Ok(idx) = col_name.parse::<usize>() {
+                                        idx
+                                    } else {
+                                        if let Some(ref schema) = schema_map {
+                                            if let Some(&idx) = schema.get(&col_name.to_lowercase()) {
+                                                idx
+                                            } else {
+                                                println!("Warning: unknown key column '{}' in {} – defaulting to 0", col_name, file_name);
+                                                0
+                                            }
+                                        } else {
+                                            println!("Warning: no schema for {}, cannot resolve key column '{}', defaulting to 0", file_name, col_name);
+                                            0
+                                        }
+                                    }
+                                }
+                                None => 0,
+                            };
+
                             // Create new record filled with zeros
                             let mut new_record = vec![0u32; header.field_count as usize];
-                            // Fill in specified fields
+
+                            // If a key is provided and the field is not explicitly set in values, write it to the key column
+                            if let Some(k) = key {
+                                let provided_key = values.keys().any(|field_name| {
+                                    // Determine if this field matches the key column
+                                    if let Ok(idx) = field_name.parse::<usize>() {
+                                        idx == key_col_index
+                                    } else {
+                                        schema_map
+                                            .as_ref()
+                                            .and_then(|schema| schema.get(&field_name.to_lowercase()))
+                                            .map_or(false, |&idx| idx == key_col_index)
+                                    }
+                                });
+                                if key_col_index < new_record.len() && !provided_key {
+                                    // `key` is a reference when matching on &PatchEntry; dereference it
+                                    new_record[key_col_index] = *k;
+                                }
+                            }
+
+                            // Fill in specified fields from the values map
                             for (field_name, value) in values {
                                 // Determine field index
                                 let field_idx: Option<usize> = {
@@ -598,7 +640,27 @@ fn apply_command(
                                     }
                                 }
                             }
-                            records.push(new_record);
+
+                            // Check for duplicate keys: if the key value in the new record already exists in the
+                            // records list at the same key column, warn and skip this insert.
+                            if key_col_index < new_record.len() {
+                                let new_key_val = new_record[key_col_index];
+                                if records.iter().any(|r| {
+                                    if key_col_index < r.len() {
+                                        r[key_col_index] == new_key_val
+                                    } else {
+                                        false
+                                    }
+                                }) {
+                                    println!("Warning: record with key {} already exists in {} – skipping insert", new_key_val, file_name);
+                                    // Do not push the duplicate record
+                                } else {
+                                    records.push(new_record);
+                                }
+                            } else {
+                                // If the key column is out of bounds, just append the record (no duplicate check)
+                                records.push(new_record);
+                            }
                         }
                         PatchEntry::Copy {
                             key,
@@ -682,7 +744,27 @@ fn apply_command(
                                             }
                                         }
                                     }
-                                    records.push(new_record);
+                                    // After applying updates, ensure we are not duplicating the key.  Use the
+                                    // resolved key column to retrieve the new key value and check against
+                                    // existing records.  If a duplicate is found, skip adding the new record and
+                                    // warn.  Otherwise, push it to the list.
+                                    if key_col_index < new_record.len() {
+                                        let new_key_val = new_record[key_col_index];
+                                        if records.iter().any(|r| {
+                                            if key_col_index < r.len() {
+                                                r[key_col_index] == new_key_val
+                                            } else {
+                                                false
+                                            }
+                                        }) {
+                                            println!("Warning: record with key {} already exists in {} – skipping copy", new_key_val, file_name);
+                                        } else {
+                                            records.push(new_record);
+                                        }
+                                    } else {
+                                        // If the key column is out of bounds, append without duplicate check
+                                        records.push(new_record);
+                                    }
                                     break;
                                 }
                             }

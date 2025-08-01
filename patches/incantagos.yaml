@@ -35,10 +35,10 @@
 
 # Spell.dbc:
 #   - type: update
-#     key: 52674 # give corruption of medivh new visual
+#     key: 51182 # guided ley beam ground effect
 #     updates:
 #       SpellVisualID_1: 8500
 #   - type: update
-#     key: 51113 # give flamestrike of medivh new visual
+#     key: 52011 # guided ley-beam pe-cast targeting
 #     updates:
 #       SpellVisualID_1: 8501

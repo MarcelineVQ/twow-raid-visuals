@@ -1,0 +1,20 @@
+# enemy rain of fire given new visual id 8001, uses growing flames (668) state kit for red color, and ground effect 4706
+
+SpellVisual.dbc:
+  - type: copy
+    key: 329
+    updates:
+      Id: 8100
+      StateKit: 668
+      AreaModel: 4706
+      HasMissile: 1 #disable secondary ground effect renderings
+
+Spell.dbc:
+  - type: update
+    key: 19717 #gehennas and blackwing warlockk(19717)
+    updates:
+      SpellVisualID_1: 8100
+  - type: update
+    key: 28794 #faerlina and bovar'kez(28794)
+    updates:
+      SpellVisualID_1: 8100

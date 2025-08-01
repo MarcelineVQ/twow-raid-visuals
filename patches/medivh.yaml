@@ -1,17 +1,14 @@
-# copy curse of blood statekit, to make you purple
+# his flamestrike is provided in flamestrikes.yaml
+
+# todo, learn how colors work and make the pink a light pink
 SpellVisualKit.dbc:
   - type: copy
     key: 657
     updates:
       Id: 8500
       HeadEffect: 397 #add a purple orb above you
-      BaseEffect: 4700 #a ring under you
-  # - type: copy
-  #   key: 657
-  #   updates:
-  #     Id: 8501
-  #     HeadEffect: 397 #add a purple orb above you
-  #     BaseEffect: 4700 #a ring under you
+      BaseEffect: 4701 #a ring under you
+      ChestEffect: 300 #just a flair for visibility
 
 SpellVisual.dbc:
   - type: copy
@@ -19,20 +16,9 @@ SpellVisual.dbc:
     updates:
       Id: 8500
       StateKit: 8500
-  - type: copy
-    key: 33 # copy flamestrike visual, give it new area kit
-    updates:
-      Id: 8501
-      HasMissile: 1
-      AreaModel: 4600
-      # AreaKit: 8501 # not yet
 
 Spell.dbc:
   - type: update
     key: 52674 # give corruption of medivh new visual
     updates:
       SpellVisualID_1: 8500
-  - type: update
-    key: 51113 # give flamestrike of medivh new visual
-    updates:
-      SpellVisualID_1: 8501

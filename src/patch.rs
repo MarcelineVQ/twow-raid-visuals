@@ -41,7 +41,15 @@ pub enum PatchEntry {
     /// inserting a string value the writer will append the string to
     /// the string block and store its offset as the field value.
     Insert {
-        /// Mapping of field indices to values for the new record.
+        /// Optional key value for the new record.  If specified the value
+        /// will be written into the key column (defaults to 0) unless an
+        /// explicit value for that field is provided in `values`.
+        #[serde(default)]
+        key: Option<u32>,
+        /// Column containing the key.  May be a field name or numeric index.
+        #[serde(default)]
+        key_column: Option<String>,
+        /// Mapping of field names (or indices) to values for the new record.
         values: HashMap<String, ValueType>,
     },
     /// Copy an existing record identified by a key into a new record,
