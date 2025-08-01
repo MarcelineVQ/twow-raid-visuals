@@ -1,5 +1,0 @@
-SpellVisual.dbc:
-  - type: update
-    key: 5100 # add an actual coloring to poison charge
-    updates:
-      StateKit: 221

@@ -1,0 +1,53 @@
+#foo 8300 base
+
+# baron infero
+SpellVisualKit.dbc:
+  - type: insert
+    key: 8300
+    values:
+      StartAnimID: 1
+      ChestEffect: 1562
+      BaseEffect: 4700
+
+SpellVisual.dbc:
+  - type: copy
+    key: 781
+    updates:
+      Id: 8300
+      StateKit: 8300
+
+Spell.dbc:
+  - type: update
+    key: 19695 #baron Inferno 19695
+    updates:
+      SpellVisualID_1: 8300
+
+#baron living bomb
+SpellVisualKit.dbc:
+  - type: insert
+    key: 8301
+    values:
+      StartAnimID: 1
+      ChestEffect: 1562
+      BaseEffect: 4700
+      LeftHandEffect: 1015
+      SpecialEffect_1: 1015
+      SpecialEffect_2: 51
+      WorldEffect: 1
+
+      CharProc_2: 1199505408
+      CharParamZero_2: 2.0
+      CharParamOne_2: 2.0
+
+SpellVisual.dbc:
+  - type: copy
+    key: 4486
+    updates:
+      Id: 8301
+      StateKit: 8301
+
+Spell.dbc:
+  - type: update
+    key: 20475 #baron living bomb 20475
+    updates:
+      SpellVisualID_1: 8301

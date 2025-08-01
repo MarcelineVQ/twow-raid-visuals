@@ -1,4 +1,4 @@
-# enemy rain of fire given new visual id 8001, uses growing flames (668) state kit for red color, and ground effect 4706
+#foo 8200 base
 
 SpellVisual.dbc:
   - type: copy

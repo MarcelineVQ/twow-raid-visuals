@@ -311,15 +311,55 @@ fn parse_patch_value(value: serde_yaml::Value, path: &Path) -> Result<Vec<PatchF
     Ok(patch_files)
 }
 
+/// Split a patch file into multiple YAML sections based on repeated top‑level DBC keys.
+/// This allows users to specify the same DBC name multiple times in a single file
+/// (e.g. `SpellVisual.dbc:` followed by another `SpellVisual.dbc:`).  We scan the
+/// file line by line; whenever we encounter a line with no leading indentation
+/// and ending in `.dbc:`, we treat that as the start of a new section.  Each
+/// section is parsed independently via `parse_patch_value` and aggregated.
+fn parse_patch_file(path: &Path) -> Result<Vec<PatchFile>> {
+    use std::fs;
+    let content = fs::read_to_string(path)
+        .with_context(|| format!("Failed to read patch file {:?}", path))?;
+    // Split into sections by top‑level DBC keys
+    let mut sections: Vec<String> = Vec::new();
+    let mut current = String::new();
+    for line in content.lines() {
+        // If the line has no leading indentation and ends with `.dbc:`, start a new section
+        let trimmed = line.trim_start();
+        let indent = line.len() - trimmed.len();
+        if indent == 0 && trimmed.ends_with(".dbc:") {
+            if !current.trim().is_empty() {
+                sections.push(current);
+                current = String::new();
+            }
+        }
+        current.push_str(line);
+        current.push('\n');
+    }
+    if !current.trim().is_empty() {
+        sections.push(current);
+    }
+    // If no sections were detected, treat the whole file as a single section
+    if sections.is_empty() {
+        sections.push(content);
+    }
+    let mut pfs_all = Vec::new();
+    for section in sections {
+        // Parse each section as YAML
+        let value: serde_yaml::Value = serde_yaml::from_str(&section).with_context(|| {
+            format!("Failed to parse YAML section in {:?}", path)
+        })?;
+        let mut pfs = parse_patch_value(value, path)?;
+        pfs_all.append(&mut pfs);
+    }
+    Ok(pfs_all)
+}
+
 fn load_patches(patch_paths: &[PathBuf]) -> Result<HashMap<String, Vec<PatchFile>>> {
     let mut patches_map: HashMap<String, Vec<PatchFile>> = HashMap::new();
     for path in patch_paths {
-        let file = File::open(path)
-            .with_context(|| format!("Failed to open patch file {:?}", path))?;
-        let reader = BufReader::new(file);
-        let value: serde_yaml::Value = serde_yaml::from_reader(reader)
-            .with_context(|| format!("Failed to parse YAML in {:?}", path))?;
-        let pfs = parse_patch_value(value, path)?;
+        let pfs = parse_patch_file(path)?;
         for pf in pfs {
             let key = pf.dbc.to_lowercase();
             patches_map.entry(key).or_default().push(pf);

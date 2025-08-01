@@ -1,0 +1,57 @@
+#foo 8600 base
+
+### garlmoon ##############################
+# removes extra spell effects from gnarlmoon red and blue moon auras
+SpellVisualKit.dbc:
+  - type: update
+    key: 5849 # red moon Spell 51081, SpellVisual 6539
+    updates:
+      HeadEffect: 0
+      ChestEffect: 0
+      BaseEffect: 0
+      LeftHandEffect: 0
+      RightHandEffect: 0
+  - type: update
+    key: 5893 #blue moon Spell 51080, SpellVisual 6589
+    updates:
+      HeadEffect: 0
+      ChestEffect: 0
+      BaseEffect: 0
+      LeftHandEffect: 0
+      RightHandEffect: 0
+###########################################
+
+### medivh ##############################
+# his flamestrike is provided in flamestrikes.yaml
+# todo, learn how colors work and make the pink a light pink
+
+SpellVisualKit.dbc:
+  - type: copy
+    key: 657
+    updates:
+      Id: 8600
+      HeadEffect: 397 #add a purple orb above you
+      BaseEffect: 4701 #a ring under you
+      ChestEffect: 300 #just a flair for visibility
+
+SpellVisual.dbc:
+  - type: copy
+    key: 5981 # copy corruption of medivh visual, give it new kit
+    updates:
+      Id: 8600
+      StateKit: 8600
+
+Spell.dbc:
+  - type: update
+    key: 52674 # give corruption of medivh new visual
+    updates:
+      SpellVisualID_1: 8600
+#########################################
+
+### rupturan ##############################
+# his flamestrike is provided in flamestrikes.yaml
+###########################################
+
+### sanv ##############################
+
+#######################################

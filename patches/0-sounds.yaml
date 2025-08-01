@@ -1,0 +1,6 @@
+# silence a weird murloc sound glitch
+SoundEntries.dbc:
+  - type: update
+    key: 8485 # baby murloc dane loop
+    updates:
+      VolumeFloat: 0.0
