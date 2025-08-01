@@ -21,10 +21,49 @@ SpellVisualKit.dbc:
       RightHandEffect: 0
 ###########################################
 
+### incantagos ##############################
+# his blizard is provided in flamestrikes.yaml
+
+#make guided ley-beam more clear
+SpellVisualKit.dbc:
+  - type: copy
+    key: 221 #green
+    updates:
+      Id: 8603
+      HeadEffect: 1562 #arrow over head
+      BaseEffect: 4707 #35y ring
+
+SpellVisual.dbc:
+  - type: copy
+    key: 5780
+    updates:
+      Id: 8602
+      StateKit: 668
+      AreaModel: 4706 #25y ring
+      HasMissile: 1 #disable secondary ground effect renderings
+
+  - type: copy
+    key: 277
+    updates:
+      Id: 8603
+      StateKit: 221 # make new kit with coloring and arlokk head mark and zone size
+
+Spell.dbc:
+  - type: update
+    key: 51182 # guided ley beam ground effect
+    updates:
+      SpellVisualID_1: 8602
+  - type: update
+    key: 52011 # guided ley-beam pe-cast targeting
+    updates:
+      SpellVisualID_1: 8603
+###########################################
+
 ### medivh ##############################
 # his flamestrike is provided in flamestrikes.yaml
 # todo, learn how colors work and make the pink a light pink
 
+# make corruption much more obvious
 SpellVisualKit.dbc:
   - type: copy
     key: 657
@@ -53,5 +92,24 @@ Spell.dbc:
 ###########################################
 
 ### sanv ##############################
+# overflowing hatred, adding a ring to the precast kit
+SpellVisualKit.dbc:
+  - type: copy
+    key: 60
+    updates:
+      Id: 8601
+      BaseEffect: 4700 #a ring under him
 
+SpellVisual.dbc:
+  - type: copy
+    key: 963
+    updates:
+      Id: 8601
+      CastKit: 8601
+
+Spell.dbc:
+  - type: update
+    key: 51203 # overflowing hatred 51203 visual 963 changed to 8013
+    updates:
+      SpellVisualID_1: 8601
 #######################################

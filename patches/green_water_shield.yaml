@@ -30,6 +30,7 @@
 #     updates:
 #       SpellVisualID_1: 9000
 
+# aoe tests on mage, blizz rank 1,2,flamestrike rank 1
 Spell.dbc:
   - type: update
     key: 10
@@ -38,8 +39,38 @@ Spell.dbc:
   - type: update
     key: 6141
     updates:
-      SpellVisualID_1: 8001
+      SpellVisualID_1: 8100
   - type: update
     key: 2120
     updates:
       SpellVisualID_1: 8200
+# aoe tests on mage, blizz rank 1,2,flamestrike rank 1
+
+# replace spells temporarily for testing
+# Spell.dbc:
+#   - type: update
+#     key: 10
+#     updates:
+#       Id: 100000
+#   - type: copy
+#     key: 26607
+#     updates:
+#       Id: 10
+
+#   - type: update
+#     key: 6141
+#     updates:
+#       Id: 614100
+#   - type: copy
+#     key: 28794
+#     updates:
+#       Id: 6141
+
+#   - type: update
+#     key: 2120
+#     updates:
+#       Id: 201200
+#   - type: copy
+#     key: 22275
+#     updates:
+#       Id: 2120

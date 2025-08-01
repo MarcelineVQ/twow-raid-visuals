@@ -5,3 +5,7 @@ SpellVisual.dbc:
     key: 5100 # add an actual coloring to poison charge 28431 visual
     updates:
       StateKit: 221
+
+### faerlina ##############################
+# rof provided in rain_of_fire.yaml
+###########################################
