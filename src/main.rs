@@ -396,11 +396,11 @@ fn load_schema_map(schema_dir: &Path, dbc_file_name: &str) -> Option<HashMap<Str
     use std::io::BufReader;
     // Attempt to load a YAML file for this DBC from the provided
     // schema directory.  If it does not exist there, fall back to
-    // the built‑in defaults under `schema_defaults` in the project
+    // the built‑in defaults under `schema` in the project
     // root.  This allows shipping canonical 1.12 definitions with
     // the tool while still permitting overrides via --schema-dir.
     let yaml_name = format!("{}.yaml", dbc_file_name);
-    let candidate_dirs = [schema_dir, Path::new("schema_defaults")];
+    let candidate_dirs = [schema_dir, Path::new("schema")];
     for dir in &candidate_dirs {
         let path = dir.join(&yaml_name);
         if !path.exists() {

@@ -1,24 +1,26 @@
 # Twow Raid Visuals + WoW 1.12 DBC Patch Manager
 
-## Patch overview
+## Patches overview
 
-The patches included in this repository adjust the visuals and sounds for several vanilla spells and boss abilities.  They are applied in alphabetical order based on the patch file name so that later patches may override or build upon earlier ones.  The highlights are summarised below:
+The patches included in this repository adjust the visuals and sounds for several vanilla spells and boss abilities.  They are applied in alphabetical order based on the patch file name so that later patches may override or build upon earlier ones.  
+The patches currently are based on twow `1.17.2` dbc's, simply change out the .dbc files in the `dbc/` folder to use other versions.  
+The highlights are summarised below:
 
 - **Ground‑effect library (`0‑ground_effects.yaml`):** Adds a catalogue of new area indicators to `SpellVisualEffectName.dbc`, including rings of various radii (3 y, 5 y, 7 y, 10 y, 15 y, 20 y, 25 y, 30 y, 35 y, 40 y and 50 y) and Flamestrike‐style circles.
 
 - **Sound fix (`0‑sounds.yaml`):** Silences the looping baby murloc dance sound by setting its volume to zero.
 
-- **Blizzard improvements (`1‑blizzard.yaml`):** Assigns a danger area to several enemy blizzard spells spells—Incantagos, Arcanists and Vek’lor—so that their Blizzard attacks display a clear area indicator.
+- **Blizzard improvements (`1‑blizzard.yaml`):** Assigns a danger area to several enemy blizzard spells spells—Incantagos, Karazhan Arcanists and Vek’lor—so that they display a clear area indicator.
 
 - **Rain of Fire improvements (`2‑rain_of_fire.yaml`):** Does the same as above for Blackwing Warlock, Gehennas, and Faerlina.
 
-- **Flamestrike improvements (`3‑flamestrike.yaml`):** Equips enemy flamestrikes—Blackwing Spellbinder,Medivh,Rupturan,Fragments of Rupturan—with an indicator of their area of effect. Also adds a projectile to aid in seeing where a strike has occured.
+- **Flamestrike improvements (`3‑flamestrike.yaml`):** Equips enemy flamestrikes—Blackwing Spellbinder, Medivh, Rupturan, Fragments of Rupturan—with an indicator of their area of effect. Also adds a projectile to aid in seeing where a strike has occured.
 
 - **Molten Core tweaks (`4‑mc.yaml`):** Introduces two effects for Baron Geddon’s Inferno and Living Bomb mechanics, providing distinct area of effect rings.
 
 - **Naxxramas adjustments (`6‑naxx.yaml`):** Adds colour to Poison Charge to make it slightly more obvious, recolours Thaddius’s positive and negative charge buffs using Gnarlmoon visuals, adds blizzard impact indication for Sapphiron.
 
-- **Karazhan and Medivh (`7‑kara.yaml`):** Removes most extra effects from the red/blue moon auras (Gnarlmoon) to reduce cpu load, adds orb above players to help indicate color. Guided-ley beam indicates its current target better, corruption of Medivh aura is given a radius indicator and an orb above the effect player's head, and reworks the Overflowing Hatred (Sanv) has a range indication ring.
+- **Karazhan (`7‑kara.yaml`):** Removes most extra effects from the red/blue moon auras (Gnarlmoon) to reduce cpu load, adds orb above players to help indicate color. Guided-ley beam indicates its current target better, Corruption of Medivh has a radius indicator and an orb above the effected player's head, Overflowing Hatred (Sanv) has a range indication ring.
 
 - **Other:** This project also includes some updated .wmo files for Karazhan to assist in-game performance.
 
@@ -32,7 +34,7 @@ The tool applies all patches in ascending filename order and reports warnings al
 
 - **DBC parsing and writing** – Reads vanilla DBC tables, applies patches and writes out new files.  
 A lightweight parser operates on untyped 32‑bit fields; built‑in YAML schemas (derived from WDBXEditor’s `Classic 1.12.1` definitions) allow you to refer to fields by name.  
-Schema files in `schema_defaults` are used automatically, and you can override them by providing your own `schema` directory.
+Schema files in `schema` are used automatically, and you can override them by providing your own `schema` directory.
 - **Patch format with `update`, `insert` and `copy` actions** – YAML patches can update existing records, insert entirely new rows (optionally specifying a `key` and `key_column` for the primary key), or copy a record and modify selected fields.  
 Floats in patches are transparently converted to their 32‑bit bit patterns, so writing `0.5` is equivalent to specifying its raw integer representation.
 - **Multi‑DBC documents** – A single patch file may contain multiple `Table.dbc:` sections.  
@@ -42,7 +44,7 @@ This allows you to layer patches (e.g. `0‑base.yaml`, `1‑boss.yaml`, `z‑te
 - **Duplicate detection** – When inserting or copying, the tool checks whether the new primary key already exists and skips the change with a warning to prevent duplicate IDs.
 - **Contextual warnings** – Any warning emitted while applying patches identifies the originating patch file, making it easier to track down invalid field names or missing schemas.
 - **Includes support** – The `build` command can bundle any files under an `includes/` directory (or a directory you specify with `--includes-dir`) into the MPQ alongside your DBCs.  
-This is useful for adding custom models or textures such as `Spells/KruulCone.blp`.
+This is useful for adding custom models or textures such as the new area indicators.
 - **Default directories** – Unless overridden, the tool reads DBCs from `dbc/`, patches from `patches/`, schemas from `schema/` (with fallbacks to the built‑in defaults) and writes output to `build/`.
 
 ### Patch format
