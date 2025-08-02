@@ -20,6 +20,8 @@ The patches included in this repository adjust the visuals and sounds for severa
 
 - **Karazhan and Medivh (`7‑kara.yaml`):** Removes most extra effects from the red/blue moon auras (Gnarlmoon) to reduce cpu load, adds orb above players to help indicate color. Guided-ley beam indicates its current target better, corruption of Medivh aura is given a radius indicator and an orb above the effect player's head, and reworks the Overflowing Hatred (Sanv) has a range indication ring.
 
+- **Other:** This project also includes some updated .wmo files for Karazhan to assist in-game performance.
+
 ## What this tool does
 
 This Rust crate offers a command‑line workflow for modifying World of Warcraft 1.12 DBC files and packaging them into an MPQ archive.  
