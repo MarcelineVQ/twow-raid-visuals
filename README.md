@@ -1,5 +1,7 @@
 # Twow Raid Visuals + WoW 1.12 DBC Patch Manager
 
+![](./ss1.png)
+
 ## Patches overview
 
 The patches included in this repository adjust the visuals and sounds for several vanilla spells and boss abilities.  They are applied in alphabetical order based on the patch file name so that later patches may override or build upon earlier ones.  
