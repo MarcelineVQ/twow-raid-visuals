@@ -4,7 +4,6 @@ use serde_yaml;
 use std::collections::{HashMap, HashSet};
 use std::fs;
 use std::fs::File;
-use std::io::BufReader;
 use std::path::{Path, PathBuf};
 
 mod dbc;
@@ -106,8 +105,8 @@ fn main() -> Result<()> {
     let cli = Cli::parse();
     match cli.command {
         Commands::Apply {
-            mut dbc_files,
-            mut patches,
+            dbc_files,
+            patches,
             out_dir,
             schema_dir,
             dbc_dir,
@@ -167,8 +166,8 @@ fn main() -> Result<()> {
             apply_command(&dbc_paths, &patch_paths, &out_dir, &schema_dir)?;
         }
         Commands::Build {
-            mut dbc_files,
-            mut patches,
+            dbc_files,
+            patches,
             out_dir,
             mpq_path,
             mpq_version,
@@ -299,6 +298,7 @@ fn parse_patch_value(value: serde_yaml::Value, path: &Path) -> Result<Vec<PatchF
                     let pf = PatchFile {
                         dbc: dbc_name,
                         changes,
+                        origin: None,
                     };
                     patch_files.push(pf);
                 }
@@ -351,6 +351,10 @@ fn parse_patch_file(path: &Path) -> Result<Vec<PatchFile>> {
             format!("Failed to parse YAML section in {:?}", path)
         })?;
         let mut pfs = parse_patch_value(value, path)?;
+        // Set the origin on each patch file to the current path
+        for pf in &mut pfs {
+            pf.origin = Some(path.to_path_buf());
+        }
         pfs_all.append(&mut pfs);
     }
     Ok(pfs_all)
@@ -358,7 +362,20 @@ fn parse_patch_file(path: &Path) -> Result<Vec<PatchFile>> {
 
 fn load_patches(patch_paths: &[PathBuf]) -> Result<HashMap<String, Vec<PatchFile>>> {
     let mut patches_map: HashMap<String, Vec<PatchFile>> = HashMap::new();
-    for path in patch_paths {
+    // Sort patch paths alphabetically by their file name to enforce deterministic ordering
+    let mut sorted: Vec<&PathBuf> = patch_paths.iter().collect();
+    sorted.sort_by(|a, b| {
+        let a_name = a
+            .file_name()
+            .and_then(|s| s.to_str())
+            .unwrap_or("");
+        let b_name = b
+            .file_name()
+            .and_then(|s| s.to_str())
+            .unwrap_or("");
+        a_name.cmp(b_name)
+    });
+    for path in sorted {
         let pfs = parse_patch_file(path)?;
         for pf in pfs {
             let key = pf.dbc.to_lowercase();
@@ -495,6 +512,12 @@ fn apply_command(
         let mut any_patch_applied = false;
         if let Some(patches_for_file) = patches_map.get(&file_name.to_lowercase()) {
             for pf in patches_for_file {
+                // Determine the origin of this patch file for warnings
+                let pf_origin = pf
+                    .origin
+                    .as_ref()
+                    .map(|p| p.display().to_string())
+                    .unwrap_or_else(|| "<unknown>".to_string());
                 for change in &pf.changes {
                     match change {
                         PatchEntry::Update {
@@ -516,11 +539,21 @@ fn apply_command(
                                             if let Some(&idx) = schema.get(&col_name.to_lowercase()) {
                                                 idx
                                             } else {
-                                                println!("Warning: unknown key column '{}' in {} – defaulting to 0", col_name, file_name);
+                                                println!(
+                                                    "Warning: unknown key column '{}' in {} (patch file: {}) – defaulting to 0",
+                                                    col_name,
+                                                    file_name,
+                                                    pf_origin
+                                                );
                                                 0
                                             }
                                         } else {
-                                            println!("Warning: no schema for {}, cannot resolve key column '{}', defaulting to 0", file_name, col_name);
+                                            println!(
+                                                "Warning: no schema for {} (patch file: {}), cannot resolve key column '{}', defaulting to 0",
+                                                file_name,
+                                                pf_origin,
+                                                col_name
+                                            );
                                             0
                                         }
                                     }
@@ -552,12 +585,23 @@ fn apply_command(
                                         let field_idx = match field_idx {
                                             Some(i) => i,
                                             None => {
-                                                println!("Warning: unknown field '{}' in {} – skipping", field_name, file_name);
+                                                println!(
+                                                    "Warning: unknown field '{}' in {} (patch file: {}) – skipping",
+                                                    field_name,
+                                                    file_name,
+                                                    pf_origin
+                                                );
                                                 continue;
                                             }
                                         };
                                         if field_idx >= record.len() {
-                                            println!("Warning: field {} out of range for record with key {}", field_idx, key);
+                                            println!(
+                                                "Warning: field {} out of range for record with key {} in {} (patch file: {})",
+                                                field_idx,
+                                                key,
+                                                file_name,
+                                                pf_origin
+                                            );
                                             continue;
                                         }
                                         match value {
@@ -578,7 +622,13 @@ fn apply_command(
                                                 if let Some(num) = value.as_u32() {
                                                     record[field_idx] = num;
                                                 } else {
-                                                    println!("Warning: unsupported value {:?} for field {}", value, field_idx);
+                                                    println!(
+                                                        "Warning: unsupported value {:?} for field {} in {} (patch file: {})",
+                                                        value,
+                                                        field_idx,
+                                                        file_name,
+                                                        pf_origin
+                                                    );
                                                 }
                                             }
                                         }
@@ -587,7 +637,12 @@ fn apply_command(
                                 }
                             }
                             if !found {
-                                println!("Warning: no record found with key {} in {}", key, file_name);
+                                println!(
+                                    "Warning: no record found with key {} in {} (patch file: {})",
+                                    key,
+                                    file_name,
+                                    pf_origin
+                                );
                             }
                         }
                         PatchEntry::Insert { key, key_column, values } => {
@@ -601,11 +656,21 @@ fn apply_command(
                                             if let Some(&idx) = schema.get(&col_name.to_lowercase()) {
                                                 idx
                                             } else {
-                                                println!("Warning: unknown key column '{}' in {} – defaulting to 0", col_name, file_name);
+                                                println!(
+                                                    "Warning: unknown key column '{}' in {} (patch file: {}) – defaulting to 0",
+                                                    col_name,
+                                                    file_name,
+                                                    pf_origin
+                                                );
                                                 0
                                             }
                                         } else {
-                                            println!("Warning: no schema for {}, cannot resolve key column '{}', defaulting to 0", file_name, col_name);
+                                            println!(
+                                                "Warning: no schema for {} (patch file: {}), cannot resolve key column '{}', defaulting to 0",
+                                                file_name,
+                                                pf_origin,
+                                                col_name
+                                            );
                                             0
                                         }
                                     }
@@ -650,12 +715,22 @@ fn apply_command(
                                 let field_idx = match field_idx {
                                     Some(i) => i,
                                     None => {
-                                        println!("Warning: unknown field '{}' in {} – skipping", field_name, file_name);
+                                        println!(
+                                            "Warning: unknown field '{}' in {} (patch file: {}) – skipping",
+                                            field_name,
+                                            file_name,
+                                            pf_origin
+                                        );
                                         continue;
                                     }
                                 };
                                 if field_idx >= new_record.len() {
-                                    println!("Warning: field {} out of range for new record", field_idx);
+                                    println!(
+                                        "Warning: field {} out of range for new record in {} (patch file: {})",
+                                        field_idx,
+                                        file_name,
+                                        pf_origin
+                                    );
                                     continue;
                                 }
                                 match value {
@@ -675,7 +750,13 @@ fn apply_command(
                                         if let Some(num) = value.as_u32() {
                                             new_record[field_idx] = num;
                                         } else {
-                                            println!("Warning: unsupported value {:?} for field {}", value, field_idx);
+                                            println!(
+                                                "Warning: unsupported value {:?} for field {} in {} (patch file: {})",
+                                                value,
+                                                field_idx,
+                                                file_name,
+                                                pf_origin
+                                            );
                                         }
                                     }
                                 }
@@ -692,7 +773,12 @@ fn apply_command(
                                         false
                                     }
                                 }) {
-                                    println!("Warning: record with key {} already exists in {} – skipping insert", new_key_val, file_name);
+                                    println!(
+                                        "Warning: record with key {} already exists in {} (patch file: {}) – skipping insert",
+                                        new_key_val,
+                                        file_name,
+                                        pf_origin
+                                    );
                                     // Do not push the duplicate record
                                 } else {
                                     records.push(new_record);
@@ -717,11 +803,21 @@ fn apply_command(
                                             if let Some(&idx) = schema.get(&col_name.to_lowercase()) {
                                                 idx
                                             } else {
-                                                println!("Warning: unknown key column '{}' in {} – defaulting to 0", col_name, file_name);
+                                                println!(
+                                                    "Warning: unknown key column '{}' in {} (patch file: {}) – defaulting to 0",
+                                                    col_name,
+                                                    file_name,
+                                                    pf_origin
+                                                );
                                                 0
                                             }
                                         } else {
-                                            println!("Warning: no schema for {}, cannot resolve key column '{}', defaulting to 0", file_name, col_name);
+                                            println!(
+                                                "Warning: no schema for {} (patch file: {}), cannot resolve key column '{}', defaulting to 0",
+                                                file_name,
+                                                pf_origin,
+                                                col_name
+                                            );
                                             0
                                         }
                                     }
@@ -753,12 +849,23 @@ fn apply_command(
                                         let field_idx = match field_idx {
                                             Some(i) => i,
                                             None => {
-                                                println!("Warning: unknown field '{}' in {} – skipping", field_name, file_name);
+                                                println!(
+                                                    "Warning: unknown field '{}' in {} (patch file: {}) – skipping",
+                                                    field_name,
+                                                    file_name,
+                                                    pf_origin
+                                                );
                                                 continue;
                                             }
                                         };
                                         if field_idx >= new_record.len() {
-                                            println!("Warning: field {} out of range for record with key {}", field_idx, key);
+                                            println!(
+                                                "Warning: field {} out of range for record with key {} in {} (patch file: {})",
+                                                field_idx,
+                                                key,
+                                                file_name,
+                                                pf_origin
+                                            );
                                             continue;
                                         }
                                         match value {
@@ -779,7 +886,13 @@ fn apply_command(
                                                 if let Some(num) = value.as_u32() {
                                                     new_record[field_idx] = num;
                                                 } else {
-                                                    println!("Warning: unsupported value {:?} for field {}", value, field_idx);
+                                                    println!(
+                                                        "Warning: unsupported value {:?} for field {} in {} (patch file: {})",
+                                                        value,
+                                                        field_idx,
+                                                        file_name,
+                                                        pf_origin
+                                                    );
                                                 }
                                             }
                                         }
@@ -797,7 +910,12 @@ fn apply_command(
                                                 false
                                             }
                                         }) {
-                                            println!("Warning: record with key {} already exists in {} – skipping copy", new_key_val, file_name);
+                                            println!(
+                                                "Warning: record with key {} already exists in {} (patch file: {}) – skipping copy",
+                                                new_key_val,
+                                                file_name,
+                                                pf_origin
+                                            );
                                         } else {
                                             records.push(new_record);
                                         }
@@ -809,7 +927,12 @@ fn apply_command(
                                 }
                             }
                             if !found {
-                                println!("Warning: no record found with key {} in {} to copy", key, file_name);
+                                println!(
+                                    "Warning: no record found with key {} in {} (patch file: {}) to copy",
+                                    key,
+                                    file_name,
+                                    pf_origin
+                                );
                             }
                         }
                     }

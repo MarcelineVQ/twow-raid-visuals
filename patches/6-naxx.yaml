@@ -9,3 +9,41 @@ SpellVisual.dbc:
 ### faerlina ##############################
 # rof provided in rain_of_fire.yaml
 ###########################################
+
+### thaddius ##############################
+# color thaddius charges using gnarlmoon visuals
+Spell.dbc:
+  - type: update
+    key: 28059 #positive charge main buff
+    updates:
+      SpellVisualID_1: 6589
+  - type: update
+    key: 28084 #negative charge main buff
+    updates:
+      SpellVisualID_1: 6539
+###########################################
+
+### sapph ##############################
+# saph blizard base Blizzard is an npc that casts Chill(28547)
+SpellVisualKit.dbc:
+  - type: copy
+    key: 6591
+    updates:
+      Id: 8500
+      CharParamZero_2: 1.0 #reduce blizzard shards from 15 to 1
+
+SpellVisual.dbc:
+  - type: copy
+    key: 7608
+    updates:
+      Id: 8500
+      AreaModel: 4800 #7y red circle
+      AreaKit: 8500
+      HasMissile: 1 #disable secondary ground effect renderings
+
+Spell.dbc:
+  - type: update
+    key: 28547 #chill 28547
+    updates:
+      SpellVisualID_1: 8500
+########################################

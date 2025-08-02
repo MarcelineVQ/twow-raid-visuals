@@ -12,6 +12,12 @@ pub struct PatchFile {
     /// A list of changes to apply.  Each change may update an existing
     /// record or insert a new one.
     pub changes: Vec<PatchEntry>,
+
+    /// Optional path to the patch file this patch was loaded from.  This is
+    /// not populated by the YAML parser (hence `serde(skip)`) but filled
+    /// in by the loader so warnings can reference the source file.
+    #[serde(skip)]
+    pub origin: Option<std::path::PathBuf>,
 }
 
 /// A single patch entry.  Serialized using an internal tagging strategy so

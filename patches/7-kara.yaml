@@ -6,19 +6,25 @@ SpellVisualKit.dbc:
   - type: update
     key: 5849 # red moon Spell 51081, SpellVisual 6539
     updates:
-      HeadEffect: 0
+      # HeadEffect: 0
+      HeadEffect: 1544 #add an orb above you
       ChestEffect: 0
       BaseEffect: 0
       LeftHandEffect: 0
       RightHandEffect: 0
+      # CharProc_2: 1244985852 # trying green
+      WorldEffect: 1 #allows this to fade properly if not cleared by other effects
   - type: update
     key: 5893 #blue moon Spell 51080, SpellVisual 6589
     updates:
-      HeadEffect: 0
+      # HeadEffect: 0
+      HeadEffect: 1544 #add an orb above you
       ChestEffect: 0
       BaseEffect: 0
       LeftHandEffect: 0
       RightHandEffect: 0
+      # CharProc_2: 337675388 # trying purple
+      WorldEffect: 1 #allows this to fade properly if not cleared by other effects
 ###########################################
 
 ### incantagos ##############################
@@ -30,7 +36,8 @@ SpellVisualKit.dbc:
     key: 221 #green
     updates:
       Id: 8603
-      HeadEffect: 1562 #arrow over head
+      HeadEffect: 2963 #arrow over head
+      ChestEffect: 1562 #hunter mark
       BaseEffect: 4707 #35y ring
 
 SpellVisual.dbc:
@@ -46,7 +53,7 @@ SpellVisual.dbc:
     key: 277
     updates:
       Id: 8603
-      StateKit: 221 # make new kit with coloring and arlokk head mark and zone size
+      StateKit: 8603 # make new kit with coloring and arlokk head mark and zone size
 
 Spell.dbc:
   - type: update
@@ -72,6 +79,7 @@ SpellVisualKit.dbc:
       HeadEffect: 397 #add a purple orb above you
       BaseEffect: 4701 #a ring under you
       ChestEffect: 300 #just a flair for visibility
+      # HeadEffect: 151 #shadow bolt visual
 
 SpellVisual.dbc:
   - type: copy

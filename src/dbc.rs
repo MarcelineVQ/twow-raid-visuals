@@ -1,7 +1,7 @@
 use anyhow::{bail, Context, Result};
 use std::collections::HashMap;
 use std::fs::File;
-use std::io::{Read, Seek, SeekFrom, Write};
+use std::io::{Read, Write};
 use std::path::Path;
 
 /// Representation of a vanilla DBC header (WDBC).  The parser does not
@@ -70,7 +70,7 @@ pub fn read_dbc<P: AsRef<Path>>(path: P) -> Result<(DbcHeader, Vec<Vec<u32>>, Ve
         let mut values: Vec<u32> = Vec::with_capacity(header.field_count as usize);
         for i in 0..header.field_count as usize {
             let start = i * 4;
-            let end = start + 4;
+            // let end = start + 4;
             let val = u32::from_le_bytes([
                 record_bytes[start],
                 record_bytes[start + 1],
@@ -142,7 +142,7 @@ pub fn write_dbc<P: AsRef<Path>>(
 /// at offset 0 is always included.
 pub fn build_string_map(block: &[u8]) -> HashMap<String, u32> {
     let mut map = HashMap::new();
-    let mut offset = 0u32;
+    // let mut offset = 0u32;
     let mut start = 0usize;
     while start < block.len() {
         // Find the next null terminator

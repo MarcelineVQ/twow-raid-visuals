@@ -1,36 +1,66 @@
 #foo 8200 base
 
+# spellbinder and medivh
+SpellVisualKit.dbc:
+  - type: copy
+    key: 695 #flamestrike
+    updates:
+      Id: 8200
+      SpecialEffect_1: 4700
+
 SpellVisual.dbc:
   - type: copy
     key: 33
     updates:
       Id: 8200
       StateKit: 668
-      AreaModel: 4600
+      CastKit: 239
+      AreaKit: 8200
       HasMissile: 1 #disable secondary ground effect renderings
-  - type: copy
-    key: 33
-    updates:
-      Id: 8201
-      StateKit: 668
-      AreaModel: 4601
-      HasMissile: 1 #disable secondary ground effect renderings
+      MissileModel: 1179
+      MissilePathType: 2
 
 Spell.dbc:
   - type: update
     key: 22275 #spellbinder flamestike (22275)
     updates:
       SpellVisualID_1: 8200
+      Speed: 40.0
   - type: update
     key: 51113 # give flamestrike of medivh new visual
     updates:
       SpellVisualID_1: 8200
+      Speed: 40.0
 
+
+#rupturan and fragments
+SpellVisualKit.dbc:
+  - type: copy
+    key: 695 #flamestrike
+    updates:
+      Id: 8201
+      SpecialEffect_1: 4702
+
+SpellVisual.dbc:
+  - type: copy
+    key: 33
+    updates:
+      Id: 8201
+      StateKit: 668
+      CastKit: 239
+      AreaKit: 8201
+      HasMissile: 1 #disable secondary ground effect renderings
+      MissileModel: 1179
+      MissilePathType: 2
+
+Spell.dbc:
   - type: update
     key: 51298 #ignite rock (51298)
     updates:
       SpellVisualID_1: 8201
+      Speed: 40.0
   - type: update
     key: 52040 #ignite earth (52040)
     updates:
       SpellVisualID_1: 8201
+      Speed: 40.0 #projectile speed, required to triggeer some visual effects
