@@ -22,6 +22,7 @@ Spell.dbc:
     updates:
       SpellVisualID_1: 8300
 
+#todo, use copy here, this was made before we had it
 #baron living bomb
 SpellVisualKit.dbc:
   - type: insert

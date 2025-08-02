@@ -6,7 +6,7 @@ SpellVisualKit.dbc:
     key: 695 #flamestrike
     updates:
       Id: 8200
-      SpecialEffect_1: 4700
+      SpecialEffect_1: 4700 #display a ground zone
 
 SpellVisual.dbc:
   - type: copy
@@ -27,7 +27,7 @@ Spell.dbc:
       SpellVisualID_1: 8200
       Speed: 40.0
   - type: update
-    key: 51113 # give flamestrike of medivh new visual
+    key: 51113 # flamestrike of medivh
     updates:
       SpellVisualID_1: 8200
       Speed: 40.0
@@ -39,7 +39,7 @@ SpellVisualKit.dbc:
     key: 695 #flamestrike
     updates:
       Id: 8201
-      SpecialEffect_1: 4702
+      SpecialEffect_1: 4702 #display a ground zone
 
 SpellVisual.dbc:
   - type: copy
