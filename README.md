@@ -1,6 +1,7 @@
 # Twow Raid Visuals + WoW 1.12 DBC Patch Manager
 
-![](./ss1.png)
+![](./ss1.png)  
+To use this project's visuals, download [the latest release](https://github.com/MarcelineVQ/twow-raid-visuals/releases/latest) and unpack to your Turtle WoW `Data` folder.  
 
 ## Patches overview
 
