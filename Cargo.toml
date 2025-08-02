@@ -1,5 +1,5 @@
 [package]
-name = "wow_dbc_manager_rs"
+name = "wow_dbc_patcher"
 version = "0.1.0"
 edition = "2021"
 

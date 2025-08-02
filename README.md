@@ -75,14 +75,13 @@ cargo build --release
 Apply patches to your DBC files and write them to the default `build/` directory:
 
 ```bash
-./target/release/wow_dbc_manager_rs apply
+./target/release/wow_dbc_patcher apply
 ```
 
 Apply patches and build an MPQ archive (using default directories for DBCs, patches, schemas and includes):
 
 ```bash
-./target/release/wow_dbc_manager_rs build \
-  --mpq build/patch-1.mpq
+./target/release/wow_dbc_patcher build --mpq patch-1.mpq
 ```
 
 You can override any of the input or output locations:
