@@ -25,15 +25,13 @@ Spell.dbc:
 #todo, use copy here, this was made before we had it
 #baron living bomb
 SpellVisualKit.dbc:
-  - type: insert
-    key: 8301
-    values:
-      StartAnimID: 1
-      ChestEffect: 1562
+  - type: copy
+    key: 3351
+    updates:
+      Id: 8301
+      HeadEffect: 2963
+      ChestEffect: 1015
       BaseEffect: 4700
-      LeftHandEffect: 1015
-      SpecialEffect_1: 1015
-      SpecialEffect_2: 51
       WorldEffect: 1
 
       CharProc_2: 1199505408

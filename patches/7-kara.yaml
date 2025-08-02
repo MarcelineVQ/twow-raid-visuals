@@ -1,5 +1,8 @@
 #foo 8600 base
 
+#todo mention anomalus vis
+# adjust incantagos finising aoe size
+
 ### garlmoon ##############################
 # removes extra spell effects from gnarlmoon red and blue moon auras
 SpellVisualKit.dbc:
@@ -46,7 +49,7 @@ SpellVisual.dbc:
     updates:
       Id: 8602
       StateKit: 668
-      AreaModel: 4706 #25y ring
+      AreaModel: 4707 #25y ring
       HasMissile: 1 #disable secondary ground effect renderings
 
   - type: copy
@@ -68,7 +71,7 @@ Spell.dbc:
 
 ### medivh ##############################
 # his flamestrike is provided in flamestrikes.yaml
-# todo, learn how colors work and make the pink a light pink
+# todo, learn how colors work and make the purple a bright pink
 
 # make corruption much more obvious
 SpellVisualKit.dbc:
@@ -113,7 +116,7 @@ SpellVisual.dbc:
     key: 963
     updates:
       Id: 8601
-      CastKit: 8601
+      PrecastKit: 8601
 
 Spell.dbc:
   - type: update
@@ -121,3 +124,5 @@ Spell.dbc:
     updates:
       SpellVisualID_1: 8601
 #######################################
+
+#todo add green effect to kara protector, red to self-destruct boy

@@ -32,14 +32,22 @@ Spell.dbc:
       SpellVisualID_1: 8200
       Speed: 40.0
 
-
 #rupturan and fragments
 SpellVisualKit.dbc:
   - type: copy
     key: 695 #flamestrike
     updates:
       Id: 8201
-      SpecialEffect_1: 4702 #display a ground zone
+      SpecialEffect_1: 4701 #display a ground zone
+      WorldEffect: 2
+      CharProc_2: 2.0
+  - type: copy
+    key: 695 #flamestrike
+    updates:
+      Id: 8202
+      SpecialEffect_1: 4700 #display a ground zone
+      WorldEffect: 2
+      CharProc_2: 2.0
 
 SpellVisual.dbc:
   - type: copy
@@ -47,8 +55,16 @@ SpellVisual.dbc:
     updates:
       Id: 8201
       StateKit: 668
-      CastKit: 239
       AreaKit: 8201
+      HasMissile: 1 #disable secondary ground effect renderings
+      MissileModel: 1179
+      MissilePathType: 2
+  - type: copy
+    key: 33
+    updates:
+      Id: 8202
+      StateKit: 668
+      AreaKit: 8202
       HasMissile: 1 #disable secondary ground effect renderings
       MissileModel: 1179
       MissilePathType: 2
@@ -62,5 +78,5 @@ Spell.dbc:
   - type: update
     key: 52040 #ignite earth (52040)
     updates:
-      SpellVisualID_1: 8201
+      SpellVisualID_1: 8202
       Speed: 40.0 #projectile speed, required to triggeer some visual effects

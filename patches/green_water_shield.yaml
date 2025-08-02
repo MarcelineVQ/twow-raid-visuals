@@ -71,7 +71,7 @@ Spell.dbc:
   #   updates:
   #     Id: 201200
   # - type: copy
-  #   key: 22275
+  #   key: 51298
   #   updates:
   #     Id: 2120
 
@@ -80,9 +80,27 @@ Spell.dbc:
   #   updates:
   #     Id: 201201
   # - type: copy
-  #   key: 51113
+  #   key: 52040
   #   updates:
   #     Id: 2121
+
+  # - type: update
+  #   key: 172
+  #   updates:
+  #     Id: 168000
+  # - type: copy
+  #   # key: 20475
+  #   # key: 52539
+  #   key: 51432
+  #   updates:
+  #     Id: 172
+
+  # - type: update
+  #   key: 980
+  #   updates:
+  #     ImplicitTargetA_1: 25
+      # Id: 98000
+
 
   # positive charge
   # - type: update
