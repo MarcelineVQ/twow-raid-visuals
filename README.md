@@ -8,8 +8,6 @@ The highlights are summarised below:
 
 - **Ground‑effect library (`0‑ground_effects.yaml`):** Adds a catalogue of new area indicators to `SpellVisualEffectName.dbc`, including rings of various radii (3 y, 5 y, 7 y, 10 y, 15 y, 20 y, 25 y, 30 y, 35 y, 40 y and 50 y) and Flamestrike‐style circles.
 
-- **Sound fix (`0‑sounds.yaml`):** Silences the looping baby murloc dance sound by setting its volume to zero.
-
 - **Blizzard improvements (`1‑blizzard.yaml`):** Assigns a danger area to several enemy blizzard spells spells—Incantagos, Karazhan Arcanists and Vek’lor—so that they display a clear area indicator.
 
 - **Rain of Fire improvements (`2‑rain_of_fire.yaml`):** Does the same as above for Blackwing Warlock, Gehennas, and Faerlina.
@@ -18,11 +16,16 @@ The highlights are summarised below:
 
 - **Molten Core tweaks (`4‑mc.yaml`):** Introduces two effects for Baron Geddon’s Inferno and Living Bomb mechanics, providing distinct area of effect rings.
 
-- **Naxxramas adjustments (`6‑naxx.yaml`):** Adds colour to Poison Charge to make it slightly more obvious, recolours Thaddius’s positive and negative charge buffs using Gnarlmoon visuals, adds blizzard impact indication for Sapphiron.
+- **Naxxramas adjustments (`6‑naxx.yaml`):** Adds colour to Poison Charge to make it slightly more obvious, recolours Thaddius’s positive and negative charge buffs using Gnarlmoon visuals, adds blizzard impact indication for Sapphiron and cuts the shard count to improve fps.
 
-- **Karazhan (`7‑kara.yaml`):** Removes most extra effects from the red/blue moon auras (Gnarlmoon) to reduce cpu load, adds orb above players to help indicate color. Guided-ley beam indicates its current target better, Corruption of Medivh has a radius indicator and an orb above the effected player's head, Overflowing Hatred (Sanv) has a range indication ring.
+- **Karazhan (`7‑kara.yaml`):** Removes most extra effects from the red/blue moon auras (Gnarlmoon) to reduce cpu load, adds orb above players to help indicate color.  Improved visibility for anomalus soaking zones.  Guided-ley beam indicates its current target better.  Corruption of Medivh has a radius indicator and an orb above the effected player's head.  Overflowing Hatred (Sanv) has a range indication ring.
 
-- **Other:** This project also includes some updated .wmo files for Karazhan to assist in-game performance.
+- **Other changes:** Updated `.wmo` files for Sanv arena in Karazhan to assist in-game rendering performance.  Silences the looping baby murloc dance sound by setting its volume to zero.
+
+- **Credits:** These contributors did not ask to be credited but should be mentioned.
+  - **Lhian** – `.wmo` edits adapted from his Karazhan performance patch  
+  - **Incantation / Fauna** – Major visual improvement to Anomalus soak zones
+
 
 ## What this tool does
 

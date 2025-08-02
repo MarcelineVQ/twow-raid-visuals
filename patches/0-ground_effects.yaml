@@ -113,6 +113,21 @@ SpellVisualEffectName.dbc:
       Scale: 1.0
 
   - type: insert
+    key: 4750
+    values:
+      Name: Danger Area 10y White
+      FileName: Spells\DangerArea10White.m2
+      AreaEffectSize: 0.0
+      Scale: 1.0
+  - type: insert
+    key: 4751
+    values:
+      Name: Danger Area 15y White
+      FileName: Spells\DangerArea15White.m2
+      AreaEffectSize: 0.0
+      Scale: 1.0
+
+  - type: insert
     key: 4800
     values:
       Name: Danger Area 7y Red

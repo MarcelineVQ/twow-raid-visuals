@@ -1,5 +1,8 @@
 #foo 8100 base
 
+# Beause her model scales up during the fight we need to use an AreaModel instead
+# of the on-impact method that flamestrike uses.
+
 SpellVisual.dbc:
   - type: copy
     key: 329

@@ -1,39 +1,32 @@
 #foo 8600 base
 
-#todo mention anomalus vis
-# adjust incantagos finising aoe size
-
 ### garlmoon ##############################
 # removes extra spell effects from gnarlmoon red and blue moon auras
 SpellVisualKit.dbc:
   - type: update
     key: 5849 # red moon Spell 51081, SpellVisual 6539
     updates:
-      # HeadEffect: 0
       HeadEffect: 1544 #add an orb above you
       ChestEffect: 0
       BaseEffect: 0
       LeftHandEffect: 0
       RightHandEffect: 0
-      # CharProc_2: 1244985852 # trying green
       WorldEffect: 1 #allows this to fade properly if not cleared by other effects
   - type: update
     key: 5893 #blue moon Spell 51080, SpellVisual 6589
     updates:
-      # HeadEffect: 0
       HeadEffect: 1544 #add an orb above you
       ChestEffect: 0
       BaseEffect: 0
       LeftHandEffect: 0
       RightHandEffect: 0
-      # CharProc_2: 337675388 # trying purple
       WorldEffect: 1 #allows this to fade properly if not cleared by other effects
 ###########################################
 
 ### incantagos ##############################
 # his blizard is provided in flamestrikes.yaml
 
-#make guided ley-beam more clear
+# make guided ley-beam more clear
 SpellVisualKit.dbc:
   - type: copy
     key: 221 #green
@@ -69,9 +62,12 @@ Spell.dbc:
       SpellVisualID_1: 8603
 ###########################################
 
+### anomalus ##############################
+# improved bomb zone visibility
+###########################################
+
 ### medivh ##############################
 # his flamestrike is provided in flamestrikes.yaml
-# todo, learn how colors work and make the purple a bright pink
 
 # make corruption much more obvious
 SpellVisualKit.dbc:
@@ -80,9 +76,8 @@ SpellVisualKit.dbc:
     updates:
       Id: 8600
       HeadEffect: 397 #add a purple orb above you
-      BaseEffect: 4701 #a ring under you
+      BaseEffect: 4751 #a ring under you, white base colored by aura
       ChestEffect: 300 #just a flair for visibility
-      # HeadEffect: 151 #shadow bolt visual
 
 SpellVisual.dbc:
   - type: copy

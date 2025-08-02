@@ -15,13 +15,13 @@ fields:
   - BreathEffect
   - LeftWeaponEffect
   - RightWeaponEffect
-  - Unknown_1 # seems needed for padding, nothing uses it?
-  - SpecialEffect_1
-  - SpecialEffect_2
-  - SpecialEffect_3
-  - WorldEffect
-  - SoundID
-  - ShakeID
+  - Unknown_1 # nothing uses it?
+  - SpecialEffect_1 #these are subtly wrong but I don't know how yet
+  - SpecialEffect_2 #these are subtly wrong but I don't know how yet
+  - SpecialEffect_3 #these are subtly wrong but I don't know how yet
+  - WorldEffect #these are subtly wrong but I don't know how yet
+  - SoundID #these are subtly wrong but I don't know how yet
+  - ShakeID #these are subtly wrong but I don't know how yet
   - CharProc_1
   - CharProc_2
   - CharProc_3
