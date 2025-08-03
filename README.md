@@ -5,29 +5,45 @@ To use this project's visuals, download [the latest release](https://github.com/
 
 ## Patches overview
 
-The patches included in this repository adjust the visuals and sounds for several vanilla spells and boss abilities.  They are applied in alphabetical order based on the patch file name so that later patches may override or build upon earlier ones.  
+The patches included in this repository adjust the visuals and sounds for several various spells and boss abilities.  They are applied in alphabetical order based on the patch file name so that later patches may override or build upon earlier ones.  
 The patches currently are based on twow `1.17.2` dbc's, simply change out the .dbc files in the `dbc/` folder to use other versions.  
 The highlights are summarised below:
 
-- **Ground‑effect library (`0‑ground_effects.yaml`):** Adds a catalogue of new area indicators to `SpellVisualEffectName.dbc`, including rings of various radii (3 y, 5 y, 7 y, 10 y, 15 y, 20 y, 25 y, 30 y, 35 y, 40 y and 50 y) and Flamestrike‐style circles.
 
-- **Blizzard (`1‑blizzard.yaml`):** Assigns a danger area to several enemy blizzard spells—Incantagos, Karazhan Arcanists and Vek’lor—so that they display a clear area indicator.
+- **AQ20:** Captain Tuubid visible marks the player targeted for Attack Command.  
 
-- **Rain of Fire (`2‑rain_of_fire.yaml`):** Does the same as above for Blackwing Warlock, Gehennas, and Faerlina.
+- **Molten Core:** Baron Geddon indicates the radius of his Inferno ability.  Living Bomb has a rough indication of area of effect.  
 
-- **Flamestrike (`3‑flamestrike.yaml`):** Equips enemy flamestrikes—Blackwing Spellbinder, Medivh, Rupturan, Fragments of Rupturan—with an indicator of their area of effect. Also adds a projectile to aid in seeing where a strike has occured.
+- **Blackwing Lair:** Warlocks and Spellbinders indicate the radius of their AoE damage.  
 
-- **Molten Core (`4‑mc.yaml`):** Introduces two effects for Baron Geddon’s Inferno and Living Bomb mechanics, providing distinct area of effect rings.
+- **AQ 40:** Lord Kri and Viscidus poison area of effects indicate their radius.  
 
-- **Naxxramas (`6‑naxx.yaml`):** Adds colour to Poison Charge to make it slightly more obvious, recolours Thaddius’s positive and negative charge buffs using Gnarlmoon visuals, adds blizzard impact indication for Sapphiron and cuts the shard count to improve fps.
+- **Naxxrams:**
+  - Poison Charge now colors your character like other enemy poison in the game do.  
+  - Faerlina indicates the radius of her Rain of Fire.  
+  - Thaddius polarity directly color your character.  
+  - Sapphiron Blizzards show their points of impact.  
 
-- **Karazhan (`7‑kara.yaml`):** Removes most extra effects from the red/blue moon auras (Gnarlmoon) to reduce cpu load, adds orb above players to help indicate color.  Improved visibility for anomalus soaking zones.  Guided-ley beam indicates its current target better.  Corruption of Medivh has a radius indicator and an orb above the effected player's head.  Overflowing Hatred (Sanv) has a range indication ring.
+- **Kara 40:**
+  - Gnarlmoon Moon debuffs have reduced spell effects improve fps.  
+  - Incantagos Blizzard and Guided-Ley Beam have additional indication to show what area they affect.  
+  - Anomalus soak zones have much improved visibility.  
+  - Medivh Flamestrike indicates its area of effect. Corruption of Medivh has much stronger indication on your character.  
+  - Rupturan Flakestrikes indicate their area of effect.  
+  - Sanv Tas'dal indicates the radius of his Overflowing hatred.  Netherwalkers, when visible in the first place, have improved visibility.  Arena has improved fps.  
+  - Trash:
+    - Karazhan Protectors indicate Spell Reflect with green coloring.  
+    - Crumbling Protectors indicate Self-Destruct Protol with red coloring.  
+    - Lingering Arcanist indicate their Blizzard area of effect.  
 
-- **Other changes:** Updated `.wmo` files for Sanv arena in Karazhan to assist in-game rendering performance.  Silences the looping baby murloc dance sound by setting its volume to zero.
+- **Other:**
+  - Silenced the looping Baby Murloc dance sound.  
+  - Gave Concussion Blow a different sound than Shield Slam.  
+  - Gave Totemic Recall a different sound than totem placement.  
 
-- **Credits:** These contributors did not ask to be credited but should be mentioned.
-  - **Lhian** – `.wmo` edits adapted from his Karazhan performance patch  
-  - **Incantation / Fauna** – Major visual improvement to Anomalus soak zones
+- **Credits:** These contributors did not ask to be credited but should be mentioned.  
+  - **Lhian** – `.wmo` edits adapted from his Karazhan performance patch.  
+  - **Incantation / Fauna** – Major visual improvement to Anomalus soak zones.  
 
 ---
 ## What this tool does

@@ -1,9 +1,10 @@
-#foo 8300 base
+#foo 8400 base
 
-# baron infero
+### baron geddon ##################
+# infero #
 SpellVisualKit.dbc:
   - type: insert
-    key: 8300
+    key: 8400
     values:
       KitType: 2
       ChestEffect: 1562
@@ -13,21 +14,21 @@ SpellVisual.dbc:
   - type: copy
     key: 781
     updates:
-      ID: 8300
-      StateKit: 8300
+      ID: 8400
+      StateKit: 8400
 
 Spell.dbc:
   - type: update
     key: 19695 #baron Inferno 19695
     updates:
-      SpellVisualID_1: 8300
+      SpellVisualID_1: 8400
 
-#baron living bomb
+# living bomb #
 SpellVisualKit.dbc:
   - type: copy
     key: 3351
     updates:
-      ID: 8301
+      ID: 8401
       HeadEffect: 2963
       ChestEffect: 1015
       BaseEffect: 4707
@@ -41,11 +42,20 @@ SpellVisual.dbc:
   - type: copy
     key: 4486
     updates:
-      ID: 8301
-      StateKit: 8301
+      ID: 8401
+      StateKit: 8401
 
 Spell.dbc:
   - type: update
     key: 20475 #baron living bomb 20475
     updates:
-      SpellVisualID_1: 8301
+      SpellVisualID_1: 8401
+###################################
+
+### blackwing warlock #####################
+# rof provided in rain_of_fire.yaml
+###########################################
+
+### blackwing spellbinder #################
+# flamestrike provided in flamestrike.yaml
+###########################################

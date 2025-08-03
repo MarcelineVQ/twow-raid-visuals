@@ -122,6 +122,13 @@ SpellVisualEffectName.dbc:
   - type: insert
     key: 4751
     values:
+      Name: Danger Area 12y White
+      FileName: Spells\DangerArea12White.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+  - type: insert
+    key: 4752
+    values:
       Name: Danger Area 15y White
       FileName: Spells\DangerArea15White.m2
       SpecialAttachPoint: 0.0

@@ -1,0 +1,10 @@
+#foo 8300 base
+
+### Captain Tuubid ###############################
+# attack order given arlokk focus visual indicator
+SpellVisual.dbc:
+  - type: update
+    key: 7378
+    updates:
+      StateKit: 6372
+##################################################

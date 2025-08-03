@@ -1,5 +1,21 @@
 # testbed
-    
+
+# procedures
+# −1: no procedure
+# 0: Chain lightning
+# 1: Color tint effects
+# 2: Model scaling
+# 4: Emissive glow (lighting)
+# 6: Eclipse-color fade
+# 7: Stand/walk animation override
+# 8: Weapon trail effect
+# 9: Blizzard (ice shard rain), if arg 1 is 0, if arg 1 is 1 it's rain of fire
+# 10: Fishing line visual
+
+# combine procedure 1 and a color from schema/spell_colors.json to colorize a stateffect
+
+
+
 # copy watershield visual, assign it new green statekit
 # SpellVisual.dbc:
 #   - type: copy
@@ -14,25 +30,25 @@
 #     key: 6426
 #     updates:
 #       ID: 9001
-#       CharProc_1: 1 #1 is 'color'
-#       CharParamZero_1: 1217603104 #packed color?
-#       CharParamOne_1: 0.5
-#       CharParamTwo_1: 1.0
+#       WorldEffect: 1 #1 is 'color'
+#       CharProc_2: 1217603104 #packed color?
+#       CharParamZero_2: 0.5
+#       CharParamOne_2: 1.0
 #       HeadEffect: 397
 #       ChestEffect: 239
 #       BaseEffect: 4700 #a ring under you
 
 
 # # give watershield our new spellvisual
-Spell.dbc:
-  # - type: update
-  #   key: 51536
-  #   updates:
-  #     ID: 515360
-  # - type: update
-  #   key: 8898
-  #   updates:
-  #     ID: 51536
+# Spell.dbc:
+#   - type: update
+#     key: 51536
+#     updates:
+#       SpellVisualID_1: 1083
+#   - type: update
+#     key: 51526
+#     updates:
+#       SpellVisualID_1: 2716
 
 # aoe tests on mage, blizz rank 1,2,flamestrike rank 1
 # Spell.dbc:
@@ -53,13 +69,13 @@ Spell.dbc:
 # replace spells temporarily for testing
 Spell.dbc:
   # - type: update
-  #   key: 10
+  #   key: 8203
   #   updates:
-  #     ID: 100000
+  #     ID: 82030
   # - type: copy
-  #   key: 26607
+  #   key: 46540
   #   updates:
-  #     ID: 10
+  #     ID: 8203
 
   # - type: update
   #   key: 6141

@@ -26,7 +26,7 @@ SpellVisualKit.dbc:
 ### incantagos ##############################
 # his blizard is provided in flamestrikes.yaml
 
-# make guided ley-beam more clear
+# make guided ley-beams more clear
 SpellVisualKit.dbc:
   - type: copy
     key: 221 #green
@@ -44,12 +44,11 @@ SpellVisual.dbc:
       StateKit: 668
       AreaModel: 4707 #25y ring
       HasMissile: 1 #disable secondary ground effect renderings
-
   - type: copy
     key: 277
     updates:
       ID: 8603
-      StateKit: 8603 # make new kit with coloring and arlokk head mark and zone size
+      StateKit: 8603
 
 Spell.dbc:
   - type: update
@@ -63,7 +62,7 @@ Spell.dbc:
 ###########################################
 
 ### anomalus ##############################
-# improved bomb zone visibility
+# improved bomb zone visibility via texture swap
 ###########################################
 
 ### medivh ##############################
@@ -76,7 +75,7 @@ SpellVisualKit.dbc:
     updates:
       ID: 8600
       HeadEffect: 397 #add a purple orb above you
-      BaseEffect: 4751 #a ring under you, white base colored by aura
+      BaseEffect: 4752 #a ring under you, white base colored by aura
       ChestEffect: 300 #just a flair for visibility
 
 SpellVisual.dbc:
@@ -93,9 +92,9 @@ Spell.dbc:
       SpellVisualID_1: 8600
 #########################################
 
-### rupturan ##############################
-# his flamestrike is provided in flamestrikes.yaml
-###########################################
+### rupturan #####################################
+# flamestrikes provided in flamestrikes.yaml
+##################################################
 
 ### sanv ##############################
 # overflowing hatred, adding a ring to the precast kit
@@ -120,4 +119,93 @@ Spell.dbc:
       SpellVisualID_1: 8601
 #######################################
 
-#todo add green effect to kara protector, red to self-destruct boy
+
+### netherwalkers ############################
+# make netherwalkers easier to see in the fray
+# does NOT affect their invisibility
+SpellVisualKit.dbc:
+  - type: copy
+    key: 5372
+    updates:
+      ID: 8605
+      # BaseEffect: 4800
+      CharProc_1: 2
+      CharParamOne_1: 2.0
+      CharProc_2: 4
+      CharParamOne_2: 4294901760
+
+SpellVisual.dbc:
+  - type: copy
+    key: 140
+    updates:
+      ID: 8605
+      StateKit: 8605
+
+Spell.dbc:
+  - type: update
+    key: 46540 # netherwalker invisibility
+    updates:
+      SpellVisualID_1: 8605
+##############################################
+
+### protectors ####################
+# red coloring to self-desruct
+# green coloring to reflect
+SpellVisualKit.dbc:
+  - type: copy
+    key: 4129
+    updates:
+      ID: 8611
+      CharProc_1: 1
+      CharParamZero_1: 16716055.0
+      CharParamOne_1: 2.0
+      CharParamTwo_1: 2.0
+      CharProc_2: 4
+      CharParamZero_2: 16716055.0
+      CharParamOne_2: 1.0
+      CharParamTwo_2: 1.0
+      CharParamThree_2: 1.0
+  - type: copy
+    key: 252
+    updates:
+      ID: 8610
+      CharProc_1: 1
+      CharParamZero_1: 1217603104
+      CharParamOne_1: 0.5
+      CharParamTwo_1: 1.0
+
+SpellVisual.dbc:
+  - type: copy
+    key: 4760
+    updates:
+      ID: 8611
+      StateKit: 8611
+  - type: copy
+    key: 154
+    updates:
+      ID: 8610
+      StateKit: 8610
+
+Spell.dbc:
+  - type: update
+    key: 57652 # self-destruction protocol
+    updates:
+      SpellVisualID_1: 8611
+  - type: update
+    key: 57654 # reflection protocol
+    updates:
+      SpellVisualID_1: 8610
+###################################
+
+### kruul #########################
+# todo add curse aoe indication
+###################################
+
+### mephistroph ###################
+# todo add better indicator for slept
+Spell.dbc:
+  - type: update
+    key: 51912 # doom out outland, give netherwalker vis improvement
+    updates:  
+      SpellVisualID_1: 8605
+###################################

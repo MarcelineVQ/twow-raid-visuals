@@ -1,6 +1,82 @@
+#####################################
 # silence a weird murloc sound glitch
 SoundEntries.dbc:
   - type: update
     key: 8485 # baby murloc dane loop
     updates:
       VolumeFloat: 0.0
+#####################################
+
+### totemic recall ################
+# give unique sound
+SoundEntries.dbc:
+  - type: copy
+    key: 2552
+    updates:
+      ID: 90000
+      File_1: m2hAxeHitWood1C.wav
+      DirectoryBase: Sound\Item\Weapons\Axe2H
+
+SpellVisualKit.dbc:
+  - type: copy
+    key: 352 # totem drop
+    updates:
+      ID: 9000
+      SoundID: 90000 #yes really
+
+SpellVisual.dbc:
+  - type: copy
+    key: 319 # totem drop
+    updates:
+      ID: 9000
+      CastKit: 9000
+
+Spell.dbc:
+  - type: update
+    key: 45513
+    updates:
+      SpellVisualID_1: 9000
+###################################
+
+### concussion blow ###############
+# give unique sound
+SoundEntries.dbc:
+  - type: copy
+    key: 42
+    updates:
+      ID: 90001
+      File_1: 2hMaceHitMetalShield1b.wav
+      DirectoryBase: Sound\Item\Weapons\Mace2H
+
+SpellVisualKit.dbc:
+  - type: copy
+    key: 1666
+    updates:
+      ID: 9001
+      SoundID: 90001 #yes really
+
+SpellVisual.dbc:
+  - type: copy
+    key: 2719
+    updates:
+      ID: 9001
+      ImpactKit: 9001
+
+Spell.dbc:
+  - type: update
+    key: 1809
+    updates:
+      SpellVisualID_1: 9001
+  - type: update
+    key: 51600
+    updates:
+      SpellVisualID_1: 9001
+  - type: update
+    key: 51601
+    updates:
+      SpellVisualID_1: 9001
+  - type: update
+    key: 51602
+    updates:
+      SpellVisualID_1: 9001
+###################################

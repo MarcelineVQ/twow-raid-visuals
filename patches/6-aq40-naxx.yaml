@@ -1,0 +1,117 @@
+#foo 8500 base
+
+##############################################
+### AQ40 #####################################
+##############################################
+
+### bug trio #################################
+# kri being eaten will remove bonus effects we want to use
+# so we have to use a plain area effect model replacement
+SpellVisualKit.dbc:
+  - type: insert
+    key: 8501
+    values:
+      WorldEffect: 2968
+
+SpellVisual.dbc:
+  - type: copy
+    key: 7080
+    updates:
+      ID: 8501
+      AreaKit: 8501
+      AreaModel: 4702
+      MissileModel: 675 # avoids launching a empty box
+      HasMissile: 1 #disable secondary ground effect renderings
+
+Spell.dbc:
+  - type: update
+    key: 25786 #toxic vapors, kri death
+    updates:
+      SpellVisualID_1: 8501
+      Speed: 14.0 #any speed is required for HasMissle to use extra effect kits
+##############################################
+
+### viscidus #################################
+SpellVisualKit.dbc:
+  - type: insert
+    key: 8502
+    values:
+      BaseEffect: 4751 #12y white, can't color a WorldEffect
+      WorldEffect: 2968
+      CharProc_1: 1
+      CharParamZero_1: 1217603104 # green
+      CharParamOne_1: 0.5
+      CharParamTwo_1: 1.0
+
+SpellVisual.dbc:
+  - type: copy
+    key: 7409
+    updates:
+      ID: 8502
+      StateKit: 221 #poison green
+      AreaKit: 8502
+      AreaModel: 0 #2968, moved to visualkit or it remains forever
+      HasMissile: 1 #disable secondary ground effect renderings
+
+Spell.dbc:
+  - type: update
+    key: 25989 #toxin, cast by viscidus cloud npc
+    updates:
+      SpellVisualID_1: 8502
+      DurationIndex: 1 # 10s
+      Speed: 14.0
+##############################################
+
+##############################################
+### NAXX #####################################
+##############################################
+
+### spiders ##############################
+SpellVisual.dbc:
+  - type: update
+    key: 5100 # add an actual coloring to poison charge 28431 visual
+    updates:
+      StateKit: 221
+##########################################
+
+### faerlina ##############################
+# rof provided in rain_of_fire.yaml
+###########################################
+
+### thaddius ##############################
+# color thaddius charges using gnarlmoon visuals
+Spell.dbc:
+  - type: update
+    key: 28059 #positive charge main buff
+    updates:
+      SpellVisualID_1: 6589
+  - type: update
+    key: 28084 #negative charge main buff
+    updates:
+      SpellVisualID_1: 6539
+###########################################
+
+### sapph ##############################
+# saph Blizzard is an npc that casts Chill(28547)
+SpellVisualKit.dbc:
+  - type: copy
+    key: 6591
+    updates:
+      ID: 8500
+      CharParamOne_1: 1.0 #reduce blizzard shards from 15 to 1
+
+SpellVisual.dbc:
+  - type: copy
+    key: 7608
+    updates:
+      ID: 8500
+      AreaModel: 4800 #7y red circle
+      AreaKit: 8500
+      HasMissile: 1 #disable secondary ground effect renderings
+
+Spell.dbc:
+  - type: update
+    key: 28547 #chill 28547
+    updates:
+      SpellVisualID_1: 8500
+########################################
