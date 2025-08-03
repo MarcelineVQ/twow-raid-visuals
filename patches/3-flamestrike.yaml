@@ -5,14 +5,14 @@ SpellVisualKit.dbc:
   - type: copy
     key: 695 #flamestrike
     updates:
-      Id: 8200
-      SpecialEffect_1: 4700 #display a ground zone
+      ID: 8200
+      WorldEffect: 4700 #display a ground zone
 
 SpellVisual.dbc:
   - type: copy
     key: 33
     updates:
-      Id: 8200
+      ID: 8200
       StateKit: 668
       CastKit: 239
       AreaKit: 8200
@@ -37,23 +37,23 @@ SpellVisualKit.dbc:
   - type: copy
     key: 695 #flamestrike
     updates:
-      Id: 8201
-      SpecialEffect_1: 4701 #display a ground zone
-      WorldEffect: 2
-      CharProc_2: 2.0
+      ID: 8201
+      WorldEffect: 4701 #display a ground zone
+      CharProc_1: 2
+      CharParamZero_1: 2.0
   - type: copy
     key: 695 #flamestrike
     updates:
-      Id: 8202
-      SpecialEffect_1: 4700 #display a ground zone
-      WorldEffect: 2
-      CharProc_2: 2.0
+      ID: 8202
+      WorldEffect: 4700 #display a ground zone
+      CharProc_1: 2
+      CharParamZero_1: 2.0
 
 SpellVisual.dbc:
   - type: copy
     key: 33
     updates:
-      Id: 8201
+      ID: 8201
       StateKit: 668
       AreaKit: 8201
       HasMissile: 1 #disable secondary ground effect renderings
@@ -62,7 +62,7 @@ SpellVisual.dbc:
   - type: copy
     key: 33
     updates:
-      Id: 8202
+      ID: 8202
       StateKit: 668
       AreaKit: 8202
       HasMissile: 1 #disable secondary ground effect renderings

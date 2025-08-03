@@ -11,7 +11,7 @@ SpellVisualKit.dbc:
       BaseEffect: 0
       LeftHandEffect: 0
       RightHandEffect: 0
-      WorldEffect: 1 #allows this to fade properly if not cleared by other effects
+      CharProc_1: 1 #allows this to fade properly if not cleared by other effects
   - type: update
     key: 5893 #blue moon Spell 51080, SpellVisual 6589
     updates:
@@ -20,7 +20,7 @@ SpellVisualKit.dbc:
       BaseEffect: 0
       LeftHandEffect: 0
       RightHandEffect: 0
-      WorldEffect: 1 #allows this to fade properly if not cleared by other effects
+      CharProc_1: 1 #allows this to fade properly if not cleared by other effects
 ###########################################
 
 ### incantagos ##############################
@@ -31,7 +31,7 @@ SpellVisualKit.dbc:
   - type: copy
     key: 221 #green
     updates:
-      Id: 8603
+      ID: 8603
       HeadEffect: 2963 #arrow over head
       ChestEffect: 1562 #hunter mark
       BaseEffect: 4707 #35y ring
@@ -40,7 +40,7 @@ SpellVisual.dbc:
   - type: copy
     key: 5780
     updates:
-      Id: 8602
+      ID: 8602
       StateKit: 668
       AreaModel: 4707 #25y ring
       HasMissile: 1 #disable secondary ground effect renderings
@@ -48,7 +48,7 @@ SpellVisual.dbc:
   - type: copy
     key: 277
     updates:
-      Id: 8603
+      ID: 8603
       StateKit: 8603 # make new kit with coloring and arlokk head mark and zone size
 
 Spell.dbc:
@@ -74,7 +74,7 @@ SpellVisualKit.dbc:
   - type: copy
     key: 657
     updates:
-      Id: 8600
+      ID: 8600
       HeadEffect: 397 #add a purple orb above you
       BaseEffect: 4751 #a ring under you, white base colored by aura
       ChestEffect: 300 #just a flair for visibility
@@ -83,7 +83,7 @@ SpellVisual.dbc:
   - type: copy
     key: 5981 # copy corruption of medivh visual, give it new kit
     updates:
-      Id: 8600
+      ID: 8600
       StateKit: 8600
 
 Spell.dbc:
@@ -103,14 +103,14 @@ SpellVisualKit.dbc:
   - type: copy
     key: 60
     updates:
-      Id: 8601
+      ID: 8601
       BaseEffect: 4700 #a ring under him
 
 SpellVisual.dbc:
   - type: copy
     key: 963
     updates:
-      Id: 8601
+      ID: 8601
       PrecastKit: 8601
 
 Spell.dbc:

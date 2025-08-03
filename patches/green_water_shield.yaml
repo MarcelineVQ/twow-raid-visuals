@@ -5,7 +5,7 @@
 #   - type: copy
 #     key: 7358
 #     updates:
-#       Id: 9000
+#       ID: 9000
 #       StateKit: 9001
 
 # # copy watershield statekit, make it green
@@ -13,22 +13,26 @@
 #   - type: copy
 #     key: 6426
 #     updates:
-#       Id: 9001
-#       WorldEffect: 1 #1 is 'color'
-#       CharProc_2: 1217603104 #packed color?
-#       CharParamZero_2: 0.5
-#       CharParamOne_2: 1.0
+#       ID: 9001
+#       CharProc_1: 1 #1 is 'color'
+#       CharParamZero_1: 1217603104 #packed color?
+#       CharParamOne_1: 0.5
+#       CharParamTwo_1: 1.0
 #       HeadEffect: 397
 #       ChestEffect: 239
 #       BaseEffect: 4700 #a ring under you
 
 
 # # give watershield our new spellvisual
-# Spell.dbc:
-#   - type: update
-#     key: 51536
-#     updates:
-#       SpellVisualID_1: 9000
+Spell.dbc:
+  # - type: update
+  #   key: 51536
+  #   updates:
+  #     ID: 515360
+  # - type: update
+  #   key: 8898
+  #   updates:
+  #     ID: 51536
 
 # aoe tests on mage, blizz rank 1,2,flamestrike rank 1
 # Spell.dbc:
@@ -51,91 +55,91 @@ Spell.dbc:
   # - type: update
   #   key: 10
   #   updates:
-  #     Id: 100000
+  #     ID: 100000
   # - type: copy
   #   key: 26607
   #   updates:
-  #     Id: 10
+  #     ID: 10
 
   # - type: update
   #   key: 6141
   #   updates:
-  #     Id: 614100
+  #     ID: 614100
   # - type: copy
   #   key: 28794
   #   updates:
-  #     Id: 6141
+  #     ID: 6141
 
   # - type: update
   #   key: 2120
   #   updates:
-  #     Id: 201200
+  #     ID: 201200
   # - type: copy
   #   key: 51298
   #   updates:
-  #     Id: 2120
+  #     ID: 2120
 
   # - type: update
   #   key: 2121
   #   updates:
-  #     Id: 201201
+  #     ID: 201201
   # - type: copy
   #   key: 52040
   #   updates:
-  #     Id: 2121
+  #     ID: 2121
 
   # - type: update
   #   key: 172
   #   updates:
-  #     Id: 168000
+  #     ID: 168000
   # - type: copy
   #   # key: 20475
   #   # key: 52539
   #   key: 51432
   #   updates:
-  #     Id: 172
+  #     ID: 172
 
   # - type: update
   #   key: 980
   #   updates:
   #     ImplicitTargetA_1: 25
-      # Id: 98000
+      # ID: 98000
 
 
   # positive charge
   # - type: update
   #   key: 51536
   #   updates:
-  #     Id: 515360
+  #     ID: 515360
   # - type: update
   #   key: 28059
   #   updates:
-  #     Id: 51536
+  #     ID: 51536
   # # negative charge
   # - type: update
   #   key: 51526
   #   updates:
-  #     Id: 515260
+  #     ID: 515260
   # - type: update
   #   key: 28084
   #   updates:
-  #     Id: 51526
+  #     ID: 51526
 
 #   #drain life, incantagos pre-stage
 #   - type: update
 #     key: 689
 #     updates:
-#       Id: 68900
+#       ID: 68900
 #   - type: copy
 #     key: 52011
 #     updates:
-#       Id: 689
+#       ID: 689
 #   #rain of fire, incantagos aoe
 #   - type: update
 #     key: 5740
 #     updates:
-#       Id: 574000
+#       ID: 574000
 #   - type: copy
 #     key: 51182
 #     updates:
-#       Id: 5740
+#       ID: 5740

@@ -1,13 +1,13 @@
 #foo 8100 base
 
-# Beause her model scales up during the fight we need to use an AreaModel instead
+# Beause faerlina's model scales up during the fight we need to use an AreaModel instead
 # of the on-impact method that flamestrike uses.
 
 SpellVisual.dbc:
   - type: copy
     key: 329
     updates:
-      Id: 8100
+      ID: 8100
       StateKit: 668
       AreaModel: 4702
       HasMissile: 1 #disable secondary ground effect renderings

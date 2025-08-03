@@ -4,7 +4,7 @@ SpellVisual.dbc:
   - type: copy
     key: 259
     updates:
-      Id: 8000
+      ID: 8000
       StateKit: 668
       AreaModel: 4706
       HasMissile: 1 #disable secondary ground effect renderings

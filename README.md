@@ -29,7 +29,7 @@ The highlights are summarised below:
   - **Lhian** – `.wmo` edits adapted from his Karazhan performance patch  
   - **Incantation / Fauna** – Major visual improvement to Anomalus soak zones
 
-
+---
 ## What this tool does
 
 This Rust crate offers a command‑line workflow for modifying World of Warcraft 1.12 DBC files and packaging them into an MPQ archive.  
@@ -67,7 +67,7 @@ Each change object must have a `type` field, which may be `update`, `insert` or 
 - **insert** – Create a new row with all columns initialised to zero.  Set values from the `values` mapping.  
 You can include `key` and `key_column` to assign a primary key unless it is supplied in `values`.
 - **copy** – Duplicate an existing row identified by `key`/`key_column`, then apply the `updates` mapping.  
-If you omit the primary key from `updates`, it is inherited from the original, so you should normally include a new `Id`.
+If you omit the primary key from `updates`, it is inherited from the original, so you should normally include a new `ID`.
 
 Field identifiers may be either numeric strings (zero‑based column numbers) or names defined in the schema.  
 Values may be integers, strings or floats; floats are converted to their 32‑bit representations on write.

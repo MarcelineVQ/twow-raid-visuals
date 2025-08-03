@@ -29,14 +29,14 @@ SpellVisualKit.dbc:
   - type: copy
     key: 6591
     updates:
-      Id: 8500
-      CharParamZero_2: 1.0 #reduce blizzard shards from 15 to 1
+      ID: 8500
+      CharParamOne_1: 1.0 #reduce blizzard shards from 15 to 1
 
 SpellVisual.dbc:
   - type: copy
     key: 7608
     updates:
-      Id: 8500
+      ID: 8500
       AreaModel: 4800 #7y red circle
       AreaKit: 8500
       HasMissile: 1 #disable secondary ground effect renderings

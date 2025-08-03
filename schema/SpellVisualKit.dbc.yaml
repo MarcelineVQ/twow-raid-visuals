@@ -4,24 +4,20 @@
 # order matches the column order in the DBC.
 fields:
   - ID
-  - StartAnimID
+  - KitType
   - AnimID
-#  - AnimKitID
   - HeadEffect
   - ChestEffect
   - BaseEffect
   - LeftHandEffect
   - RightHandEffect
   - BreathEffect
-  - LeftWeaponEffect
-  - RightWeaponEffect
-  - Unknown_1 # nothing uses it?
-  - SpecialEffect_1 #these are subtly wrong but I don't know how yet
-  - SpecialEffect_2 #these are subtly wrong but I don't know how yet
-  - SpecialEffect_3 #these are subtly wrong but I don't know how yet
-  - WorldEffect #these are subtly wrong but I don't know how yet
-  - SoundID #these are subtly wrong but I don't know how yet
-  - ShakeID #these are subtly wrong but I don't know how yet
+  - SpecialEffect_1
+  - SpecialEffect_2
+  - SpecialEffect_3
+  - WorldEffect
+  - SoundID
+  - ShakeID
   - CharProc_1
   - CharProc_2
   - CharProc_3
@@ -38,4 +34,25 @@ fields:
   - CharParamTwo_2
   - CharParamTwo_3
   - CharParamTwo_4
-  - Flags
+  - CharParamThree_1
+  - CharParamThree_2
+  - CharParamThree_3
+  - CharParamThree_4
+
+# KitType<32>
+# AnimID<32>
+# HeadEffect<32>
+# ChestEffect<32>
+# BaseEffect<32>
+# LeftHandEffect<32>
+# RightHandEffect<32>
+# BreathEffect<32>
+# SpecialEffect<32>[3]
+# WorldEffect<32>
+# SoundID<32>
+# ShakeID<32>
+# CharProc<32>[4]
+# CharParamZero[4]
+# CharParamOne[4]
+# CharParamTwo[4]
+# CharParamThree[4]

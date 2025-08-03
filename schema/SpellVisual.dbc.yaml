@@ -8,15 +8,30 @@ fields:
   - CastKit
   - ImpactKit
   - StateKit
-  #- StateDoneKit
   - ChannelKit
   - HasMissile
   - MissileModel
-  - Unknown_1
   - MissilePathType
   - MissileDestinationAttachment
+  - MissileSound
   - HasArea
   - AreaModel
   - AreaKit
-  - CasterImpactKit
-  - TargetImpactKit
+  - AnimEventSoundID
+  - Flags
+
+# PrecastKit<32>
+# CastKit<32>
+# ImpactKit<32>
+# StateKit<32>
+# ChannelKit<32>
+# HasMissile<32>
+# MissileModel<32>
+# MissilePathType<32>
+# MissileDestinationAttachment<32>
+# MissileSound<32>
+# HasAreaEffect<32>
+# AreaModel<32>
+# AreaKit<32>
+# AnimEventSoundID<32>
+# Flags<32>
