@@ -1,10 +1,11 @@
 #foo 8100 base
 
-# Beause faerlina's model scales up during the fight and because gehennas and warlocks scales
-# differ we need to use an AreaModel instead of the on-impact method that flamestrike uses.
-# This does't get the nice fade-in speed improvement however.
-# todo: improve this, knowing when RoF wil tick is CRITICAL to a raid.
-# maybe just have a different marker for the start of it that fits any scale
+SpellVisualKit.dbc:
+  - type: copy
+    key: 692
+    updates:
+      ID: 8100
+      WorldEffect: 4901 #add a prehit animation, slightly speeds up players seeing the RoF
 
 SpellVisual.dbc:
   - type: copy
@@ -12,15 +13,21 @@ SpellVisual.dbc:
     updates:
       ID: 8100
       StateKit: 668
-      AreaModel: 4702
-      HasMissile: 1 #disable secondary ground effect renderings
+      AreaModel: 4902
+      MissileModel: 1179
+      # MissilePathType: 2
+      # MissileDestinationAttachment: 0
+      AreaKit: 8100
+      HasMissile: 14 #disable secondary ground effect renderings
 
 Spell.dbc:
   - type: update
     key: 19717 #gehennas and blackwing warlockk(19717)
     updates:
       SpellVisualID_1: 8100
+      Speed: 140.0
   - type: update
     key: 28794 #faerlina and bovar'kez(28794)
     updates:
       SpellVisualID_1: 8100
+      Speed: 14.0

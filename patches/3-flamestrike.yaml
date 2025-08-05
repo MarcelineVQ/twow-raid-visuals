@@ -6,7 +6,8 @@ SpellVisualKit.dbc:
     key: 695 #flamestrike
     updates:
       ID: 8200
-      WorldEffect: 4905 #display a ground zone
+      # WorldEffect: 4905 #display a ground zone
+      WorldEffect: 4901 #add a prehit animation, slightly speeds up players seeing the hit
 
 SpellVisual.dbc:
   - type: copy
@@ -15,6 +16,7 @@ SpellVisual.dbc:
       ID: 8200
       StateKit: 668
       AreaKit: 8200
+      AreaModel: 4912 #display a ground zone
       HasMissile: 1 #disable secondary ground effect renderings
       MissileModel: 1179
       MissilePathType: 2
@@ -37,12 +39,14 @@ SpellVisualKit.dbc:
     key: 695 #flamestrike
     updates:
       ID: 8211
-      WorldEffect: 4900 #display a ground zone
+      # WorldEffect: 4910 #display a ground zone
+      WorldEffect: 4901 #add a prehit animation, slightly speeds up players seeing the hit
   - type: copy
     key: 695 #flamestrike
     updates:
       ID: 8212
-      WorldEffect: 4911 #display a ground zone
+      # WorldEffect: 4911 #display a ground zone
+      WorldEffect: 4901 #add a prehit animation, slightly speeds up players seeing the hit
 
 SpellVisual.dbc:
   - type: copy
@@ -51,6 +55,7 @@ SpellVisual.dbc:
       ID: 8211
       StateKit: 668
       AreaKit: 8211
+      AreaModel: 4910
       HasMissile: 1 #disable secondary ground effect renderings
       MissileModel: 1179
       MissilePathType: 2
@@ -60,6 +65,7 @@ SpellVisual.dbc:
       ID: 8212
       StateKit: 668
       AreaKit: 8212
+      AreaModel: 4911
       HasMissile: 1 #disable secondary ground effect renderings
       MissileModel: 1179
       MissilePathType: 2

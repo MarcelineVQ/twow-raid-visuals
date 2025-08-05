@@ -98,6 +98,21 @@ SpellVisualEffectName.dbc:
       Scale: 1.0
 
   - type: insert
+    key: 4901
+    values:
+      Name: RoF Alert
+      FileName: Spells\DangerZone_W10_S2_X.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+  - type: insert
+    key: 4902
+    values:
+      Name: Blackwing/Faerlina RoF
+      FileName: Spells\DangerZone_W22_S30.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+
+  - type: insert
     key: 4905
     values:
       Name: Kri Cloud
@@ -124,6 +139,13 @@ SpellVisualEffectName.dbc:
     values:
       Name: Ignite Earth
       FileName: Spells\DangerZone_W10_S18.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+  - type: insert
+    key: 4912
+    values:
+      Name: Flame Strike Hatcher/Spellbinder/Medivh
+      FileName: Spells\DangerZone_W12_S8.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
 
