@@ -7,8 +7,8 @@ SpellVisualKit.dbc:
     updates:
       ID: 8200
       # WorldEffect: 4905 #display a ground zone
-      WorldEffect: 4901 #add a prehit animation, slightly speeds up players seeing the hit
-
+      WorldEffect: 4801 #add a prehit animation, slightly speeds up players seeing the hit
+      # todo, try adding a base effect here for the X and use flamestrike for WorldEffect or AreaModel
 SpellVisual.dbc:
   - type: copy
     key: 33
@@ -26,12 +26,12 @@ Spell.dbc:
     key: 22275 #spellbinder/hatcher flamestike (22275)
     updates:
       SpellVisualID_1: 8200
-      Speed: 40.0
+      Speed: 200.0
   - type: update
     key: 51113 # flamestrike of medivh
     updates:
       SpellVisualID_1: 8200
-      Speed: 40.0
+      Speed: 200.0
 
 #rupturan and fragments
 SpellVisualKit.dbc:
@@ -40,13 +40,13 @@ SpellVisualKit.dbc:
     updates:
       ID: 8211
       # WorldEffect: 4910 #display a ground zone
-      WorldEffect: 4901 #add a prehit animation, slightly speeds up players seeing the hit
+      WorldEffect: 4801 #add a prehit animation, slightly speeds up players seeing the hit
   - type: copy
     key: 695 #flamestrike
     updates:
       ID: 8212
       # WorldEffect: 4911 #display a ground zone
-      WorldEffect: 4901 #add a prehit animation, slightly speeds up players seeing the hit
+      WorldEffect: 4801 #add a prehit animation, slightly speeds up players seeing the hit
 
 SpellVisual.dbc:
   - type: copy
@@ -75,9 +75,9 @@ Spell.dbc:
     key: 51298 #ignite rock (51298)
     updates:
       SpellVisualID_1: 8211
-      Speed: 40.0
+      Speed: 200.0
   - type: update
     key: 52040 #ignite earth (52040)
     updates:
       SpellVisualID_1: 8212
-      Speed: 40.0 #projectile speed, required to triggeer some visual effects
+      Speed: 200.0 #projectile speed, required to triggeer some visual effects

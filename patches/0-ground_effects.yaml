@@ -88,6 +88,22 @@ SpellVisualEffectName.dbc:
       SpecialAttachPoint: 0.0
       Scale: 1.0
 
+  # symbols
+  - type: insert
+    key: 4800
+    values:
+      Name: 5y X, quickfade
+      FileName: Spells\DangerZone_W5_S2_X.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+  - type: insert
+    key: 4801
+    values:
+      Name: 10y X, quickfade
+      FileName: Spells\DangerZone_W10_S2_X.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+
   # specifically tailored spells
   - type: insert
     key: 4900
@@ -124,6 +140,13 @@ SpellVisualEffectName.dbc:
     values: # made longer than debuff time, or fades too often
       Name: Visc Cloud
       FileName: Spells\DangerZone_W12_S20_White.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+  - type: insert
+    key: 4907
+    values:
+      Name: Emp Bugs
+      FileName: Spells\DangerZone_W17_S30.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
 

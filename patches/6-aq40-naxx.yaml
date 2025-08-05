@@ -67,6 +67,72 @@ Spell.dbc:
       Speed: 14.0
 ##############################################
 
+
+
+### twin emps #################################
+# bilzzard indicators provided in blizzard.yaml
+
+# bug explosion range
+SpellVisualKit.dbc:
+  - type: copy
+    key: 854
+    updates:
+      ID: 8502
+      BaseEffect: 4907 #a 17y ring
+      WorldEffect: 4801 # 10y X
+
+SpellVisual.dbc:
+  - type: copy
+    key: 7420
+    updates:
+      ID: 8502
+      StateKit: 8502
+
+Spell.dbc:
+  - type: update
+    key: 804 # explode bug, companion spell mutate bug 802
+    updates:
+      SpellVisualID_1: 8502
+
+# ranges after teleport, not useful, just noise
+# SpellVisualKit.dbc:
+#   - type: insert
+#     key: 8503
+#     values:
+#       BaseEffect: 4752 #a 15y white
+#       CharProc_1: 1
+#       CharParamZero_1: 16716055.0
+#       CharParamOne_1: 2.0
+#       CharParamTwo_1: 2.0
+#       # WorldEffect: 4902 #a 20y ring
+#       # CharProc_1: 14
+#       # CharParamZero_1: 0.5
+
+# SpellVisual.dbc:
+#   - type: insert
+#     key: 8503
+#     values:
+#       StateKit: 8503
+#       HasArea: 1
+#       HasMissile: 1
+#       AreaModel: 4902
+
+# Spell.dbc:
+#   - type: update
+#     key: 799 # twins teleport, kel'nilash, indicate aggro radius and explosion radius
+#     updates:
+#       SpellVisualID_1: 8503
+
+# Spell.dbc:
+#   - type: update
+#     key: 800 # twins teleport, vek'lor, indicate aggro radius and explosion radius
+#     updates:
+#       SpellVisualID_1: 8503
+
+#######################################
+
+###############################################
+
 ##############################################
 ### NAXX #####################################
 ##############################################

@@ -15,7 +15,7 @@ The highlights are summarised below:
 
 - **Blackwing Lair:** Warlocks and Spellbinders indicate the radius of their AoE damage.  
 
-- **AQ 40:** Lord Kri and Viscidus poison area of effects indicate their radius.  
+- **AQ 40:** Lord Kri and Viscidus poison area of effects indicate their radius.  Twin Emporer Blizzard and Bug Explosion indicate radius.  
 
 - **Naxxrams:**
   - Poison Charge now colors your character like other enemy poisons in the game do.  
@@ -40,6 +40,7 @@ The highlights are summarised below:
   - Silenced the looping Baby Murloc dance sound.  
   - Gave Concussion Blow a different sound than Shield Slam.  
   - Gave Totemic Recall a different sound than totem placement.  
+  - Removed obnoxious green tinting from Decaying Flesh debuff.  
 
 - **Credits:** These contributors did not ask to be credited but should be mentioned.  
   - **Lhian** – `.wmo` edits adapted from his Karazhan performance patch.  

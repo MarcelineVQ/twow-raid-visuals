@@ -5,7 +5,7 @@ SpellVisualKit.dbc:
     key: 692
     updates:
       ID: 8100
-      WorldEffect: 4901 #add a prehit animation, slightly speeds up players seeing the RoF
+      WorldEffect: 4801 #add a prehit animation, slightly speeds up players seeing the RoF
 
 SpellVisual.dbc:
   - type: copy
@@ -25,9 +25,9 @@ Spell.dbc:
     key: 19717 #gehennas and blackwing warlockk(19717)
     updates:
       SpellVisualID_1: 8100
-      Speed: 140.0
+      Speed: 200.0
   - type: update
     key: 28794 #faerlina and bovar'kez(28794)
     updates:
       SpellVisualID_1: 8100
-      Speed: 14.0
+      Speed: 200.0

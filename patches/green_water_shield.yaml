@@ -11,10 +11,9 @@
 # 8: Weapon trail effect
 # 9: Blizzard (ice shard rain), if arg 1 is 0, if arg 1 is 1 it's rain of fire
 # 10: Fishing line visual
+# 14: opacity
 
 # combine procedure 1 and a color from schema/spell_colors.json to colorize a stateffect
-
-
 
 # copy watershield visual, assign it new green statekit
 # SpellVisual.dbc:
@@ -41,10 +40,10 @@
 
 # # give watershield our new spellvisual
 # Spell.dbc:
-#   - type: update
-#     key: 51536
-#     updates:
-#       SpellVisualID_1: 8611
+  # - type: update
+  #   key: 51536
+  #   updates:
+  #     SpellVisualID_1: 8700
 #   - type: update
 #     key: 51526
 #     updates:
@@ -86,6 +85,7 @@ Spell.dbc:
   #   updates:
   #     ID: 6141
 
+  # ignite earth/rock
   # - type: update
   #   key: 2120
   #   updates:
@@ -94,7 +94,6 @@ Spell.dbc:
   #   key: 51298
   #   updates:
   #     ID: 2120
-
   # - type: update
   #   key: 2121
   #   updates:

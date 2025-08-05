@@ -1,0 +1,23 @@
+#foo 8800 base
+
+#######################################################
+# remove the obnoxious green effect from Decaying Flesh
+#######################################################
+SpellVisualKit.dbc:
+  - type: copy
+    key: 293
+    updates:
+      Id: 8800
+      CharProc_1: 0 #remove coloring
+SpellVisual.dbc:
+  - type: copy
+    key: 177
+    updates:
+      Id: 8800
+      StateKit: 8800
+Spell.dbc:
+  - type: update
+    key: 42025
+    updates:
+      SpellVisualID_1: 8800
+#######################################################
