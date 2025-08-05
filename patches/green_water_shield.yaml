@@ -40,15 +40,15 @@
 
 
 # # give watershield our new spellvisual
-Spell.dbc:
-  - type: update
-    key: 51536
-    updates:
-      SpellVisualID_1: 8611
-  - type: update
-    key: 51526
-    updates:
-      SpellVisualID_1: 8610
+# Spell.dbc:
+#   - type: update
+#     key: 51536
+#     updates:
+#       SpellVisualID_1: 8611
+#   - type: update
+#     key: 51526
+#     updates:
+#       SpellVisualID_1: 8610
 
 # aoe tests on mage, blizz rank 1,2,flamestrike rank 1
 # Spell.dbc:
