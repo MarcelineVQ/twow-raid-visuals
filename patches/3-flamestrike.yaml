@@ -1,12 +1,12 @@
 #foo 8200 base
 
-# spellbinder and medivh
+# spellbinder, hatcher, and medivh
 SpellVisualKit.dbc:
   - type: copy
     key: 695 #flamestrike
     updates:
       ID: 8200
-      WorldEffect: 4700 #display a ground zone
+      WorldEffect: 4905 #display a ground zone
 
 SpellVisual.dbc:
   - type: copy
@@ -14,7 +14,6 @@ SpellVisual.dbc:
     updates:
       ID: 8200
       StateKit: 668
-      CastKit: 239
       AreaKit: 8200
       HasMissile: 1 #disable secondary ground effect renderings
       MissileModel: 1179
@@ -22,7 +21,7 @@ SpellVisual.dbc:
 
 Spell.dbc:
   - type: update
-    key: 22275 #spellbinder flamestike (22275)
+    key: 22275 #spellbinder/hatcher flamestike (22275)
     updates:
       SpellVisualID_1: 8200
       Speed: 40.0
@@ -37,34 +36,30 @@ SpellVisualKit.dbc:
   - type: copy
     key: 695 #flamestrike
     updates:
-      ID: 8201
-      WorldEffect: 4701 #display a ground zone
-      CharProc_1: 2
-      CharParamZero_1: 2.0
+      ID: 8211
+      WorldEffect: 4900 #display a ground zone
   - type: copy
     key: 695 #flamestrike
     updates:
-      ID: 8202
-      WorldEffect: 4700 #display a ground zone
-      CharProc_1: 2
-      CharParamZero_1: 2.0
+      ID: 8212
+      WorldEffect: 4911 #display a ground zone
 
 SpellVisual.dbc:
   - type: copy
     key: 33
     updates:
-      ID: 8201
+      ID: 8211
       StateKit: 668
-      AreaKit: 8201
+      AreaKit: 8211
       HasMissile: 1 #disable secondary ground effect renderings
       MissileModel: 1179
       MissilePathType: 2
   - type: copy
     key: 33
     updates:
-      ID: 8202
+      ID: 8212
       StateKit: 668
-      AreaKit: 8202
+      AreaKit: 8212
       HasMissile: 1 #disable secondary ground effect renderings
       MissileModel: 1179
       MissilePathType: 2
@@ -73,10 +68,10 @@ Spell.dbc:
   - type: update
     key: 51298 #ignite rock (51298)
     updates:
-      SpellVisualID_1: 8201
+      SpellVisualID_1: 8211
       Speed: 40.0
   - type: update
     key: 52040 #ignite earth (52040)
     updates:
-      SpellVisualID_1: 8202
+      SpellVisualID_1: 8212
       Speed: 40.0 #projectile speed, required to triggeer some visual effects

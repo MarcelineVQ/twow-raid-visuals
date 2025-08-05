@@ -6,7 +6,7 @@ SpellVisual.dbc:
     updates:
       ID: 8000
       StateKit: 668
-      AreaModel: 4706
+      AreaModel: 4920
       HasMissile: 1 #disable secondary ground effect renderings
 
 Spell.dbc:

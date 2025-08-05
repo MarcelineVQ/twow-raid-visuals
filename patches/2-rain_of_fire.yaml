@@ -1,7 +1,10 @@
 #foo 8100 base
 
-# Beause faerlina's model scales up during the fight we need to use an AreaModel instead
-# of the on-impact method that flamestrike uses.
+# Beause faerlina's model scales up during the fight and because gehennas and warlocks scales
+# differ we need to use an AreaModel instead of the on-impact method that flamestrike uses.
+# This does't get the nice fade-in speed improvement however.
+# todo: improve this, knowing when RoF wil tick is CRITICAL to a raid.
+# maybe just have a different marker for the start of it that fits any scale
 
 SpellVisual.dbc:
   - type: copy

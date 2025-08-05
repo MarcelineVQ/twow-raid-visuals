@@ -128,7 +128,6 @@ SpellVisualKit.dbc:
     key: 5372
     updates:
       ID: 8605
-      # BaseEffect: 4800
       CharProc_1: 2
       CharParamOne_1: 2.0
       CharProc_2: 4
@@ -149,9 +148,8 @@ Spell.dbc:
 ##############################################
 
 ### protectors ####################
-# red coloring to self-desruct
-# green coloring to reflect
 SpellVisualKit.dbc:
+  # red coloring to self-desruct
   - type: copy
     key: 4129
     updates:
@@ -160,19 +158,15 @@ SpellVisualKit.dbc:
       CharParamZero_1: 16716055.0
       CharParamOne_1: 2.0
       CharParamTwo_1: 2.0
-      CharProc_2: 4
-      CharParamZero_2: 16716055.0
-      CharParamOne_2: 1.0
-      CharParamTwo_2: 1.0
-      CharParamThree_2: 1.0
+  # green coloring to reflect
   - type: copy
     key: 252
     updates:
       ID: 8610
       CharProc_1: 1
-      CharParamZero_1: 1217603104
-      CharParamOne_1: 0.5
-      CharParamTwo_1: 1.0
+      CharParamZero_1: 65280.0
+      CharParamOne_1: 2.0
+      CharParamTwo_1: 2.0
 
 SpellVisual.dbc:
   - type: copy

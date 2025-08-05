@@ -1,149 +1,149 @@
 # ground effects for other spells
 
 SpellVisualEffectName.dbc:
-  # circles
-  - type: insert
-    key: 4500
-    values:
-      Name: Danger Area 3y
-      FileName: Spells\Danger03_Area.m2
-      SpecialAttachPoint: 0.0
-      Scale: 1.0
-  - type: insert
-    key: 4501
-    values:
-      Name: Danger Area 5y
-      FileName: Spells\DangerArea05.m2
-      SpecialAttachPoint: 0.0
-      Scale: 1.0
-  - type: insert
-    key: 4502
-    values:
-      Name: Danger Area 10y
-      FileName: Spells\DangerArea10.m2
-      SpecialAttachPoint: 0.0
-      Scale: 1.0
-  - type: insert
-    key: 4503
-    values:
-      Name: Danger Area 20y
-      FileName: Spells\DangerArea20.m2
-      SpecialAttachPoint: 0.0
-      Scale: 1.0
-  - type: insert
-    key: 4504
-    values:
-      Name: Danger Area 40y
-      FileName: Spells\Danger40_Area.m2
-      SpecialAttachPoint: 0.0
-      Scale: 1.0
-
-  #flamestrikes
-  - type: insert
-    key: 4600
-    values:
-      Name: Flamestrike 5y
-      FileName: Spells\Flamestrike_Impact_Base_05.m2
-      SpecialAttachPoint: 0.0
-      Scale: 1.0
-  - type: insert
-    key: 4601
-    values:
-      Name: Flamestrike 10y
-      FileName: Spells\Flamestrike_Impact_Base_10.m2
-      SpecialAttachPoint: 0.0
-      Scale: 1.0
-
   #new circles
   - type: insert
     key: 4700
     values:
-      Name: Danger Area 10y
-      FileName: Spells\DangerArea10.m2
+      Name: Danger Zone 10y
+      FileName: Spells\DangerZone_W10_S30.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
   - type: insert
     key: 4701
     values:
-      Name: Danger Area 15y
-      FileName: Spells\DangerArea15.m2
+      Name: Danger Zone 15y
+      FileName: Spells\DangerZone_W15_S30.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
   - type: insert
     key: 4702
     values:
-      Name: Danger Area 20y
-      FileName: Spells\DangerArea20.m2
+      Name: Danger Zone 20y
+      FileName: Spells\DangerZone_W20_S30.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
   - type: insert
     key: 4703
     values:
-      Name: Danger Area 30y
-      FileName: Spells\DangerArea30.m2
+      Name: Danger Zone 30y
+      FileName: Spells\DangerZone_W30_S30.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
   - type: insert
     key: 4704
     values:
-      Name: Danger Area 40y
-      FileName: Spells\DangerArea40.m2
+      Name: Danger Zone 40y
+      FileName: Spells\DangerZone_W40_S30.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
   - type: insert
     key: 4705
     values:
-      Name: Danger Area 50y
-      FileName: Spells\DangerArea50.m2
+      Name: Danger Zone 50y
+      FileName: Spells\DangerZone_W50_S30.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
   - type: insert
     key: 4706
     values:
-      Name: Danger Area 25y
-      FileName: Spells\DangerArea25.m2
+      Name: Danger Zone 25y
+      FileName: Spells\DangerZone_W25_S30.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
   - type: insert
     key: 4707
     values:
-      Name: Danger Area 35y
-      FileName: Spells\DangerArea35.m2
+      Name: Danger Zone 35y
+      FileName: Spells\DangerZone_W35_S30.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+  - type: insert
+    key: 4708
+    values:
+      Name: Danger Zone 23y
+      FileName: Spells\DangerZone_W23_S30.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
 
   - type: insert
     key: 4750
     values:
-      Name: Danger Area 10y White
-      FileName: Spells\DangerArea10White.m2
+      Name: Danger Zone 10y White
+      FileName: Spells\DangerZone_W10_S30_White.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
   - type: insert
     key: 4751
     values:
-      Name: Danger Area 12y White
-      FileName: Spells\DangerArea12White.m2
+      Name: Danger Zone 12y White
+      FileName: Spells\DangerZone_W12_S30_White.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
   - type: insert
     key: 4752
     values:
-      Name: Danger Area 15y White
-      FileName: Spells\DangerArea15White.m2
+      Name: Danger Zone 15y White
+      FileName: Spells\DangerZone_W15_S30_White.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
 
-  - type: insert
-    key: 4800
-    values:
-      Name: Danger Area 7y Red
-      FileName: Spells\DangerArea7Red.m2
-      SpecialAttachPoint: 0.0
-      Scale: 1.0
-
+  # specifically tailored spells
   - type: insert
     key: 4900
+    values: #data says 15 but seems to be 18 in game
+      Name: Sapph Blizzard (7y Red)
+      FileName: Spells\DangerZone_W7_S18_Red.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+
+  - type: insert
+    key: 4905
+    values:
+      Name: Kri Cloud
+      FileName: Spells\DangerZone_W20_S120.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+  - type: insert
+    key: 4906
+    values: # made longer than debuff time, or fades too often
+      Name: Visc Cloud
+      FileName: Spells\DangerZone_W12_S20_White.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+
+  - type: insert
+    key: 4910
+    values:
+      Name: Ignite Rock
+      FileName: Spells\DangerZone_W15_S12.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+  - type: insert
+    key: 4911
+    values:
+      Name: Ignite Earth
+      FileName: Spells\DangerZone_W10_S18.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+
+  - type: insert
+    key: 4920
+    values:
+      Name: Arcanist/Incantagos Blizzard
+      FileName: Spells\DangerZone_W22_S12.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+  # - type: insert -- seems to be 12 as well despite spell data
+  #   key: 4921
+  #   values:
+  #     Name: Vek'lor Blizzard
+  #     FileName: Spells\DangerZone_W23_S10.m2
+  #     SpecialAttachPoint: 0.0
+  #     Scale: 1.0
+
+  - type: insert
+    key: 4950
     values:
       Name: Kruul Cone
       FileName: Spells\KruulCone.m2

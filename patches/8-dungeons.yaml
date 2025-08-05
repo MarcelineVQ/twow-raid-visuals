@@ -1,1 +1,27 @@
 #foo 8700 base
+
+
+#scholo
+
+# pretty useless tbb, maybe a good example piece
+### ??? ###############################
+# fixate given arlokk focus visual indicator
+# SpellVisualKit.dbc:
+#   - type: copy
+#     key: 668
+#     updates:
+#       Id: 8700
+#       HeadEffect: 2963
+#       ChestEffect: 1562
+# SpellVisual.dbc:
+#   - type: copy
+#     key: 870
+#     updates:
+#       Id: 8700
+#       StateKit: 8700
+# Spell.dbc:
+#   - type: update
+#     key: 12021
+#     updates:
+#       SpellVisualID_1: 8700
+##################################################

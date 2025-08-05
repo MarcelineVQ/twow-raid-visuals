@@ -9,8 +9,7 @@ The patches included in this repository adjust the visuals and sounds for severa
 The patches currently are based on twow `1.17.2` dbc's, simply change out the .dbc files in the `dbc/` folder to use other versions.  
 The highlights are summarised below:
 
-
-- **AQ20:** Captain Tuubid visible marks the player targeted for Attack Command.  
+- **AQ20:** Captain Tuubid visibly marks the player targeted for Attack Command.  
 
 - **Molten Core:** Baron Geddon indicates the radius of his Inferno ability.  Living Bomb has a rough indication of area of effect.  
 
@@ -19,13 +18,14 @@ The highlights are summarised below:
 - **AQ 40:** Lord Kri and Viscidus poison area of effects indicate their radius.  
 
 - **Naxxrams:**
-  - Poison Charge now colors your character like other enemy poison in the game do.  
+  - Poison Charge now colors your character like other enemy poisons in the game do.  
+  - Faerlina Acolytes are more obvious when casting Shadow Bolt Volley.  
   - Faerlina indicates the radius of her Rain of Fire.  
-  - Thaddius polarity directly color your character.  
-  - Sapphiron Blizzards show their points of impact.  
+  - Thaddius polarity directly colors your character.  
+  - Sapphiron Blizzards show their point of impact.  
 
 - **Kara 40:**
-  - Gnarlmoon Moon debuffs have reduced spell effects improve fps.  
+  - Gnarlmoon Moon debuffs have reduced spell effects to improve fps.  
   - Incantagos Blizzard and Guided-Ley Beam have additional indication to show what area they affect.  
   - Anomalus soak zones have much improved visibility.  
   - Medivh Flamestrike indicates its area of effect. Corruption of Medivh has much stronger indication on your character.  
@@ -33,8 +33,8 @@ The highlights are summarised below:
   - Sanv Tas'dal indicates the radius of his Overflowing hatred.  Netherwalkers, when visible in the first place, have improved visibility.  Arena has improved fps.  
   - Trash:
     - Karazhan Protectors indicate Spell Reflect with green coloring.  
-    - Crumbling Protectors indicate Self-Destruct Protol with red coloring.  
-    - Lingering Arcanist indicate their Blizzard area of effect.  
+    - Crumbling Protectors indicate Self-Destruct Protocol with red coloring.  
+    - Lingering Arcanists indicate their Blizzard area of effect.  
 
 - **Other:**
   - Silenced the looping Baby Murloc dance sound.  
