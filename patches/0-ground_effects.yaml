@@ -65,6 +65,13 @@ SpellVisualEffectName.dbc:
       FileName: Spells\DangerZone_W23_S30.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
+  - type: insert
+    key: 4709
+    values:
+      Name: Danger Zone 12y
+      FileName: Spells\DangerZone_W12_S30.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
 
   - type: insert
     key: 4750
@@ -154,14 +161,14 @@ SpellVisualEffectName.dbc:
     key: 4910
     values:
       Name: Ignite Rock
-      FileName: Spells\DangerZone_W15_S12.m2
+      FileName: Spells\DangerZone_W20_S12.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
   - type: insert
     key: 4911
     values:
       Name: Ignite Earth
-      FileName: Spells\DangerZone_W10_S18.m2
+      FileName: Spells\DangerZone_W20_S18.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
   - type: insert
@@ -169,6 +176,13 @@ SpellVisualEffectName.dbc:
     values:
       Name: Flame Strike Hatcher/Spellbinder/Medivh
       FileName: Spells\DangerZone_W12_S8.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+  - type: insert
+    key: 4913
+    values:
+      Name: Techie Bomb
+      FileName: Spells\DangerZone_W4_S1_White.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
 
@@ -186,6 +200,14 @@ SpellVisualEffectName.dbc:
   #     FileName: Spells\DangerZone_W23_S10.m2
   #     SpecialAttachPoint: 0.0
   #     Scale: 1.0
+
+  - type: insert
+    key: 4930
+    values:
+      Name: Arcane Anomaly Area
+      FileName: Spells\DangerZone_W3.75_S9_White.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
 
   - type: insert
     key: 4950

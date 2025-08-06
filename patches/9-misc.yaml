@@ -1,5 +1,6 @@
 #foo 8800 base
 
+# todo determine if snake/scorpid pet poison does this as well
 #######################################################
 # remove the obnoxious green effect from Decaying Flesh
 #######################################################
@@ -21,3 +22,16 @@ Spell.dbc:
     updates:
       SpellVisualID_1: 8800
 #######################################################
+
+# hunter's mark
+# 3239	0	478	0	2950	0	0	0	0	1	0	0	0	0	0	0
+
+# SpellVisualEffectName.dbc:
+#   - type: update
+#     key: 1562
+#     updates:
+#       Scale: 3.0
+#   - type: update
+#     key: 1563
+#     updates:
+#       Scale: 3.0

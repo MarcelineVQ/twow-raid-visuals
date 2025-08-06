@@ -31,10 +31,12 @@ The highlights are summarised below:
   - Medivh Flamestrike indicates its area of effect. Corruption of Medivh has much stronger indication on your character.  
   - Rupturan Flakestrikes indicate their area of effect.  
   - Sanv Tas'dal indicates the radius of his Overflowing hatred.  Netherwalkers, when visible in the first place, have improved visibility.  Arena has improved fps.  
+  - Mark of the Highlord decurse explosion given rough area of effect indication.  
   - Trash:
     - Karazhan Protectors indicate Spell Reflect with green coloring.  
     - Crumbling Protectors indicate Self-Destruct Protocol with red coloring.  
     - Lingering Arcanists indicate their Blizzard area of effect.  
+    - Arcane Anomaly indicates the application range of its stacking debuff.  
 
 - **Other:**
   - Silenced the looping Baby Murloc dance sound.  

@@ -39,11 +39,11 @@
 
 
 # # give watershield our new spellvisual
-# Spell.dbc:
+Spell.dbc:
   # - type: update
   #   key: 51536
   #   updates:
-  #     SpellVisualID_1: 8700
+  #     SpellVisualID_1: 8606
 #   - type: update
 #     key: 51526
 #     updates:
@@ -127,9 +127,20 @@ Spell.dbc:
   #   updates:
   #     ID: 515360
   # - type: update
-  #   key: 28059
+  #   key: 57646
   #   updates:
   #     ID: 51536
+
+  # positive charge
+  # - type: update
+  #   key: 26666
+  #   updates:
+  #     ID: 266660
+  # - type: update
+  #   key: 57646
+  #   updates:
+  #     ID: 26666
+
   # # negative charge
   # - type: update
   #   key: 51526

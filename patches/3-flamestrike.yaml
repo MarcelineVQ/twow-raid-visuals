@@ -1,14 +1,21 @@
 #foo 8200 base
 
-# spellbinder, hatcher, and medivh
+# move flamestrike visual to a on-hit effect, so we can use world marker for effective zone
 SpellVisualKit.dbc:
   - type: copy
     key: 695 #flamestrike
     updates:
       ID: 8200
-      # WorldEffect: 4905 #display a ground zone
-      WorldEffect: 4801 #add a prehit animation, slightly speeds up players seeing the hit
-      # todo, try adding a base effect here for the X and use flamestrike for WorldEffect or AreaModel
+      # WorldEffect: 4801 # 10y X
+      WorldEffect: 420 # flamestrike
+  - type: copy
+    key: 695 #flamestrike
+    updates:
+      ID: 8201
+      WorldEffect: 4800 # 5y X
+      # WorldEffect: 420 #flamestrike model is obnoxious at this size
+
+# spellbinder, hatcher, and medivh
 SpellVisual.dbc:
   - type: copy
     key: 33
@@ -26,46 +33,32 @@ Spell.dbc:
     key: 22275 #spellbinder/hatcher flamestike (22275)
     updates:
       SpellVisualID_1: 8200
-      Speed: 200.0
+      Speed: 300.0
   - type: update
     key: 51113 # flamestrike of medivh
     updates:
       SpellVisualID_1: 8200
-      Speed: 200.0
+      Speed: 300.0
 
 #rupturan and fragments
-SpellVisualKit.dbc:
-  - type: copy
-    key: 695 #flamestrike
-    updates:
-      ID: 8211
-      # WorldEffect: 4910 #display a ground zone
-      WorldEffect: 4801 #add a prehit animation, slightly speeds up players seeing the hit
-  - type: copy
-    key: 695 #flamestrike
-    updates:
-      ID: 8212
-      # WorldEffect: 4911 #display a ground zone
-      WorldEffect: 4801 #add a prehit animation, slightly speeds up players seeing the hit
-
 SpellVisual.dbc:
-  - type: copy
+  - type: copy #fragments
     key: 33
     updates:
       ID: 8211
       StateKit: 668
-      AreaKit: 8211
-      AreaModel: 4910
+      AreaKit: 8200
+      AreaModel: 4910 # 20y, 12s, spelldata claims 10y though
       HasMissile: 1 #disable secondary ground effect renderings
       MissileModel: 1179
       MissilePathType: 2
-  - type: copy
+  - type: copy #rupturan
     key: 33
     updates:
       ID: 8212
       StateKit: 668
-      AreaKit: 8212
-      AreaModel: 4911
+      AreaKit: 8201
+      AreaModel: 4911 # 20y, 18s, spelldata claims 10y though
       HasMissile: 1 #disable secondary ground effect renderings
       MissileModel: 1179
       MissilePathType: 2
@@ -75,9 +68,9 @@ Spell.dbc:
     key: 51298 #ignite rock (51298)
     updates:
       SpellVisualID_1: 8211
-      Speed: 200.0
+      Speed: 300.0
   - type: update
     key: 52040 #ignite earth (52040)
     updates:
       SpellVisualID_1: 8212
-      Speed: 200.0 #projectile speed, required to triggeer some visual effects
+      Speed: 300.0 #projectile speed, required to triggeer some visual effects

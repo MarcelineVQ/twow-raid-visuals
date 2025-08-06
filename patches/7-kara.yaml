@@ -147,6 +147,55 @@ Spell.dbc:
       SpellVisualID_1: 8605
 ##############################################
 
+### arcane anomaly ##############################
+# anomaly seems to have a 4x model scale factor
+
+# show stacking debuff range
+SpellVisualKit.dbc:
+  - type: copy
+    key: 1004
+    updates:
+      ID: 8607
+      BaseEffect: 4930 # 15y ring (3.75x4), unsure of exact extent. spell data claims 15
+      WorldEffect: 734 # was the base effect before
+
+SpellVisual.dbc:
+  - type: copy
+    key: 965
+    updates:
+      ID: 8607
+      CastKit: 8607 #apply specifically on cast
+
+Spell.dbc:
+  - type: update
+    key: 57646 # overflowing arcana
+    updates:
+      SpellVisualID_1: 8607
+########################################
+
+### kruul ##############################
+# mark of the highlord, exploding curse
+SpellVisualKit.dbc:
+  - type: copy
+    key: 653
+    updates:
+      ID: 8606
+      BaseEffect: 4701 # 15y ring, unsure of exact extent. spell data claims 10y but that seems small to me
+
+SpellVisual.dbc:
+  - type: copy
+    key: 561
+    updates:
+      ID: 8606
+      StateKit: 8606
+
+Spell.dbc:
+  - type: update
+    key: 51166 # mark of the highlord
+    updates:
+      SpellVisualID_1: 8606
+########################################
+
 ### protectors ####################
 SpellVisualKit.dbc:
   # red coloring to self-desruct

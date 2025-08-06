@@ -18,7 +18,7 @@ SpellVisual.dbc:
       # MissilePathType: 2
       # MissileDestinationAttachment: 0
       AreaKit: 8100
-      HasMissile: 14 #disable secondary ground effect renderings
+      HasMissile: 1 #disable secondary ground effect renderings
 
 Spell.dbc:
   - type: update
