@@ -134,6 +134,13 @@ SpellVisualEffectName.dbc:
       FileName: Spells\DangerZone_W22_S30_Flame.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
+  - type: insert
+    key: 4903
+    values:
+      Name: Geddon Inferno
+      FileName: Spells\DangerZone_W10_S30_Flame.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
 
   - type: insert
     key: 4905
@@ -171,6 +178,7 @@ SpellVisualEffectName.dbc:
       FileName: Spells\DangerZone_W20_S18.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
+
   - type: insert
     key: 4912
     values:

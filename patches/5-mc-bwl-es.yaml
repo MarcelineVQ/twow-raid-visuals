@@ -8,7 +8,7 @@ SpellVisualKit.dbc:
     values:
       KitType: 2
       ChestEffect: 1562
-      BaseEffect: 4700
+      BaseEffect: 4903
 
 SpellVisual.dbc:
   - type: copy

@@ -130,10 +130,9 @@ MPQ packaging is optional; omit `--mpq` if you only need the patched DBC files.
 - **Simplified typing** – The default parser stores every field as a 32‑bit integer.  
 The schemas allow you to reference fields by name but do not change their underlying type.  
 Multi‑column arrays are flattened; floats and arrays are still written as raw bits.  
-To work with proper types, consider extending the tool to use the `wow_cdbc` schema loader【112334797174866†L145-L175】.
 - **Vanilla format only** – The current implementation targets WoW 1.12 (WDBC).  
 Newer formats with hash tables (WDB2/WDB5) are not supported.
 - **Duplicate strings** – New string values are appended to the string block even if identical strings already exist.  
-Large numbers of similar inserts may increase file size.
+Large numbers of similar (string) inserts may increase file size.
 
 For more advanced functionality, including typed access to DBC fields, see the [`wow-cdbc` documentation](https://raw.githubusercontent.com/wowemulation-dev/warcraft-rs/master/file-formats/database/wow-cdbc/README.md).
