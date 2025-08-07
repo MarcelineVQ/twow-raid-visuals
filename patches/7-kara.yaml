@@ -173,29 +173,6 @@ Spell.dbc:
       SpellVisualID_1: 8607
 ########################################
 
-### kruul ##############################
-# mark of the highlord, exploding curse
-SpellVisualKit.dbc:
-  - type: copy
-    key: 653
-    updates:
-      ID: 8606
-      BaseEffect: 4701 # 15y ring, unsure of exact extent. spell data claims 10y but that seems small to me
-
-SpellVisual.dbc:
-  - type: copy
-    key: 561
-    updates:
-      ID: 8606
-      StateKit: 8606
-
-Spell.dbc:
-  - type: update
-    key: 51166 # mark of the highlord
-    updates:
-      SpellVisualID_1: 8606
-########################################
-
 ### protectors ####################
 SpellVisualKit.dbc:
   # red coloring to self-desruct
@@ -241,8 +218,27 @@ Spell.dbc:
 ###################################
 
 ### kruul #########################
-# todo add curse aoe indication
-###################################
+# mark of the highlord, exploding curse
+SpellVisualKit.dbc:
+  - type: copy
+    key: 653
+    updates:
+      ID: 8606
+      BaseEffect: 4701 # 15y ring, unsure of exact extent. spell data claims 10y but that seems small to me
+
+SpellVisual.dbc:
+  - type: copy
+    key: 561
+    updates:
+      ID: 8606
+      StateKit: 8606
+
+Spell.dbc:
+  - type: update
+    key: 51166 # mark of the highlord
+    updates:
+      SpellVisualID_1: 8606
+########################################
 
 ### mephistroph ###################
 # todo add better indicator for slept

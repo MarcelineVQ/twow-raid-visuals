@@ -212,10 +212,18 @@ SpellVisualEffectName.dbc:
   - type: insert
     key: 4930
     values:
-      Name: Arcane Anomaly Area
+      Name: Arcane Anomaly Area #4x scale
       FileName: Spells\DangerZone_W3.75_S9_White.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
+
+  # - type: insert
+  #   key: 4931
+  #   values:
+  #     Name: Anubisath Sentinel #3x? scale
+  #     FileName: Spells\DangerZone_W8_S300.m2
+  #     SpecialAttachPoint: 0.0
+  #     Scale: 1.0
 
   - type: insert
     key: 4950

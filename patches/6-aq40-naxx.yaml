@@ -67,8 +67,6 @@ Spell.dbc:
       Speed: 14.0
 ##############################################
 
-
-
 ### twin emps #################################
 # bilzzard indicators provided in blizzard.yaml
 
@@ -131,6 +129,114 @@ Spell.dbc:
 
 #######################################
 
+### anubisath sentinels ######################
+SpellVisualKit.dbc:
+  - type: insert
+    key: 8517
+    values:
+      BreathEffect: 88
+  - type: insert
+    key: 8516
+    values:
+      RightHandEffect: 94
+  - type: insert
+    key: 8514
+    values:
+      ChestEffect: 70 # rejuv
+  - type: insert
+    key: 8513
+    values:
+      # BaseEffect: 4931
+      BreathEffect: 464
+  - type: copy
+    key: 252
+    updates:
+      Id: 8511
+      LeftHandEffect: 365
+  - type: copy
+    key: 252
+    updates:
+      Id: 8510
+      LeftHandEffect: 151
+
+SpellVisual.dbc:
+  # - type: insert
+  #   key: 8518
+  #   values:
+  #     StateKit: 8518
+  - type: insert
+    key: 8517
+    values:
+      StateKit: 8517
+  - type: insert
+    key: 8516
+    values:
+      StateKit: 8516
+  # - type: copy
+  #   key: 7460
+  #   updates:
+  #     Id: 8515
+  #     StateKit: 8515
+  - type: insert
+    key: 8514
+    values:
+      StateKit: 8514 # rejuv
+  - type: insert
+    key: 8513
+    values:
+      StateKit: 8513
+  # - type: insert
+  #   key: 8512
+  #   values:
+  #     StateKit: 8512
+  - type: copy
+    key: 154
+    updates:
+      Id: 8511
+      StateKit: 8511
+  - type: copy
+    key: 154
+    updates:
+      Id: 8510
+      StateKit: 8510
+
+Spell.dbc:
+  # - type: update
+  #   key: 21737 # periodic knock away aura 21737
+  #   updates:
+  #     SpellVisualID_1: 8518 # was 0
+  - type: update
+    key: 2834 # periodic thunderclap aura 2834
+    updates:
+      SpellVisualID_1: 8517 # was 0
+  - type: update
+    key: 9347 # periodic mortal strike aura 9347
+    updates:
+      SpellVisualID_1: 8516 # was 0
+  # - type: update
+  #   key: 25777 # thorns aura 25777 #already visible
+  #   updates:
+  #     SpellVisualID_1: 8515 # was 7460
+  - type: update
+    key: 2147 # mending aura 2147
+    updates:
+      SpellVisualID_1: 8514 # was 0
+  - type: update
+    key: 2148 # periodic shadow storm aura 2148
+    updates:
+      SpellVisualID_1: 8513 # was 0
+  - type: update
+    key: 812 # periodic mana burn aura 812
+    updates: # give a nice scary purple
+      SpellVisualID_1: 561 # was 0
+  - type: update
+    key: 13022 # fire and arcane reflect 13022
+    updates: #give a reflection bubble effect
+      SpellVisualID_1: 8511 #was 19
+  - type: update
+    key: 19595 # shadow and frost reflect 19595
+    updates: #give a reflection bubble effect
+      SpellVisualID_1: 8510 #was 0
 ###############################################
 
 ##############################################
@@ -152,7 +258,7 @@ SpellVisualKit.dbc:
   - type: copy
     key: 114
     updates:
-      ID: 8510
+      ID: 8520
       LeftHandEffect: 2222
       RightHandEffect: 2222
 
@@ -160,14 +266,14 @@ SpellVisual.dbc:
   - type: copy
     key: 2318
     updates:
-      ID: 8510
-      PrecastKit: 8510
+      ID: 8520
+      PrecastKit: 8520
 
 Spell.dbc:
   - type: update
     key: 28448 # shadow bolt volley
     updates:
-      SpellVisualID_1: 8510
+      SpellVisualID_1: 8520
 ###########################################
 
 ### faerlina ##############################
@@ -193,21 +299,21 @@ SpellVisualKit.dbc:
   - type: copy
     key: 6591
     updates:
-      ID: 8515
+      ID: 8525
       CharParamOne_1: 1.0 #reduce blizzard shards from 15 to 1
 
 SpellVisual.dbc:
   - type: copy
     key: 7608
     updates:
-      ID: 8515
+      ID: 8525
       AreaModel: 4900 #7y red circle
-      AreaKit: 8515
+      AreaKit: 8525
       HasMissile: 1 #disable secondary ground effect renderings
 
 Spell.dbc:
   - type: update
     key: 28547 #chill 28547
     updates:
-      SpellVisualID_1: 8515
+      SpellVisualID_1: 8525
 ########################################
