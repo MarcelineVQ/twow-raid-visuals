@@ -15,7 +15,16 @@ The highlights are summarised below:
 
 - **Blackwing Lair:** Warlocks and Spellbinders indicate the radius of their AoE damage.  
 
-- **AQ 40:** Lord Kri and Viscidus poison area of effects indicate their radius.  Twin Emporer Blizzard and Bug Explosion indicate radius.  
+- **AQ 40:**
+  - Anubisath Sentinels have additional visual cues to help mageless compositions.  
+    - Reflect bubbles and glowing shadow or fire in hand to show which reflect it is.  
+    - A deep purple curse for Mana Burn.  
+    - Rejuvenation effect for HoT.  
+    - Lightning breath to indicate Thunder Clap.  
+    - Red weapon to indicate Mortal Strike.  
+    - Shadow breath to indicate Shadow Volley.  
+  - Lord Kri and Viscidus poison area of effects indicate their radius.  
+  - Twin Emporer Blizzard and Bug Explosion indicate radius.  
 
 - **Naxxrams:**
   - Poison Charge now colors your character like other enemy poisons in the game do.  
@@ -36,7 +45,7 @@ The highlights are summarised below:
     - Karazhan Protectors indicate Spell Reflect with green coloring.  
     - Crumbling Protectors indicate Self-Destruct Protocol with red coloring.  
     - Lingering Arcanists indicate their Blizzard area of effect.  
-    - Arcane Anomaly indicates the application range of its stacking debuff.  
+    - Arcane Anomaly indicates the application range of its stacking debuff (untested).  
 
 - **Other:**
   - Silenced the looping Baby Murloc dance sound.  
