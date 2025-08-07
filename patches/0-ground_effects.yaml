@@ -131,7 +131,7 @@ SpellVisualEffectName.dbc:
     key: 4902
     values:
       Name: Blackwing/Faerlina RoF
-      FileName: Spells\DangerZone_W22_S30.m2
+      FileName: Spells\DangerZone_W22_S30_Flame.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
 
@@ -190,7 +190,7 @@ SpellVisualEffectName.dbc:
     key: 4920
     values:
       Name: Arcanist/Incantagos Blizzard
-      FileName: Spells\DangerZone_W22_S12.m2
+      FileName: Spells\DangerZone_W22_S12_Frost.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
   # - type: insert -- seems to be 12 as well despite spell data

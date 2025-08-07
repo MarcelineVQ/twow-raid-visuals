@@ -1,6 +1,8 @@
 #foo 8200 base
 
-# move flamestrike visual to a on-hit effect, so we can use world marker for effective zone
+# move flamestrike visual to a on-hit effect, so we can use world marker for the
+# more consistent effective zone display.
+
 SpellVisualKit.dbc:
   - type: copy
     key: 695 #flamestrike

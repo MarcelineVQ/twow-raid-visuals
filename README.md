@@ -29,7 +29,7 @@ The highlights are summarised below:
   - Incantagos Blizzard and Guided-Ley Beam have additional indication to show what area they affect.  
   - Anomalus soak zones have much improved visibility.  
   - Medivh Flamestrike indicates its area of effect. Corruption of Medivh has much stronger indication on your character.  
-  - Rupturan Flakestrikes indicate their area of effect.  
+  - Rupturan Flamestrikes indicate their area of effect.  
   - Sanv Tas'dal indicates the radius of his Overflowing hatred.  Netherwalkers, when visible in the first place, have improved visibility.  Arena has improved fps.  
   - Mark of the Highlord decurse explosion given rough area of effect indication.  
   - Trash:
