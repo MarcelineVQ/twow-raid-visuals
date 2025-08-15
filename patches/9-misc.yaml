@@ -1,6 +1,9 @@
 #foo 8800 base
 
+# todo remove or reduce the visual effect of corrosive poison on mobs
 # todo determine if snake/scorpid pet poison does this as well
+# they do
+
 #######################################################
 # remove the obnoxious green effect from Decaying Flesh
 #######################################################
@@ -23,6 +26,11 @@ Spell.dbc:
       SpellVisualID_1: 8800
 #######################################################
 
+
+# corehound scale
+
+# aquatic miasma, blue
+
 # hunter's mark
 # 3239	0	478	0	2950	0	0	0	0	1	0	0	0	0	0	0
 
@@ -35,3 +43,34 @@ Spell.dbc:
 #     key: 1563
 #     updates:
 #       Scale: 3.0
+
+# todo, brainwashers should have a light beam
+# todo, mailboxes should have a light beam
+# closest we can do is prob making an arrow that casts on the player location
+
+# #######################################################
+# # mailbox
+# #######################################################
+# SpellVisualKit.dbc:
+#   - type: copy
+#     key: 6448
+#     updates:
+#       Id: 8805
+#       # KitType: 3
+#       # WorldEffect: 2989
+
+# SpellVisual.dbc:
+#   - type: copy
+#     key: 88
+#     updates:
+#       Id: 8805
+#       CastKit: 8805
+#       Flags: 2
+
+# Spell.dbc:
+#   - type: update
+#     key: 45513
+#     updates:
+#       SpellVisualID_1: 8805
+#       DurationIndex: 15 #5mins
+# #######################################################

@@ -25,9 +25,16 @@ Spell.dbc:
     key: 19717 #gehennas and blackwing warlockk(19717)
     updates:
       SpellVisualID_1: 8100
-      Speed: 200.0
+      Speed: 255.0
   - type: update
     key: 28794 #faerlina and bovar'kez(28794)
     updates:
       SpellVisualID_1: 8100
-      Speed: 200.0
+      Speed: 255.0
+
+# todo for some reason dragging people in raid frame drops frames bad fr me, not sure when that started
+
+# todo make signups
+
+# rupturan sizes were perrrrfect, maybe a tiny bit wider on smaller adds, anomaly needs changing
+# rupturan affects faded a little fast

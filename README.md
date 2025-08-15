@@ -25,6 +25,7 @@ The highlights are summarised below:
     - Shadow breath to indicate Shadow Volley.  
   - Lord Kri and Viscidus poison area of effects indicate their radius.  
   - Twin Emporer Blizzard and Bug Explosion indicate radius.  
+  - Ouro Dirt Mounts indicate their radius.  
 
 - **Naxxrams:**
   - Poison Charge now colors your character like other enemy poisons in the game do.  
@@ -38,7 +39,7 @@ The highlights are summarised below:
   - Incantagos Blizzard and Guided-Ley Beam have additional indication to show what area they affect.  
   - Anomalus soak zones have much improved visibility.  
   - Medivh Flamestrike indicates its area of effect. Corruption of Medivh has much stronger indication on your character.  
-  - Rupturan Flamestrikes indicate their area of effect.  
+  - Rupturan Flamestrikes indicate their area of effect.  Dirt Mount indicates its radius.  
   - Sanv Tas'dal indicates the radius of his Overflowing hatred.  Netherwalkers, when visible in the first place, have improved visibility.  Arena has improved fps.  
   - Mark of the Highlord decurse explosion given rough area of effect indication.  
   - Trash:
@@ -49,6 +50,7 @@ The highlights are summarised below:
 
 - **Other:**
   - Silenced the looping Baby Murloc dance sound.  
+  - Quited Carvan Kodo footsteps.  
   - Gave Concussion Blow a different sound than Shield Slam.  
   - Gave Totemic Recall a different sound than totem placement.  
   - Removed obnoxious green tinting from Decaying Flesh debuff.  

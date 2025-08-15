@@ -23,10 +23,21 @@ SpellVisualKit.dbc:
       CharProc_1: 1 #allows this to fade properly if not cleared by other effects
 ###########################################
 
+### draconic intimidation ###################
+# remove the skull visual on the lasting debuff, it should only mean fear
+Spell.dbc:
+  - type: update
+    key: 52393 #draconic intimidation
+    updates:
+      SpellVisualID_1: 852 # a lesser fear visual
+
+#############################################
+
 ### incantagos ##############################
 # his blizard is provided in flamestrikes.yaml
 
 # make guided ley-beams more clear
+# todo, double-check this not sure the area is playing
 SpellVisualKit.dbc:
   - type: copy
     key: 221 #green
@@ -94,6 +105,7 @@ Spell.dbc:
 
 ### rupturan #####################################
 # flamestrikes provided in flamestrikes.yaml
+# dirt mound visual provided in aq4-naxx.yaml
 ##################################################
 
 ### sanv ##############################
@@ -103,7 +115,14 @@ SpellVisualKit.dbc:
     key: 60
     updates:
       ID: 8601
-      BaseEffect: 4700 #a ring under him
+      # BaseEffect: 4700 #a ring under him
+      BaseEffect: 4903 #geddon ring, 10y before scaling
+      # red coloring to self-desruct
+      CharProc_1: 13
+      CharParamZero_1: 16716055.0
+      CharParamOne_1: 10.0 # hold time
+      CharParamTwo_1: 1.0 # fade out time
+      # todo, fix texture edge bleed
 
 SpellVisual.dbc:
   - type: copy
@@ -131,7 +150,7 @@ SpellVisualKit.dbc:
       CharProc_1: 2
       CharParamOne_1: 2.0
       CharProc_2: 4
-      CharParamOne_2: 4294901760
+      CharParamOne_2: 4294901760 #todo, check this is this scale? scale doesn't work here
 
 SpellVisual.dbc:
   - type: copy
@@ -156,7 +175,7 @@ SpellVisualKit.dbc:
     key: 1004
     updates:
       ID: 8607
-      BaseEffect: 4930 # 15y ring (3.75x4), unsure of exact extent. spell data claims 15
+      BaseEffect: 4930 # 15y ring after scaling, unsure of exact extent. spell data claims 15
       WorldEffect: 734 # was the base effect before
 
 SpellVisual.dbc:
@@ -224,7 +243,7 @@ SpellVisualKit.dbc:
     key: 653
     updates:
       ID: 8606
-      BaseEffect: 4701 # 15y ring, unsure of exact extent. spell data claims 10y but that seems small to me
+      BaseEffect: 4701 # 15y ring, unsure of exact extent. spell data claims 10y but that seems too small to me
 
 SpellVisual.dbc:
   - type: copy
@@ -242,9 +261,11 @@ Spell.dbc:
 
 ### mephistroph ###################
 # todo add better indicator for slept
+# todo add his 20% melee aoe ring
+# todo, make the range add more visible if possible
 Spell.dbc:
   - type: update
-    key: 51912 # doom out outland, give netherwalker vis improvement
+    key: 51912 # doom of outland, give netherwalker vis improvement
     updates:  
       SpellVisualID_1: 8605
 ###################################

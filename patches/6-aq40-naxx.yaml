@@ -33,7 +33,7 @@ Spell.dbc:
     key: 25786 #toxic vapors, kri death
     updates:
       SpellVisualID_1: 8500
-      Speed: 14.0 #any speed is required for HasMissle to use extra effect kits
+      Speed: 255.0 #any speed is required for HasMissle to use extra effect kits
 ##############################################
 
 ### viscidus #################################
@@ -64,7 +64,7 @@ Spell.dbc:
     updates:
       SpellVisualID_1: 8501
       DurationIndex: 1 # 10s
-      Speed: 14.0
+      Speed: 255.0
 ##############################################
 
 ### twin emps #################################
@@ -126,7 +126,43 @@ Spell.dbc:
 #     key: 800 # twins teleport, vek'lor, indicate aggro radius and explosion radius
 #     updates:
 #       SpellVisualID_1: 8503
+###############################################
 
+### ouro #################################
+# dirt mound
+CreatureModelData.dbc: # use a lower profile invisble model so "head" is near ground
+  - type: copy
+    key: 1731
+    updates:
+      ID: 8608
+      ModelName: Creature\InvisibleStalker\InvisibleStalkerNoName.mdx
+
+CreatureDisplayInfo.dbc:
+  - type: update
+    key: 15294
+    updates:
+      ModelID: 8608
+
+SpellVisualKit.dbc:
+  - type: copy
+    key: 6466
+    updates:
+      ID: 8608
+      BaseEffect: 4908 #a 8y ring, model is 2.25x scale so it's about an 18y effect
+      HeadEffect: 2994
+
+SpellVisual.dbc:
+  - type: copy
+    key: 7430
+    updates:
+      ID: 8608
+      CastKit: 8608
+
+Spell.dbc:
+  - type: update
+    key: 26093 # quake
+    updates:
+      SpellVisualID_1: 8608
 #######################################
 
 ### anubisath sentinels ######################
@@ -134,11 +170,12 @@ SpellVisualKit.dbc:
   - type: insert
     key: 8517
     values:
-      BreathEffect: 88
+      # BreathEffect: 88
+      RightHandEffect: 88 #lightning
   - type: insert
     key: 8516
     values:
-      RightHandEffect: 94
+      RightHandEffect: 94 #rage
   - type: insert
     key: 8514
     values:
@@ -146,18 +183,18 @@ SpellVisualKit.dbc:
   - type: insert
     key: 8513
     values:
-      # BaseEffect: 4931
-      BreathEffect: 464
+      BreathEffect: 623 #shadow precast
   - type: copy
     key: 252
     updates:
       Id: 8511
-      LeftHandEffect: 365
+      LeftHandEffect: 287 #fire precast
   - type: copy
     key: 252
     updates:
       Id: 8510
-      LeftHandEffect: 151
+      LeftHandEffect: 17 #shadow precast
+
 
 SpellVisual.dbc:
   # - type: insert
@@ -301,19 +338,24 @@ SpellVisualKit.dbc:
     updates:
       ID: 8525
       CharParamOne_1: 1.0 #reduce blizzard shards from 15 to 1
+      WorldEffect: 4981 #add a prehit animation, slightly speeds up players seeing the effect
 
 SpellVisual.dbc:
   - type: copy
     key: 7608
     updates:
       ID: 8525
-      AreaModel: 4900 #7y red circle
+      # StateKit: 668
+      AreaModel: 4980 #7y orange circle
       AreaKit: 8525
-      HasMissile: 1 #disable secondary ground effect renderings
+      HasMissile: 1
+      MissileModel: 234
+      MissileDestinationAttachment: 2
 
 Spell.dbc:
   - type: update
     key: 28547 #chill 28547
     updates:
       SpellVisualID_1: 8525
+      Speed: 255.0
 ########################################

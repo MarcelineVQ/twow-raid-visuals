@@ -1,0 +1,18 @@
+# Default schema for CreatureDisplayInfo.dbc (WoW 1.12.1 5875)
+#
+# Array fields in this table are expanded with numeric suffixes.  The
+# order matches the column order in the DBC.
+
+fields:
+  - ID
+  - ModelID
+  - SoundID
+  - ExtendedDisplayInfoID
+  - CreatureModelScale
+  - CreatureModelAlpha
+  - TextureVariation_1
+  - TextureVariation_2
+  - TextureVariation_3
+  - SizeClass
+  - BloodID
+  - NPCSoundID

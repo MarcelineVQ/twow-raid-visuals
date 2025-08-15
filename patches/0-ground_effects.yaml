@@ -113,10 +113,17 @@ SpellVisualEffectName.dbc:
 
   # specifically tailored spells
   - type: insert
-    key: 4900
+    key: 4980
     values: #data says 15 but seems to be 18 in game
-      Name: Sapph Blizzard (7y Red)
-      FileName: Spells\DangerZone_W7_S18_Red.m2
+      Name: Sapph Blizzard (7y Orange)
+      FileName: Spells\DangerZone_W7_S18_Orange.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+  - type: insert
+    key: 4981
+    values:
+      Name: Sapph Blizzard (Ice Crystal)
+      FileName: Spells\DangerZone_W7_S2_Orange_Fast.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
 
@@ -131,7 +138,7 @@ SpellVisualEffectName.dbc:
     key: 4902
     values:
       Name: Blackwing/Faerlina RoF
-      FileName: Spells\DangerZone_W22_S30_Flame.m2
+      FileName: Spells\DangerZone_W22_S12_Flame.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
   - type: insert
@@ -163,19 +170,26 @@ SpellVisualEffectName.dbc:
       FileName: Spells\DangerZone_W17_S30.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
+  - type: insert
+    key: 4908
+    values:
+      Name: Ouro Dirt Mounds
+      FileName: Spells\DangerZone_W8_S30.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
 
   - type: insert
     key: 4910
     values:
       Name: Ignite Rock
-      FileName: Spells\DangerZone_W20_S12.m2
+      FileName: Spells\DangerZone_W20_S12.m2 # change this to the flame decal, make it last a little longer
       SpecialAttachPoint: 0.0
       Scale: 1.0
   - type: insert
     key: 4911
     values:
       Name: Ignite Earth
-      FileName: Spells\DangerZone_W20_S18.m2
+      FileName: Spells\DangerZone_W20_S18.m2 # change this to the flame decal, make it last a little longer
       SpecialAttachPoint: 0.0
       Scale: 1.0
 
@@ -197,7 +211,7 @@ SpellVisualEffectName.dbc:
   - type: insert
     key: 4920
     values:
-      Name: Arcanist/Incantagos Blizzard
+      Name: Arcanist/Incantagos Blizzard #todo, frost circle might be too close to texture edge
       FileName: Spells\DangerZone_W22_S12_Frost.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
@@ -212,8 +226,8 @@ SpellVisualEffectName.dbc:
   - type: insert
     key: 4930
     values:
-      Name: Arcane Anomaly Area #4x scale
-      FileName: Spells\DangerZone_W3.75_S9_White.m2
+      Name: Arcane Anomaly Area #3.5x scale
+      FileName: Spells\DangerZone_W10_S9_White.m2 #probably still too small
       SpecialAttachPoint: 0.0
       Scale: 1.0
 
@@ -230,5 +244,13 @@ SpellVisualEffectName.dbc:
     values:
       Name: Kruul Cone
       FileName: Spells\KruulCone.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+
+  - type: insert
+    key: 5000
+    values:
+      Name: FooSmoke
+      FileName: Spells\FooSmoke.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0

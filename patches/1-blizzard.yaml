@@ -17,21 +17,22 @@ SpellVisual.dbc:
       AreaKit: 8000
       HasMissile: 1 #disable secondary ground effect renderings
       MissileModel: 234
-      MissileDestinationAttachment: 2
+      # MissileDestinationAttachment: 2
+      Flags: 1
 
 Spell.dbc:
   - type: update
     key: 51180 #incantagos(51180)
     updates:
       SpellVisualID_1: 8000
-      Speed: 300.0 #speed determines missile speed, and thus when the prehit occurs
+      Speed: 255.0 #speed determines missile speed, and thus when the prehit occurs
   - type: update
     key: 57657 #arcanist(57657)
     updates:
       SpellVisualID_1: 8000
-      Speed: 300.0
+      Speed: 255.0
   - type: update
     key: 26607 #vek'lor(26607)
     updates:
       SpellVisualID_1: 8000
-      Speed: 300.0
+      Speed: 255.0

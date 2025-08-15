@@ -1,0 +1,22 @@
+# Default schema for CreatureModelData.dbc (WoW 1.12.1 5875)
+#
+# Array fields in this table are expanded with numeric suffixes.  The
+# order matches the column order in the DBC.
+
+fields:
+  - ID
+  - Flags
+  - ModelName
+  - SizeClass
+  - ModelScale
+  - BloodID
+  - FootprintTextureID
+  - FootprintTextureLength
+  - FootprintTextureWidth
+  - FootprintParticleScale
+  - FoleyMaterialID
+  - FootstepShakeSize
+  - DeathThudShakeSize
+  - SoundID
+  - CollisionWidth
+  - CollisionHeight

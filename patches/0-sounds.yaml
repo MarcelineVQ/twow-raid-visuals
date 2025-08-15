@@ -1,4 +1,4 @@
-#####################################
+### baby murloc dance ###############
 # silence a weird murloc sound glitch
 SoundEntries.dbc:
   - type: update
@@ -7,6 +7,16 @@ SoundEntries.dbc:
       VolumeFloat: 0.0
 #####################################
 
+### caravan kodo ##################
+# silence kodo steps
+CreatureModelData.dbc:
+  - type: update
+    key: 1071
+    updates:
+      SoundID: 171 # turtle footsteps
+###################################
+
+
 ### totemic recall ################
 # give unique sound
 SoundEntries.dbc:
@@ -14,8 +24,11 @@ SoundEntries.dbc:
     key: 2552
     updates:
       ID: 90000
-      File_1: m2hAxeHitWood1C.wav
-      DirectoryBase: Sound\Item\Weapons\Axe2H
+      File_1: m1hAxeHitWood1A.wav
+      DirectoryBase: Sound\Item\Weapons\Axe1H
+      VolumeFloat: 0.8
+      # File_1: m2hAxeHitWood1C.wav
+      # DirectoryBase: Sound\Item\Weapons\Axe2H
 
 SpellVisualKit.dbc:
   - type: copy
@@ -55,7 +68,7 @@ SpellVisualKit.dbc:
       ID: 9001
       SoundID: 90001 #yes really
 
-SpellVisual.dbc:
+SpellVisual.dbc: # don't clobber other users of 2719
   - type: copy
     key: 2719
     updates:

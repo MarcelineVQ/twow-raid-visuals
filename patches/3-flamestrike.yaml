@@ -1,8 +1,27 @@
 #foo 8200 base
 
-# move flamestrike visual to a on-hit effect, so we can use world marker for the
-# more consistent effective zone display.
+# Here’s the basic logic behind how these area effect visuals work:
+# 
+# Area effect spells can have a model that appears in the world. On cast, the
+# client plays two versions of the model: Model A at full opacity, and Model B
+# at slightly reduced opacity. Model A scales with the caster’s size; Model B
+# does not. Model B’s fade-in/out timing is hardcoded client-side, so we can’t
+# speed it up.
+#
+# This means that if we want a world model representing an area that ignores
+# caster scale, we lose control over how quickly it becomes visible.
+#
+# The workaround: use missile rendering instead. If the spell is flagged as a
+# missile, Model A no longer plays. Instead, we can control the impact visual
+# via the AreaKit. This animation can appear at full opacity instantly, and
+# its fade timing is under our control. It does scale with the caster, but we
+# can pre-scale the model to compensate in most cases.
+#
+# For the missile animation to play, the spell must have a Speed value, which
+# defines missile travel speed. Travel time affects when the animation starts;
+# a high speed is usually chosen to ensure the impact effect starts quickly.
 
+# move flamestrike impact animation to missile impact
 SpellVisualKit.dbc:
   - type: copy
     key: 695 #flamestrike
@@ -28,19 +47,20 @@ SpellVisual.dbc:
       AreaModel: 4912 #display a ground zone
       HasMissile: 1 #disable secondary ground effect renderings
       MissileModel: 1179
-      MissilePathType: 2
+      # MissilePathType: 2
+      # Flags: 1
 
 Spell.dbc:
   - type: update
     key: 22275 #spellbinder/hatcher flamestike (22275)
     updates:
       SpellVisualID_1: 8200
-      Speed: 300.0
+      Speed: 255.0
   - type: update
     key: 51113 # flamestrike of medivh
     updates:
       SpellVisualID_1: 8200
-      Speed: 300.0
+      Speed: 255.0
 
 #rupturan and fragments
 SpellVisual.dbc:
@@ -54,6 +74,7 @@ SpellVisual.dbc:
       HasMissile: 1 #disable secondary ground effect renderings
       MissileModel: 1179
       MissilePathType: 2
+      # Flags: 1
   - type: copy #rupturan
     key: 33
     updates:
@@ -64,15 +85,16 @@ SpellVisual.dbc:
       HasMissile: 1 #disable secondary ground effect renderings
       MissileModel: 1179
       MissilePathType: 2
+      # Flags: 1
 
 Spell.dbc:
   - type: update
     key: 51298 #ignite rock (51298)
     updates:
       SpellVisualID_1: 8211
-      Speed: 300.0
+      Speed: 255.0
   - type: update
     key: 52040 #ignite earth (52040)
     updates:
       SpellVisualID_1: 8212
-      Speed: 300.0 #projectile speed, required to triggeer some visual effects
+      Speed: 255.0 #projectile speed, required to triggeer some visual effects
