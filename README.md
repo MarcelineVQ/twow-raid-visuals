@@ -6,7 +6,7 @@ To use this project's visuals, download [the latest release](https://github.com/
 ## Patches overview
 
 The patches included in this repository adjust the visuals and sounds for several various spells and boss abilities.  They are applied in alphabetical order based on the patch file name so that later patches may override or build upon earlier ones.  
-The patches currently are based on twow `1.17.2` dbc's, simply change out the .dbc files in the `dbc/` folder to use other versions.  
+The patches currently are based on twow `1.18.0` dbc's, simply change out the .dbc files in the `dbc/` folder to use other versions.  
 The highlights are summarised below:
 
 - **AQ20:** Captain Tuubid visibly marks the player targeted for Attack Command.  
@@ -46,7 +46,7 @@ The highlights are summarised below:
     - Karazhan Protectors indicate Spell Reflect with green coloring.  
     - Crumbling Protectors indicate Self-Destruct Protocol with red coloring.  
     - Lingering Arcanists indicate their Blizzard area of effect.  
-    - Arcane Anomaly indicates the application range of its stacking debuff (untested).  
+    - Arcane Anomaly indicates the application range of its stacking debuff.  
 
 - **Other:**
   - Silenced the looping Baby Murloc dance sound.  

@@ -57,7 +57,7 @@ Spell.dbc:
       SpellVisualID_1: 8200
       Speed: 255.0
   - type: update
-    key: 51113 # flamestrike of medivh
+    key: 51113 # flamestrike of medivh, use old style visual + our indicator
     updates:
       SpellVisualID_1: 8200
       Speed: 255.0

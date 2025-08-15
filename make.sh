@@ -1,0 +1,1 @@
+./target/release/wow_dbc_patcher build --mpq patch-O.mpq
