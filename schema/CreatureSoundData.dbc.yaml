@@ -1,0 +1,36 @@
+# Default schema for CreatureSoundData.dbc (WoW 1.12.1 5875)
+#
+# Array fields in this table are expanded with numeric suffixes.  The
+# order matches the column order in the DBC.
+
+fields:
+  - ID
+  - SoundExertionID
+  - SoundExertionCriticalID
+  - SoundInjuryID
+  - SoundInjuryCriticalID
+  - SoundInjuryCrushingBlowID
+  - SoundDeathID
+  - SoundStunID
+  - SoundStandID
+  - SoundFootstepID
+  - SoundAggroID
+  - SoundWingFlapID
+  - SoundWingGlideID
+  - SoundAlertID
+  - SoundFidget_1
+  - SoundFidget_2
+  - SoundFidget_3
+  - SoundFidget_4
+  - CustomAttack_1
+  - CustomAttack_2
+  - CustomAttack_3
+  - CustomAttack_4
+  - NPCSoundID
+  - LoopSoundID
+  - CreatureImpactType
+  - SoundJumpStartID
+  - SoundJumpEndID
+  - SoundPetAttackID
+  - SoundPetOrderID
+  - SoundPetDismissID
