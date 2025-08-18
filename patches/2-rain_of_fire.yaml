@@ -3,14 +3,14 @@
 SpellVisualKit.dbc:
   - type: copy
     key: 692
-    updates:
+    values:
       ID: 8100
       WorldEffect: 4801 #add a prehit animation, slightly speeds up players seeing the RoF
 
 SpellVisual.dbc:
   - type: copy
     key: 329
-    updates:
+    values:
       ID: 8100
       StateKit: 668
       AreaModel: 4902
@@ -23,12 +23,12 @@ SpellVisual.dbc:
 Spell.dbc:
   - type: update
     key: 19717 #gehennas and blackwing warlockk(19717)
-    updates:
+    values:
       SpellVisualID_1: 8100
       Speed: 255.0
   - type: update
     key: 28794 #faerlina and bovar'kez(28794)
-    updates:
+    values:
       SpellVisualID_1: 8100
       Speed: 255.0
 

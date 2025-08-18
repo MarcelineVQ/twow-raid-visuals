@@ -10,19 +10,19 @@
 SpellVisualKit.dbc:
   - type: copy
     key: 293
-    updates:
+    values:
       Id: 8800
       CharProc_1: 0 #remove coloring
 SpellVisual.dbc:
   - type: copy
     key: 177
-    updates:
+    values:
       Id: 8800
       StateKit: 8800
 Spell.dbc:
   - type: update
     key: 42025
-    updates:
+    values:
       SpellVisualID_1: 8800
 #######################################################
 
@@ -37,11 +37,11 @@ Spell.dbc:
 # SpellVisualEffectName.dbc:
 #   - type: update
 #     key: 1562
-#     updates:
+#     values:
 #       Scale: 3.0
 #   - type: update
 #     key: 1563
-#     updates:
+#     values:
 #       Scale: 3.0
 
 # todo, brainwashers should have a light beam
@@ -54,7 +54,7 @@ Spell.dbc:
 # SpellVisualKit.dbc:
 #   - type: copy
 #     key: 6448
-#     updates:
+#     values:
 #       Id: 8805
 #       # KitType: 3
 #       # WorldEffect: 2989
@@ -62,7 +62,7 @@ Spell.dbc:
 # SpellVisual.dbc:
 #   - type: copy
 #     key: 88
-#     updates:
+#     values:
 #       Id: 8805
 #       CastKit: 8805
 #       Flags: 2
@@ -70,7 +70,7 @@ Spell.dbc:
 # Spell.dbc:
 #   - type: update
 #     key: 45513
-#     updates:
+#     values:
 #       SpellVisualID_1: 8805
 #       DurationIndex: 15 #5mins
 # #######################################################

@@ -101,6 +101,113 @@ enum Commands {
     },
 }
 
+/// Resolves a key column name or index to a numeric index
+fn resolve_key_column_index(
+    key_column: &Option<String>,
+    schema_map: &Option<HashMap<String, usize>>,
+    file_name: &str,
+    pf_origin: &str,
+) -> usize {
+    match key_column {
+        Some(ref col_name) => {
+            // Try to parse as a number first
+            if let Ok(idx) = col_name.parse::<usize>() {
+                idx
+            } else {
+                // Look up by name in schema map
+                if let Some(ref schema) = schema_map {
+                    if let Some(&idx) = schema.get(&col_name.to_lowercase()) {
+                        idx
+                    } else {
+                        println!(
+                            "Warning: unknown key column '{}' in {} (patch file: {}) – defaulting to 0",
+                            col_name, file_name, pf_origin
+                        );
+                        0
+                    }
+                } else {
+                    println!(
+                        "Warning: no schema for {} (patch file: {}), cannot resolve key column '{}', defaulting to 0",
+                        file_name, pf_origin, col_name
+                    );
+                    0
+                }
+            }
+        }
+        None => 0,
+    }
+}
+
+/// Resolves a field name or index to a numeric index
+fn resolve_field_index(
+    field_name: &str,
+    schema_map: &Option<HashMap<String, usize>>,
+) -> Option<usize> {
+    // Try parse as number
+    if let Ok(idx) = field_name.parse::<usize>() {
+        Some(idx)
+    } else {
+        schema_map
+            .as_ref()
+            .and_then(|schema| schema.get(&field_name.to_lowercase()).cloned())
+    }
+}
+
+/// Applies values to a record, handling string allocation
+fn apply_values_to_record(
+    values: &HashMap<String, ValueType>,
+    record: &mut Vec<u32>,
+    schema_map: &Option<HashMap<String, usize>>,
+    string_map: &mut HashMap<String, u32>,
+    new_strings: &mut Vec<String>,
+    string_block: &[u8],
+    file_name: &str,
+    pf_origin: &str,
+    record_key: u32,
+) {
+    for (field_name, value) in values {
+        let field_idx = match resolve_field_index(field_name, schema_map) {
+            Some(i) => i,
+            None => {
+                println!(
+                    "Warning: unknown field '{}' in {} (patch file: {}) – skipping",
+                    field_name, file_name, pf_origin
+                );
+                continue;
+            }
+        };
+        
+        if field_idx >= record.len() {
+            println!(
+                "Warning: field {} out of range for record with key {} in {} (patch file: {})",
+                field_idx, record_key, file_name, pf_origin
+            );
+            continue;
+        }
+        
+        match value {
+            ValueType::String(s) => {
+                // Check if string already exists
+                let offset = if let Some(&off) = string_map.get(s) {
+                    off
+                } else {
+                    let offset = (string_block.len()
+                        + new_strings.iter().map(|ss| ss.len() + 1).sum::<usize>()) as u32;
+                    string_map.insert(s.clone(), offset);
+                    new_strings.push(s.clone());
+                    offset
+                };
+                record[field_idx] = offset;
+            }
+            _ => {
+                if let Some(int_val) = value.as_u32() {
+                    record[field_idx] = int_val;
+                }
+            }
+        }
+    }
+}
+
 fn main() -> Result<()> {
     let cli = Cli::parse();
     match cli.command {
@@ -523,43 +630,9 @@ fn apply_command(
                         PatchEntry::Update {
                             key,
                             key_column,
-                            updates,
+                            values,
                         } => {
-                            // Determine key column index.  The key_column may be
-                            // a number in string form or a field name.  If none
-                            // is provided default to 0.
-                            let key_col_index: usize = match key_column {
-                                Some(ref col_name) => {
-                                    // Try to parse as a number first
-                                    if let Ok(idx) = col_name.parse::<usize>() {
-                                        idx
-                                    } else {
-                                        // Look up by name in schema map
-                                        if let Some(ref schema) = schema_map {
-                                            if let Some(&idx) = schema.get(&col_name.to_lowercase()) {
-                                                idx
-                                            } else {
-                                                println!(
-                                                    "Warning: unknown key column '{}' in {} (patch file: {}) – defaulting to 0",
-                                                    col_name,
-                                                    file_name,
-                                                    pf_origin
-                                                );
-                                                0
-                                            }
-                                        } else {
-                                            println!(
-                                                "Warning: no schema for {} (patch file: {}), cannot resolve key column '{}', defaulting to 0",
-                                                file_name,
-                                                pf_origin,
-                                                col_name
-                                            );
-                                            0
-                                        }
-                                    }
-                                }
-                                None => 0,
-                            };
+                            let key_col_index = resolve_key_column_index(key_column, &schema_map, &file_name, &pf_origin);
 
                             // Find the record with matching key
                             let mut found = false;
@@ -569,70 +642,17 @@ fn apply_command(
                                 }
                                 if record[key_col_index] == *key {
                                     found = true;
-                                    // Apply updates
-                                    for (field_name, value) in updates {
-                                        // Determine field index
-                                        let field_idx: Option<usize> = {
-                                            // Try parse as number
-                                            if let Ok(idx) = field_name.parse::<usize>() {
-                                                Some(idx)
-                                            } else {
-                                                schema_map
-                                                    .as_ref()
-                                                    .and_then(|schema| schema.get(&field_name.to_lowercase()).cloned())
-                                            }
-                                        };
-                                        let field_idx = match field_idx {
-                                            Some(i) => i,
-                                            None => {
-                                                println!(
-                                                    "Warning: unknown field '{}' in {} (patch file: {}) – skipping",
-                                                    field_name,
-                                                    file_name,
-                                                    pf_origin
-                                                );
-                                                continue;
-                                            }
-                                        };
-                                        if field_idx >= record.len() {
-                                            println!(
-                                                "Warning: field {} out of range for record with key {} in {} (patch file: {})",
-                                                field_idx,
-                                                key,
-                                                file_name,
-                                                pf_origin
-                                            );
-                                            continue;
-                                        }
-                                        match value {
-                                            ValueType::String(s) => {
-                                                // Check if string already exists
-                                                let offset = if let Some(&off) = string_map.get(s) {
-                                                    off
-                                                } else {
-                                                    let offset = (string_block.len()
-                                                        + new_strings.iter().map(|ss| ss.len() + 1).sum::<usize>()) as u32;
-                                                    string_map.insert(s.clone(), offset);
-                                                    new_strings.push(s.clone());
-                                                    offset
-                                                };
-                                                record[field_idx] = offset;
-                                            }
-                                            _ => {
-                                                if let Some(num) = value.as_u32() {
-                                                    record[field_idx] = num;
-                                                } else {
-                                                    println!(
-                                                        "Warning: unsupported value {:?} for field {} in {} (patch file: {})",
-                                                        value,
-                                                        field_idx,
-                                                        file_name,
-                                                        pf_origin
-                                                    );
-                                                }
-                                            }
-                                        }
-                                    }
+                                    apply_values_to_record(
+                                        values,
+                                        record,
+                                        &schema_map,
+                                        &mut string_map,
+                                        &mut new_strings,
+                                        &string_block,
+                                        &file_name,
+                                        &pf_origin,
+                                        *key,
+                                    );
                                     break;
                                 }
                             }
@@ -646,37 +666,7 @@ fn apply_command(
                             }
                         }
                         PatchEntry::Insert { key, key_column, values } => {
-                            // Determine the key column index once so we can apply it consistently
-                            let key_col_index: usize = match key_column {
-                                Some(ref col_name) => {
-                                    if let Ok(idx) = col_name.parse::<usize>() {
-                                        idx
-                                    } else {
-                                        if let Some(ref schema) = schema_map {
-                                            if let Some(&idx) = schema.get(&col_name.to_lowercase()) {
-                                                idx
-                                            } else {
-                                                println!(
-                                                    "Warning: unknown key column '{}' in {} (patch file: {}) – defaulting to 0",
-                                                    col_name,
-                                                    file_name,
-                                                    pf_origin
-                                                );
-                                                0
-                                            }
-                                        } else {
-                                            println!(
-                                                "Warning: no schema for {} (patch file: {}), cannot resolve key column '{}', defaulting to 0",
-                                                file_name,
-                                                pf_origin,
-                                                col_name
-                                            );
-                                            0
-                                        }
-                                    }
-                                }
-                                None => 0,
-                            };
+                            let key_col_index = resolve_key_column_index(key_column, &schema_map, &file_name, &pf_origin);
 
                             // Create new record filled with zeros
                             let mut new_record = vec![0u32; header.field_count as usize];
@@ -701,66 +691,18 @@ fn apply_command(
                             }
 
                             // Fill in specified fields from the values map
-                            for (field_name, value) in values {
-                                // Determine field index
-                                let field_idx: Option<usize> = {
-                                    if let Ok(idx) = field_name.parse::<usize>() {
-                                        Some(idx)
-                                    } else {
-                                        schema_map
-                                            .as_ref()
-                                            .and_then(|schema| schema.get(&field_name.to_lowercase()).cloned())
-                                    }
-                                };
-                                let field_idx = match field_idx {
-                                    Some(i) => i,
-                                    None => {
-                                        println!(
-                                            "Warning: unknown field '{}' in {} (patch file: {}) – skipping",
-                                            field_name,
-                                            file_name,
-                                            pf_origin
-                                        );
-                                        continue;
-                                    }
-                                };
-                                if field_idx >= new_record.len() {
-                                    println!(
-                                        "Warning: field {} out of range for new record in {} (patch file: {})",
-                                        field_idx,
-                                        file_name,
-                                        pf_origin
-                                    );
-                                    continue;
-                                }
-                                match value {
-                                    ValueType::String(s) => {
-                                        let offset = if let Some(&off) = string_map.get(s) {
-                                            off
-                                        } else {
-                                            let offset = (string_block.len()
-                                                + new_strings.iter().map(|ss| ss.len() + 1).sum::<usize>()) as u32;
-                                            string_map.insert(s.clone(), offset);
-                                            new_strings.push(s.clone());
-                                            offset
-                                        };
-                                        new_record[field_idx] = offset;
-                                    }
-                                    _ => {
-                                        if let Some(num) = value.as_u32() {
-                                            new_record[field_idx] = num;
-                                        } else {
-                                            println!(
-                                                "Warning: unsupported value {:?} for field {} in {} (patch file: {})",
-                                                value,
-                                                field_idx,
-                                                file_name,
-                                                pf_origin
-                                            );
-                                        }
-                                    }
-                                }
-                            }
+                            let effective_key = key.unwrap_or(0); // Use a default key for apply_values_to_record
+                            apply_values_to_record(
+                                values,
+                                &mut new_record,
+                                &schema_map,
+                                &mut string_map,
+                                &mut new_strings,
+                                &string_block,
+                                &file_name,
+                                &pf_origin,
+                                effective_key,
+                            );
 
                             // Check for duplicate keys: if the key value in the new record already exists in the
                             // records list at the same key column, warn and skip this insert.
@@ -791,39 +733,9 @@ fn apply_command(
                         PatchEntry::Copy {
                             key,
                             key_column,
-                            updates,
+                            values,
                         } => {
-                            // Determine key column index
-                            let key_col_index: usize = match key_column {
-                                Some(ref col_name) => {
-                                    if let Ok(idx) = col_name.parse::<usize>() {
-                                        idx
-                                    } else {
-                                        if let Some(ref schema) = schema_map {
-                                            if let Some(&idx) = schema.get(&col_name.to_lowercase()) {
-                                                idx
-                                            } else {
-                                                println!(
-                                                    "Warning: unknown key column '{}' in {} (patch file: {}) – defaulting to 0",
-                                                    col_name,
-                                                    file_name,
-                                                    pf_origin
-                                                );
-                                                0
-                                            }
-                                        } else {
-                                            println!(
-                                                "Warning: no schema for {} (patch file: {}), cannot resolve key column '{}', defaulting to 0",
-                                                file_name,
-                                                pf_origin,
-                                                col_name
-                                            );
-                                            0
-                                        }
-                                    }
-                                }
-                                None => 0,
-                            };
+                            let key_col_index = resolve_key_column_index(key_column, &schema_map, &file_name, &pf_origin);
                             // Find the record to copy
                             let mut found = false;
                             for record in &records {
@@ -835,68 +747,17 @@ fn apply_command(
                                     // Clone the existing record
                                     let mut new_record = record.clone();
                                     // Apply updates to the new record
-                                    for (field_name, value) in updates {
-                                        // Determine field index
-                                        let field_idx: Option<usize> = {
-                                            if let Ok(idx) = field_name.parse::<usize>() {
-                                                Some(idx)
-                                            } else {
-                                                schema_map
-                                                    .as_ref()
-                                                    .and_then(|schema| schema.get(&field_name.to_lowercase()).cloned())
-                                            }
-                                        };
-                                        let field_idx = match field_idx {
-                                            Some(i) => i,
-                                            None => {
-                                                println!(
-                                                    "Warning: unknown field '{}' in {} (patch file: {}) – skipping",
-                                                    field_name,
-                                                    file_name,
-                                                    pf_origin
-                                                );
-                                                continue;
-                                            }
-                                        };
-                                        if field_idx >= new_record.len() {
-                                            println!(
-                                                "Warning: field {} out of range for record with key {} in {} (patch file: {})",
-                                                field_idx,
-                                                key,
-                                                file_name,
-                                                pf_origin
-                                            );
-                                            continue;
-                                        }
-                                        match value {
-                                            ValueType::String(s) => {
-                                                // Reuse or allocate string offset
-                                                let offset = if let Some(&off) = string_map.get(s) {
-                                                    off
-                                                } else {
-                                                    let offset = (string_block.len()
-                                                        + new_strings.iter().map(|ss| ss.len() + 1).sum::<usize>()) as u32;
-                                                    string_map.insert(s.clone(), offset);
-                                                    new_strings.push(s.clone());
-                                                    offset
-                                                };
-                                                new_record[field_idx] = offset;
-                                            }
-                                            _ => {
-                                                if let Some(num) = value.as_u32() {
-                                                    new_record[field_idx] = num;
-                                                } else {
-                                                    println!(
-                                                        "Warning: unsupported value {:?} for field {} in {} (patch file: {})",
-                                                        value,
-                                                        field_idx,
-                                                        file_name,
-                                                        pf_origin
-                                                    );
-                                                }
-                                            }
-                                        }
-                                    }
+                                    apply_values_to_record(
+                                        values,
+                                        &mut new_record,
+                                        &schema_map,
+                                        &mut string_map,
+                                        &mut new_strings,
+                                        &string_block,
+                                        &file_name,
+                                        &pf_origin,
+                                        *key,
+                                    );
                                     // After applying updates, ensure we are not duplicating the key.  Use the
                                     // resolved key column to retrieve the new key value and check against
                                     // existing records.  If a duplicate is found, skip adding the new record and

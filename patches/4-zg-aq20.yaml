@@ -5,6 +5,6 @@
 SpellVisual.dbc:
   - type: update
     key: 7378
-    updates:
+    values:
       StateKit: 6372
 ##################################################

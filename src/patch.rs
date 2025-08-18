@@ -40,7 +40,7 @@ pub enum PatchEntry {
         /// The index mapping will be resolved at runtime against the
         /// provided schema.  Fields not found in the schema are ignored
         /// with a warning.
-        updates: HashMap<String, ValueType>,
+        values: HashMap<String, ValueType>,
     },
     /// Insert a completely new record.  Only the fields listed in
     /// `values` will be set; unspecified fields default to zero.  When
@@ -70,7 +70,7 @@ pub enum PatchEntry {
         #[serde(default)]
         key_column: Option<String>,
         /// Mapping of field names (or indices) to new values for the copied record.
-        updates: HashMap<String, ValueType>,
+        values: HashMap<String, ValueType>,
     },
 }
 

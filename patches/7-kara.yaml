@@ -5,7 +5,7 @@
 SpellVisualKit.dbc:
   - type: update
     key: 5849 # red moon Spell 51081, SpellVisual 6539
-    updates:
+    values:
       HeadEffect: 1544 #add an orb above you
       ChestEffect: 0
       BaseEffect: 0
@@ -14,7 +14,7 @@ SpellVisualKit.dbc:
       CharProc_1: 1 #allows this to fade properly if not cleared by other effects
   - type: update
     key: 5893 #blue moon Spell 51080, SpellVisual 6589
-    updates:
+    values:
       HeadEffect: 1544 #add an orb above you
       ChestEffect: 0
       BaseEffect: 0
@@ -28,7 +28,7 @@ SpellVisualKit.dbc:
 Spell.dbc:
   - type: update
     key: 52393 #draconic intimidation
-    updates:
+    values:
       SpellVisualID_1: 852 # a lesser fear visual
 
 #############################################
@@ -41,7 +41,7 @@ Spell.dbc:
 SpellVisualKit.dbc:
   - type: copy
     key: 221 #green
-    updates:
+    values:
       ID: 8603
       HeadEffect: 2963 #arrow over head
       ChestEffect: 1562 #hunter mark
@@ -50,25 +50,25 @@ SpellVisualKit.dbc:
 SpellVisual.dbc:
   - type: copy
     key: 5780
-    updates:
+    values:
       ID: 8602
       StateKit: 668
       AreaModel: 4707 #25y ring
       HasMissile: 1 #disable secondary ground effect renderings
   - type: copy
     key: 277
-    updates:
+    values:
       ID: 8603
       StateKit: 8603
 
 Spell.dbc:
   - type: update
     key: 51182 # guided ley beam ground effect
-    updates:
+    values:
       SpellVisualID_1: 8602
   - type: update
     key: 52011 # guided ley-beam pe-cast targeting
-    updates:
+    values:
       SpellVisualID_1: 8603
 ###########################################
 
@@ -83,7 +83,7 @@ Spell.dbc:
 SpellVisualKit.dbc:
   - type: copy
     key: 657
-    updates:
+    values:
       ID: 8600
       HeadEffect: 397 #add a purple orb above you
       BaseEffect: 4752 #a ring under you, white base colored by aura
@@ -92,14 +92,14 @@ SpellVisualKit.dbc:
 SpellVisual.dbc:
   - type: copy
     key: 5981 # copy corruption of medivh visual, give it new kit
-    updates:
+    values:
       ID: 8600
       StateKit: 8600
 
 Spell.dbc:
   - type: update
     key: 52674 # give corruption of medivh new visual
-    updates:
+    values:
       SpellVisualID_1: 8600
 #########################################
 
@@ -113,7 +113,7 @@ Spell.dbc:
 SpellVisualKit.dbc:
   - type: copy
     key: 60
-    updates:
+    values:
       ID: 8601
       # BaseEffect: 4700 #a ring under him
       BaseEffect: 4903 #geddon ring, 10y before scaling
@@ -127,14 +127,14 @@ SpellVisualKit.dbc:
 SpellVisual.dbc:
   - type: copy
     key: 963
-    updates:
+    values:
       ID: 8601
       PrecastKit: 8601
 
 Spell.dbc:
   - type: update
     key: 51203 # overflowing hatred 51203 visual 963 changed to 8013
-    updates:
+    values:
       SpellVisualID_1: 8601
 #######################################
 
@@ -145,7 +145,7 @@ Spell.dbc:
 SpellVisualKit.dbc:
   - type: copy
     key: 5372
-    updates:
+    values:
       ID: 8605
       CharProc_1: 2
       CharParamOne_1: 2.0
@@ -155,14 +155,14 @@ SpellVisualKit.dbc:
 SpellVisual.dbc:
   - type: copy
     key: 140
-    updates:
+    values:
       ID: 8605
       StateKit: 8605
 
 Spell.dbc:
   - type: update
     key: 46540 # netherwalker invisibility
-    updates:
+    values:
       SpellVisualID_1: 8605
 ##############################################
 
@@ -173,7 +173,7 @@ Spell.dbc:
 SpellVisualKit.dbc:
   - type: copy
     key: 1004
-    updates:
+    values:
       ID: 8607
       BaseEffect: 4930 # 15y ring after scaling, unsure of exact extent. spell data claims 15
       WorldEffect: 734 # was the base effect before
@@ -181,14 +181,14 @@ SpellVisualKit.dbc:
 SpellVisual.dbc:
   - type: copy
     key: 965
-    updates:
+    values:
       ID: 8607
       CastKit: 8607 #apply specifically on cast
 
 Spell.dbc:
   - type: update
     key: 57646 # overflowing arcana
-    updates:
+    values:
       SpellVisualID_1: 8607
 ########################################
 
@@ -197,7 +197,7 @@ SpellVisualKit.dbc:
   # red coloring to self-desruct
   - type: copy
     key: 4129
-    updates:
+    values:
       ID: 8611
       CharProc_1: 1
       CharParamZero_1: 16716055.0
@@ -206,7 +206,7 @@ SpellVisualKit.dbc:
   # green coloring to reflect
   - type: copy
     key: 252
-    updates:
+    values:
       ID: 8610
       CharProc_1: 1
       CharParamZero_1: 65280.0
@@ -216,23 +216,23 @@ SpellVisualKit.dbc:
 SpellVisual.dbc:
   - type: copy
     key: 4760
-    updates:
+    values:
       ID: 8611
       StateKit: 8611
   - type: copy
     key: 154
-    updates:
+    values:
       ID: 8610
       StateKit: 8610
 
 Spell.dbc:
   - type: update
     key: 57652 # self-destruction protocol
-    updates:
+    values:
       SpellVisualID_1: 8611
   - type: update
     key: 57654 # reflection protocol
-    updates:
+    values:
       SpellVisualID_1: 8610
 ###################################
 
@@ -241,21 +241,21 @@ Spell.dbc:
 SpellVisualKit.dbc:
   - type: copy
     key: 653
-    updates:
+    values:
       ID: 8606
       BaseEffect: 4701 # 15y ring, unsure of exact extent. spell data claims 10y but that seems too small to me
 
 SpellVisual.dbc:
   - type: copy
     key: 561
-    updates:
+    values:
       ID: 8606
       StateKit: 8606
 
 Spell.dbc:
   - type: update
     key: 51166 # mark of the highlord
-    updates:
+    values:
       SpellVisualID_1: 8606
 ########################################
 
@@ -266,6 +266,6 @@ Spell.dbc:
 Spell.dbc:
   - type: update
     key: 51912 # doom of outland, give netherwalker vis improvement
-    updates:  
+    values:  
       SpellVisualID_1: 8605
 ###################################

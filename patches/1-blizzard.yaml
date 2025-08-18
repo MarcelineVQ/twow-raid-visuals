@@ -3,14 +3,14 @@
 SpellVisualKit.dbc:
   - type: copy
     key: 609
-    updates:
+    values:
       ID: 8000
       WorldEffect: 4800 #add a prehit animation, slightly speeds up players seeing the effect
 
 SpellVisual.dbc:
   - type: copy
     key: 259
-    updates:
+    values:
       ID: 8000
       StateKit: 668
       AreaModel: 4920
@@ -23,16 +23,16 @@ SpellVisual.dbc:
 Spell.dbc:
   - type: update
     key: 51180 #incantagos(51180)
-    updates:
+    values:
       SpellVisualID_1: 8000
       Speed: 255.0 #speed determines missile speed, and thus when the prehit occurs
   - type: update
     key: 57657 #arcanist(57657)
-    updates:
+    values:
       SpellVisualID_1: 8000
       Speed: 255.0
   - type: update
     key: 26607 #vek'lor(26607)
-    updates:
+    values:
       SpellVisualID_1: 8000
       Speed: 255.0

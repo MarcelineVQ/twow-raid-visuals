@@ -25,13 +25,13 @@
 SpellVisualKit.dbc:
   - type: copy
     key: 695 #flamestrike
-    updates:
+    values:
       ID: 8200
       # WorldEffect: 4801 # 10y X
       WorldEffect: 420 # flamestrike
   - type: copy
     key: 695 #flamestrike
-    updates:
+    values:
       ID: 8201
       WorldEffect: 4800 # 5y X
       # WorldEffect: 420 #flamestrike model is obnoxious at this size
@@ -40,7 +40,7 @@ SpellVisualKit.dbc:
 SpellVisual.dbc:
   - type: copy
     key: 33
-    updates:
+    values:
       ID: 8200
       StateKit: 668
       AreaKit: 8200
@@ -53,12 +53,12 @@ SpellVisual.dbc:
 Spell.dbc:
   - type: update
     key: 22275 #spellbinder/hatcher flamestike (22275)
-    updates:
+    values:
       SpellVisualID_1: 8200
       Speed: 255.0
   - type: update
     key: 51113 # flamestrike of medivh, use old style visual + our indicator
-    updates:
+    values:
       SpellVisualID_1: 8200
       Speed: 255.0
 
@@ -66,7 +66,7 @@ Spell.dbc:
 SpellVisual.dbc:
   - type: copy #fragments
     key: 33
-    updates:
+    values:
       ID: 8211
       StateKit: 668
       AreaKit: 8200
@@ -77,7 +77,7 @@ SpellVisual.dbc:
       # Flags: 1
   - type: copy #rupturan
     key: 33
-    updates:
+    values:
       ID: 8212
       StateKit: 668
       AreaKit: 8201
@@ -90,11 +90,12 @@ SpellVisual.dbc:
 Spell.dbc:
   - type: update
     key: 51298 #ignite rock (51298)
-    updates:
+    values:
       SpellVisualID_1: 8211
+      # Speed: 255.0
       Speed: 255.0
   - type: update
     key: 52040 #ignite earth (52040)
-    updates:
+    values:
       SpellVisualID_1: 8212
       Speed: 255.0 #projectile speed, required to triggeer some visual effects

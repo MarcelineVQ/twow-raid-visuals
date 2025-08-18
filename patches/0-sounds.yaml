@@ -3,7 +3,7 @@
 SoundEntries.dbc:
   - type: update
     key: 8485 # baby murloc dance loop
-    updates:
+    values:
       VolumeFloat: 0.0
 #####################################
 
@@ -12,7 +12,7 @@ SoundEntries.dbc:
 CreatureModelData.dbc:
   - type: update
     key: 1071
-    updates:
+    values:
       SoundID: 171 # turtle footsteps
 ###################################
 
@@ -22,7 +22,7 @@ CreatureModelData.dbc:
 SoundEntries.dbc:
   - type: copy
     key: 2552
-    updates:
+    values:
       ID: 90000
       File_1: m1hAxeHitWood1A.wav
       DirectoryBase: Sound\Item\Weapons\Axe1H
@@ -33,21 +33,21 @@ SoundEntries.dbc:
 SpellVisualKit.dbc:
   - type: copy
     key: 352 # totem drop
-    updates:
+    values:
       ID: 9000
       SoundID: 90000 #yes really
 
 SpellVisual.dbc:
   - type: copy
     key: 319 # totem drop
-    updates:
+    values:
       ID: 9000
       CastKit: 9000
 
 Spell.dbc:
   - type: update
     key: 45513
-    updates:
+    values:
       SpellVisualID_1: 9000
 ###################################
 
@@ -56,7 +56,7 @@ Spell.dbc:
 SoundEntries.dbc:
   - type: copy
     key: 42
-    updates:
+    values:
       ID: 90001
       File_1: 2hMaceHitMetalShield1b.wav
       DirectoryBase: Sound\Item\Weapons\Mace2H
@@ -65,33 +65,33 @@ SoundEntries.dbc:
 SpellVisualKit.dbc:
   - type: copy
     key: 1666
-    updates:
+    values:
       ID: 9001
       SoundID: 90001 #yes really
 
 SpellVisual.dbc: # don't clobber other users of 2719
   - type: copy
     key: 2719
-    updates:
+    values:
       ID: 9001
       ImpactKit: 9001
 
 Spell.dbc:
   - type: update
     key: 1809
-    updates:
+    values:
       SpellVisualID_1: 9001
   - type: update
     key: 51600
-    updates:
+    values:
       SpellVisualID_1: 9001
   - type: update
     key: 51601
-    updates:
+    values:
       SpellVisualID_1: 9001
   - type: update
     key: 51602
-    updates:
+    values:
       SpellVisualID_1: 9001
 ###################################
 
@@ -100,6 +100,6 @@ Spell.dbc:
 CreatureSoundData.dbc:
   - type: update
     key: 5012
-    updates:
+    values:
       LoopSoundID: 0
 #####################################

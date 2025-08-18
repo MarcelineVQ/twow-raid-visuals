@@ -28,7 +28,7 @@
 # SpellVisual.dbc:
 #   - type: update
 #     key: 7358
-#     updates:
+#     values:
 #       ID: 10000
 #       StateKit: 10001
 #       # CastKit: 10001
@@ -48,7 +48,7 @@ SpellVisualEffectName.dbc:
 # SpellVisual.dbc:
 #   - type: update
 #     key: 7976
-#     updates:
+#     values:
 #       AreaModel: 10000
 
 Spell.dbc:
@@ -71,14 +71,14 @@ Spell.dbc:
 # SpellVisual.dbc:
 #   - type: update
 #     key: 886
-#     updates:
+#     values:
 #       ID: 9000
 #       StateKit: 9001
 
 # SpellVisualKit.dbc:
 #   - type: copy
 #     key: 6426
-#     updates:
+#     values:
 #       ID: 10001
 #       SpecialEffect_1: 4903
 #       SpecialEffect_2: 4903
@@ -87,7 +87,7 @@ Spell.dbc:
 # SpellVisualKit.dbc:
 #   - type: update
 #     key: 989
-#     updates:
+#     values:
 #       # RightHandEffect: 94
 #       # LeftHandEffect: 94
 #       # WorldEffect: 1 #1 is 'color'
@@ -126,15 +126,15 @@ Spell.dbc:
 # Spell.dbc:
 #   - type: update
 #     key: 10
-#     updates:
+#     values:
 #       SpellVisualID_1: 8000
 #   - type: update
 #     key: 6141
-#     updates:
+#     values:
 #       SpellVisualID_1: 8100
 #   - type: update
 #     key: 2120
-#     updates:
+#     values:
 #       SpellVisualID_1: 8200
 # aoe tests on mage, blizz rank 1,2,flamestrike rank 1
 
@@ -144,37 +144,37 @@ Spell.dbc:
 # SpellVisualKit.dbc:
 #   - type: copy
 #     key: 345
-#     updates:
+#     values:
 #       Id: 9900
 #       WorldEffect: 2989
 
 # SpellVisual.dbc:
 #   - type: copy
 #     key: 344
-#     updates:
+#     values:
 #       Id: 9900
 #       PrecastKit: 9900
 
 # Spell.dbc:
 #   - type: update
 #     key: 2008
-#     updates:
+#     values:
 #       SpellVisualID_1: 9900
 #   - type: update
 #     key: 20609
-#     updates:
+#     values:
 #       SpellVisualID_1: 9900
 #   - type: update
 #     key: 20610
-#     updates:
+#     values:
 #       SpellVisualID_1: 9900
 #   - type: update
 #     key: 20776
-#     updates:
+#     values:
 #       SpellVisualID_1: 9900
 #   - type: update
 #     key: 20777
-#     updates:
+#     values:
 #       SpellVisualID_1: 9900
 # #######################################################
 
@@ -184,37 +184,37 @@ Spell.dbc:
 # SpellVisualKit.dbc:
 #   - type: copy
 #     key: 193
-#     updates:
+#     values:
 #       Id: 9901
 #       WorldEffect: 2989
 
 # SpellVisual.dbc:
 #   - type: copy
 #     key: 41
-#     updates:
+#     values:
 #       Id: 9901
 #       PrecastKit: 9901
 
 # Spell.dbc:
 #   - type: update
 #     key: 7328
-#     updates:
+#     values:
 #       SpellVisualID_1: 9901
 #   - type: update
 #     key: 10322
-#     updates:
+#     values:
 #       SpellVisualID_1: 9901
 #   - type: update
 #     key: 10324
-#     updates:
+#     values:
 #       SpellVisualID_1: 9901
 #   - type: update
 #     key: 20772
-#     updates:
+#     values:
 #       SpellVisualID_1: 9901
 #   - type: update
 #     key: 20773
-#     updates:
+#     values:
 #       SpellVisualID_1: 9901
 # #######################################################
 
@@ -224,23 +224,23 @@ Spell.dbc:
 # Spell.dbc:
 #   - type: update
 #     key: 2006
-#     updates:
+#     values:
 #       SpellVisualID_1: 9901
 #   - type: update
 #     key: 2010
-#     updates:
+#     values:
 #       SpellVisualID_1: 9901
 #   - type: update
 #     key: 10880
-#     updates:
+#     values:
 #       SpellVisualID_1: 9901
 #   - type: update
 #     key: 10881
-#     updates:
+#     values:
 #       SpellVisualID_1: 9901
 #   - type: update
 #     key: 20770
-#     updates:
+#     values:
 #       SpellVisualID_1: 9901
 # #######################################################
 
@@ -248,11 +248,11 @@ Spell.dbc:
 Spell.dbc:
 #   - type: update
 #     key: 15208
-#     updates:
+#     values:
 #       ID: 152080
 #   - type: copy
 #     key: 46540
-#     updates:
+#     values:
 #       ID: 15208
 
   # - type: update
@@ -272,21 +272,21 @@ Spell.dbc:
 
 # - type: update
 #     key: 2120
-#     updates:
+#     values:
 #       ID: 201200
 #   - type: copy
 #     key: 52729
 #     # key: 51203
-#     updates:
+#     values:
 #       ID: 2120
 
 #   - type: update
 #     key: 2121
-#     updates:
+#     values:
 #       ID: 201201
 #   - type: copy
 #     key: 42037
-#     updates:
+#     values:
 #       ID: 2121
 
   # - type: update
@@ -352,18 +352,18 @@ Spell.dbc:
 #   #drain life, incantagos pre-stage
 #   - type: update
 #     key: 689
-#     updates:
+#     values:
 #       ID: 68900
 #   - type: copy
 #     key: 52011
-#     updates:
+#     values:
 #       ID: 689
 #   #rain of fire, incantagos aoe
 #   - type: update
 #     key: 5740
-#     updates:
+#     values:
 #       ID: 574000
 #   - type: copy
 #     key: 51182
-#     updates:
+#     values:
 #       ID: 5740

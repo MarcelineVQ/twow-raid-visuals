@@ -8,19 +8,19 @@
 # SpellVisualKit.dbc:
 #   - type: copy
 #     key: 668
-#     updates:
+#     values:
 #       Id: 8700
 #       HeadEffect: 2963
 #       ChestEffect: 1562
 # SpellVisual.dbc:
 #   - type: copy
 #     key: 870
-#     updates:
+#     values:
 #       Id: 8700
 #       StateKit: 8700
 # Spell.dbc:
 #   - type: update
 #     key: 12021
-#     updates:
+#     values:
 #       SpellVisualID_1: 8700
 ##################################################

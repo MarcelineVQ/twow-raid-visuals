@@ -21,7 +21,7 @@ SpellVisualKit.dbc:
 SpellVisual.dbc:
   - type: copy
     key: 7080
-    updates:
+    values:
       ID: 8500
       AreaKit: 8500
       AreaModel: 4905
@@ -31,7 +31,7 @@ SpellVisual.dbc:
 Spell.dbc:
   - type: update
     key: 25786 #toxic vapors, kri death
-    updates:
+    values:
       SpellVisualID_1: 8500
       Speed: 255.0 #any speed is required for HasMissle to use extra effect kits
 ##############################################
@@ -51,7 +51,7 @@ SpellVisualKit.dbc:
 SpellVisual.dbc:
   - type: copy
     key: 7409
-    updates:
+    values:
       ID: 8501
       StateKit: 221 #poison green
       AreaKit: 8501
@@ -61,7 +61,7 @@ SpellVisual.dbc:
 Spell.dbc:
   - type: update
     key: 25989 #toxin, cast by viscidus cloud npc
-    updates:
+    values:
       SpellVisualID_1: 8501
       DurationIndex: 1 # 10s
       Speed: 255.0
@@ -74,7 +74,7 @@ Spell.dbc:
 SpellVisualKit.dbc:
   - type: copy
     key: 854
-    updates:
+    values:
       ID: 8502
       BaseEffect: 4907  # 17y ring
       WorldEffect: 4801 # 10y X
@@ -82,14 +82,14 @@ SpellVisualKit.dbc:
 SpellVisual.dbc:
   - type: copy
     key: 7420
-    updates:
+    values:
       ID: 8502
       StateKit: 8502
 
 Spell.dbc:
   - type: update
     key: 804 # explode bug. companion spell mutate bug 802
-    updates:
+    values:
       SpellVisualID_1: 8502
 
 # ranges after teleport, not useful, just noise
@@ -118,13 +118,13 @@ Spell.dbc:
 # Spell.dbc:
 #   - type: update
 #     key: 799 # twins teleport, kel'nilash, indicate aggro radius and explosion radius
-#     updates:
+#     values:
 #       SpellVisualID_1: 8503
 
 # Spell.dbc:
 #   - type: update
 #     key: 800 # twins teleport, vek'lor, indicate aggro radius and explosion radius
-#     updates:
+#     values:
 #       SpellVisualID_1: 8503
 ###############################################
 
@@ -133,20 +133,20 @@ Spell.dbc:
 CreatureModelData.dbc: # use a lower profile invisble model so "head" is near ground
   - type: copy
     key: 1731
-    updates:
+    values:
       ID: 8608
       ModelName: Creature\InvisibleStalker\InvisibleStalkerNoName.mdx
 
 CreatureDisplayInfo.dbc:
   - type: update
     key: 15294
-    updates:
+    values:
       ModelID: 8608
 
 SpellVisualKit.dbc:
   - type: copy
     key: 6466
-    updates:
+    values:
       ID: 8608
       BaseEffect: 4908 #a 8y ring, model is 2.25x scale so it's about an 18y effect
       HeadEffect: 2994
@@ -154,14 +154,14 @@ SpellVisualKit.dbc:
 SpellVisual.dbc:
   - type: copy
     key: 7430
-    updates:
+    values:
       ID: 8608
       CastKit: 8608
 
 Spell.dbc:
   - type: update
     key: 26093 # quake
-    updates:
+    values:
       SpellVisualID_1: 8608
 #######################################
 
@@ -186,12 +186,12 @@ SpellVisualKit.dbc:
       BreathEffect: 623 #shadow precast
   - type: copy
     key: 252
-    updates:
+    values:
       Id: 8511
       LeftHandEffect: 287 #fire precast
   - type: copy
     key: 252
-    updates:
+    values:
       Id: 8510
       LeftHandEffect: 17 #shadow precast
 
@@ -228,12 +228,12 @@ SpellVisual.dbc:
   #     StateKit: 8512
   - type: copy
     key: 154
-    updates:
+    values:
       Id: 8511
       StateKit: 8511
   - type: copy
     key: 154
-    updates:
+    values:
       Id: 8510
       StateKit: 8510
 
@@ -244,11 +244,11 @@ Spell.dbc:
   #     SpellVisualID_1: 8518 # was 0
   - type: update
     key: 2834 # periodic thunderclap aura 2834
-    updates:
+    values:
       SpellVisualID_1: 8517 # was 0
   - type: update
     key: 9347 # periodic mortal strike aura 9347
-    updates:
+    values:
       SpellVisualID_1: 8516 # was 0
   # - type: update
   #   key: 25777 # thorns aura 25777 #already visible
@@ -256,23 +256,23 @@ Spell.dbc:
   #     SpellVisualID_1: 8515 # was 7460
   - type: update
     key: 2147 # mending aura 2147
-    updates:
+    values:
       SpellVisualID_1: 8514 # was 0
   - type: update
     key: 2148 # periodic shadow storm aura 2148
-    updates:
+    values:
       SpellVisualID_1: 8513 # was 0
   - type: update
     key: 812 # periodic mana burn aura 812
-    updates: # give a nice scary purple
+    values: # give a nice scary purple
       SpellVisualID_1: 561 # was 0
   - type: update
     key: 13022 # fire and arcane reflect 13022
-    updates: #give a reflection bubble effect
+    values: #give a reflection bubble effect
       SpellVisualID_1: 8511 #was 19
   - type: update
     key: 19595 # shadow and frost reflect 19595
-    updates: #give a reflection bubble effect
+    values: #give a reflection bubble effect
       SpellVisualID_1: 8510 #was 0
 ###############################################
 
@@ -284,7 +284,7 @@ Spell.dbc:
 SpellVisual.dbc:
   - type: update
     key: 5100 # add an actual coloring to poison charge 28431 visual
-    updates:
+    values:
       StateKit: 221
 ##########################################
 
@@ -294,7 +294,7 @@ SpellVisual.dbc:
 SpellVisualKit.dbc:
   - type: copy
     key: 114
-    updates:
+    values:
       ID: 8520
       LeftHandEffect: 2222
       RightHandEffect: 2222
@@ -302,14 +302,14 @@ SpellVisualKit.dbc:
 SpellVisual.dbc:
   - type: copy
     key: 2318
-    updates:
+    values:
       ID: 8520
       PrecastKit: 8520
 
 Spell.dbc:
   - type: update
     key: 28448 # shadow bolt volley
-    updates:
+    values:
       SpellVisualID_1: 8520
 ###########################################
 
@@ -322,11 +322,11 @@ Spell.dbc:
 Spell.dbc:
   - type: update
     key: 28059 #positive charge main buff
-    updates:
+    values:
       SpellVisualID_1: 6589
   - type: update
     key: 28084 #negative charge main buff
-    updates:
+    values:
       SpellVisualID_1: 6539
 ###########################################
 
@@ -335,7 +335,7 @@ Spell.dbc:
 SpellVisualKit.dbc:
   - type: copy
     key: 6591
-    updates:
+    values:
       ID: 8525
       CharParamOne_1: 1.0 #reduce blizzard shards from 15 to 1
       WorldEffect: 4981 #add a prehit animation, slightly speeds up players seeing the effect
@@ -343,7 +343,7 @@ SpellVisualKit.dbc:
 SpellVisual.dbc:
   - type: copy
     key: 7608
-    updates:
+    values:
       ID: 8525
       # StateKit: 668
       AreaModel: 4980 #7y orange circle
@@ -355,7 +355,7 @@ SpellVisual.dbc:
 Spell.dbc:
   - type: update
     key: 28547 #chill 28547
-    updates:
+    values:
       SpellVisualID_1: 8525
       Speed: 255.0
 ########################################

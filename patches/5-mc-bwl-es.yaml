@@ -13,21 +13,21 @@ SpellVisualKit.dbc:
 SpellVisual.dbc:
   - type: copy
     key: 781
-    updates:
+    values:
       ID: 8400
       StateKit: 8400
 
 Spell.dbc:
   - type: update
     key: 19695 #baron Inferno 19695
-    updates:
+    values:
       SpellVisualID_1: 8400
 
 # living bomb #
 SpellVisualKit.dbc:
   - type: copy
     key: 3351
-    updates:
+    values:
       ID: 8401
       HeadEffect: 2963
       ChestEffect: 1015
@@ -41,14 +41,14 @@ SpellVisualKit.dbc:
 SpellVisual.dbc:
   - type: copy
     key: 4486
-    updates:
+    values:
       ID: 8401
       StateKit: 8401
 
 Spell.dbc:
   - type: update
     key: 20475 #baron living bomb 20475
-    updates:
+    values:
       SpellVisualID_1: 8401
 ###################################
 
@@ -59,7 +59,7 @@ Spell.dbc:
 SpellVisualKit.dbc:
   - type: copy
     key: 60
-    updates:
+    values:
       ID: 8410
       BaseEffect: 4904 #flame ring, 7y before scaling
       # red coloring to self-desruct
@@ -72,14 +72,14 @@ SpellVisualKit.dbc:
 SpellVisual.dbc:
   - type: copy
     key: 963
-    updates:
+    values:
       ID: 8410
       PrecastKit: 8410
 
 Spell.dbc:
   - type: update
     key: 42037 #fire nova
-    updates:
+    values:
       SpellVisualID_1: 8410
 ###################################
 
@@ -90,7 +90,7 @@ Spell.dbc:
 SpellVisualKit.dbc:
   - type: copy
     key: 695 #flamestrike
-    updates:
+    values:
       ID: 8415
       WorldEffect: 4702 # 10y X
       # BaseEffect: 420 # 10y X
@@ -98,7 +98,7 @@ SpellVisualKit.dbc:
 SpellVisual.dbc:
   - type: copy
     key: 7970
-    updates:
+    values:
       ID: 8415
       AreaKit: 8415
       AreaModel: 4454 # 4702 # 7y, 8 yards claimed
@@ -112,11 +112,11 @@ SpellVisual.dbc:
 Spell.dbc:
   - type: update
     key: 52724 #zone1
-    updates:
+    values:
       SpellVisualID_1: 0
   - type: update
     key: 52729 #zone2
-    updates:
+    values:
       SpellVisualID_1: 8415
       Speed: 255.0
 ###################################
