@@ -33,6 +33,48 @@
 #       StateKit: 10001
 #       # CastKit: 10001
 
+# earthqake cast rank 3, 48308, visual 7976
+# earthquake all ranmk area effect, 51489, visual 7977
+
+SpellVisualEffectName.dbc:
+#   - type: insert
+#     key: 10000
+#     values:
+#       Name: OuroBase
+#       FileName: World\Kalimdor\Silithus\ActiveDoodads\SandWorm\SandWorm_RockBase.mdx
+#       SpecialAttachPoint: 0.0 # actually works, 1 is head I think, 0 is ground
+#       Scale: 1.0
+
+# SpellVisual.dbc:
+#   - type: update
+#     key: 7976
+#     updates:
+#       AreaModel: 10000
+
+Spell.dbc:
+  # - type: update
+    # key: 48308
+    # updates:
+      # SpellVisualID_1: 0
+
+# Spell.dbc:
+  # - type: update
+    # key: 51489
+    # updates:
+      # SpellVisualID_1: 0
+  # - type: update
+  #   key: 7977
+  #   updates:
+  #     AreaKit: 4980
+  #     SpellVisualID_1: 735
+
+# SpellVisual.dbc:
+#   - type: update
+#     key: 886
+#     updates:
+#       ID: 9000
+#       StateKit: 9001
+
 # SpellVisualKit.dbc:
 #   - type: copy
 #     key: 6426
@@ -74,7 +116,7 @@ Spell.dbc:
   # - type: update
   #   key: 51536
   #   updates:
-  #     SpellVisualID_1: 8601
+  #     SpellVisualID_1: 7976
   # - type: update
   #   key: 51526
   #   updates:
@@ -226,20 +268,26 @@ Spell.dbc:
   # - type: update
   #   key: 2120
   #   updates:
-  #     ID: 201200
-  # - type: copy
-  #   key: 51298
-  #   # key: 51203
-  #   updates:
-  #     ID: 2120
-  # - type: update
-  #   key: 2121
-  #   updates:
-  #     ID: 201201
-  # - type: copy
-  #   key: 52040
-  #   updates:
-  #     ID: 2121
+  #     SpellVisualID_1: 8415
+
+# - type: update
+#     key: 2120
+#     updates:
+#       ID: 201200
+#   - type: copy
+#     key: 52729
+#     # key: 51203
+#     updates:
+#       ID: 2120
+
+#   - type: update
+#     key: 2121
+#     updates:
+#       ID: 201201
+#   - type: copy
+#     key: 42037
+#     updates:
+#       ID: 2121
 
   # - type: update
   #   key: 172

@@ -2,7 +2,7 @@
 # silence a weird murloc sound glitch
 SoundEntries.dbc:
   - type: update
-    key: 8485 # baby murloc dane loop
+    key: 8485 # baby murloc dance loop
     updates:
       VolumeFloat: 0.0
 #####################################
@@ -60,6 +60,7 @@ SoundEntries.dbc:
       ID: 90001
       File_1: 2hMaceHitMetalShield1b.wav
       DirectoryBase: Sound\Item\Weapons\Mace2H
+      VolumeFloat: 1.3 #a bit quiet currently
 
 SpellVisualKit.dbc:
   - type: copy
@@ -93,3 +94,12 @@ Spell.dbc:
     updates:
       SpellVisualID_1: 9001
 ###################################
+
+### duck ############################
+# tried to switch from loop to various fidget timings to randomize the quack but duck has no fidgets
+CreatureSoundData.dbc:
+  - type: update
+    key: 5012
+    updates:
+      LoopSoundID: 0
+#####################################

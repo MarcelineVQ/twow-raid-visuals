@@ -148,6 +148,13 @@ SpellVisualEffectName.dbc:
       FileName: Spells\DangerZone_W10_S30_Flame.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
+  - type: insert
+    key: 4904
+    values:
+      Name: Incindus Nova
+      FileName: Spells\DangerZone_W7_S30_Flame.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
 
   - type: insert
     key: 4905

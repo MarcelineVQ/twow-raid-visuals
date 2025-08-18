@@ -48,15 +48,18 @@ The highlights are summarised below:
     - Lingering Arcanists indicate their Blizzard area of effect.  
     - Arcane Anomaly indicates the application range of its stacking debuff.  
 
-- **Other:**
+- **Sound:**
   - Silenced the looping Baby Murloc dance sound.  
-  - Quited Carvan Kodo footsteps.  
+  - Silenced the looping Duck quacks.  
+  - - Was unable to make them just quack randomly as they lack fidget animations.  
+  - Quieted Carvan Kodo footsteps.  
   - Gave Concussion Blow a different sound than Shield Slam.  
   - Gave Totemic Recall a different sound than totem placement.  
+
+- **Other:**
   - Removed obnoxious green tinting from Decaying Flesh debuff.  
 
 - **Credits:** These contributors did not ask to be credited but should be mentioned.  
-  - **Lhian** – `.wmo` edits adapted from his Karazhan performance patch.  
   - **Incantation / Fauna** – Major visual improvement to Anomalus soak zones.  
 
 ---

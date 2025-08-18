@@ -75,4 +75,6 @@ Spell.dbc:
 #       DurationIndex: 15 #5mins
 # #######################################################
 
-# see if you can affect hurricane translucency
+# todo see if you can affect hurricane translucency
+# todo check shadowguard for why it renders weird
+# todo check naxx tiny sword mobs?

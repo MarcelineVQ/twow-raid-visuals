@@ -52,6 +52,76 @@ Spell.dbc:
       SpellVisualID_1: 8401
 ###################################
 
+### incindis ##################
+# has probably 6x scaling on model
+
+# fire nova precast indication
+SpellVisualKit.dbc:
+  - type: copy
+    key: 60
+    updates:
+      ID: 8410
+      BaseEffect: 4904 #flame ring, 7y before scaling
+      # red coloring to self-desruct
+      CharProc_1: 13
+      CharParamZero_1: 16716055.0
+      CharParamOne_1: 3.5 # hold time
+      CharParamTwo_1: 0.5 # fade out time
+      # todo, fix texture edge bleed
+
+SpellVisual.dbc:
+  - type: copy
+    key: 963
+    updates:
+      ID: 8410
+      PrecastKit: 8410
+
+Spell.dbc:
+  - type: update
+    key: 42037 #fire nova
+    updates:
+      SpellVisualID_1: 8410
+###################################
+
+### thaurrisan ##################
+# essentially just doom'rel, 2x scaling
+
+# rune of power resizing
+SpellVisualKit.dbc:
+  - type: copy
+    key: 695 #flamestrike
+    updates:
+      ID: 8415
+      WorldEffect: 4702 # 10y X
+      # BaseEffect: 420 # 10y X
+
+SpellVisual.dbc:
+  - type: copy
+    key: 7970
+    updates:
+      ID: 8415
+      AreaKit: 8415
+      AreaModel: 4454 # 4702 # 7y, 8 yards claimed
+      # AreaModel: 0 # 7y, 8 yards claimed
+      HasMissile: 1 #disable secondary ground effect renderings
+      MissileModel: 1179
+      MissilePathType: 2
+
+# thaurrisan casts two zones with different id's at once for some reason
+# they do not both need to be shown!
+Spell.dbc:
+  - type: update
+    key: 52724 #zone1
+    updates:
+      SpellVisualID_1: 0
+  - type: update
+    key: 52729 #zone2
+    updates:
+      SpellVisualID_1: 8415
+      Speed: 255.0
+###################################
+
+
 ### blackwing warlock #####################
 # rof provided in rain_of_fire.yaml
 ###########################################
