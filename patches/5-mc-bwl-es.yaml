@@ -87,25 +87,24 @@ Spell.dbc:
 # essentially just doom'rel, 2x scaling
 
 # rune of power resizing
-SpellVisualKit.dbc:
+SpellVisualEffectName.dbc:
+  #new circles
   - type: copy
-    key: 695 #flamestrike
+    key: 4454
     values:
       ID: 8415
-      WorldEffect: 4702 # 10y X
-      # BaseEffect: 420 # 10y X
+      Name: Danger Zone 15y
+      FileName: Spells\DangerZone_W25_S13_Arcane.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
 
 SpellVisual.dbc:
   - type: copy
-    key: 7970
+    key: 7970 #must copy, anomalus uses this as well and as far as I know that one is accurate
     values:
       ID: 8415
-      AreaKit: 8415
-      AreaModel: 4454 # 4702 # 7y, 8 yards claimed
-      # AreaModel: 0 # 7y, 8 yards claimed
+      AreaModel: 8415
       HasMissile: 1 #disable secondary ground effect renderings
-      MissileModel: 1179
-      MissilePathType: 2
 
 # thaurrisan casts two zones with different id's at once for some reason
 # they do not both need to be shown!
@@ -118,7 +117,71 @@ Spell.dbc:
     key: 52729 #zone2
     values:
       SpellVisualID_1: 8415
-      Speed: 255.0
+      # Speed: 255.0
+
+# rune of combusion, in
+SpellVisualKit.dbc:
+  - type: copy
+    key: 235 #melt armor state
+    values:
+      ID: 8416
+      # HeadEffect: 297 #flame
+      HeadEffect: 212 #flame
+      BaseEffect: 1015 #flamewalk
+      CharProc_1: 13
+      CharParamZero_1: 16716055.0 # red
+      CharParamOne_1: 5.5 # hold time
+      CharParamTwo_1: 0.5 # fade out time
+
+SpellVisual.dbc:
+  - type: copy
+    key: 46 #melt armor
+    values:
+      ID: 8416
+      StateKit: 8416
+
+Spell.dbc:
+  - type: update
+    key: 52726 # rune of combusion, in
+    values:
+      SpellVisualID_1: 8416
+
+# rune of detonation, out
+SpellVisualKit.dbc:
+  - type: insert
+    # key: 695 #flamestrike
+    values:
+      ID: 8417
+      # WorldEffect: 4702 # 10y X
+      HeadEffect: 1544 #orb
+      # BaseEffect: 297 #flame
+
+      # HeadEffect: 401 #arcane hit
+      ChestEffect: 734 #flamewalk
+      # HeadEffect: 735 #flamewalk
+      BreathEffect: 735 #flamewalk
+      # BaseEffect: 1016 #flamewalk
+      BaseEffect: 168 #flamewalk
+      # CharProc_1: 13
+      # CharParamZero_1: 4066815.0
+      # CharParamZero_1: 3947775.0
+      # CharParamOne_1: 5.5 # hold time
+      # CharParamTwo_1: 0.5 # fade out time
+
+SpellVisual.dbc:
+  - type: copy
+    key: 2756
+    values:
+      ID: 8417
+      StateKit: 8417
+      # ImpactKit: 8420
+
+Spell.dbc:
+  - type: update
+    key: 52725 # rune of detonation, out
+    values:
+      SpellVisualID_1: 8417
+
 ###################################
 
 

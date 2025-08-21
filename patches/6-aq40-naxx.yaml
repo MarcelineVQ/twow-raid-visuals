@@ -67,6 +67,11 @@ Spell.dbc:
       Speed: 255.0
 ##############################################
 
+
+### Anubisath Guardian ##########################################
+# Explode provided in zg-aq20.yaml
+##################################################################
+
 ### twin emps #################################
 # bilzzard indicators provided in blizzard.yaml
 
@@ -130,26 +135,13 @@ Spell.dbc:
 
 ### ouro #################################
 # dirt mound
-CreatureModelData.dbc: # use a lower profile invisble model so "head" is near ground
-  - type: copy
-    key: 1731
-    values:
-      ID: 8608
-      ModelName: Creature\InvisibleStalker\InvisibleStalkerNoName.mdx
-
-CreatureDisplayInfo.dbc:
-  - type: update
-    key: 15294
-    values:
-      ModelID: 8608
-
 SpellVisualKit.dbc:
   - type: copy
     key: 6466
     values:
       ID: 8608
       BaseEffect: 4908 #a 8y ring, model is 2.25x scale so it's about an 18y effect
-      HeadEffect: 2994
+      WorldEffect: 2994 # popcorn
 
 SpellVisual.dbc:
   - type: copy

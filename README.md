@@ -9,9 +9,15 @@ The patches included in this repository adjust the visuals and sounds for severa
 The patches currently are based on twow `1.18.0` dbc's, simply change out the .dbc files in the `dbc/` folder to use other versions.  
 The highlights are summarised below:
 
-- **AQ20:** Captain Tuubid visibly marks the player targeted for Attack Command.  
+- **AQ20:**
+  - Captain Tuubid visibly marks the player targeted for Attack Command.  
+  - Captain Drenn indicates the radius of Lightning Cloud.  
+  - Anubisath Defenders indicate their Explosion range.  
 
-- **Molten Core:** Baron Geddon indicates the radius of his Inferno ability.  Living Bomb has a rough indication of area of effect.  
+- **Molten Core:**
+  - Baron Geddon indicates the radius of his Inferno ability.  Living Bomb has a rough indication of area of effect.  
+  - Incindus indicates the radius of his Fire Nova.  
+  - Sorcerer-Thane Thaurissan indicates his debuffs on the player.  Rescaled Rune of Power ground effect.  
 
 - **Blackwing Lair:** Warlocks and Spellbinders indicate the radius of their AoE damage.  
 
@@ -24,8 +30,9 @@ The highlights are summarised below:
     - Red weapon to indicate Mortal Strike.  
     - Shadow breath to indicate Shadow Volley.  
   - Lord Kri and Viscidus poison area of effects indicate their radius.  
+  - Anubisath Guardians indicate their Explosion range.  
   - Twin Emporer Blizzard and Bug Explosion indicate radius.  
-  - Ouro Dirt Mounts indicate their radius.  
+  - Ouro Dirt Mounds indicate their radius.  
 
 - **Naxxrams:**
   - Poison Charge now colors your character like other enemy poisons in the game do.  
@@ -39,8 +46,8 @@ The highlights are summarised below:
   - Incantagos Blizzard and Guided-Ley Beam have additional indication to show what area they affect.  
   - Anomalus soak zones have much improved visibility.  
   - Medivh Flamestrike indicates its area of effect. Corruption of Medivh has much stronger indication on your character.  
-  - Rupturan Flamestrikes indicate their area of effect.  Dirt Mount indicates its radius.  
-  - Sanv Tas'dal indicates the radius of his Overflowing hatred.  Netherwalkers, when visible in the first place, have improved visibility.  Arena has improved fps.  
+  - Rupturan Flamestrikes indicate their area of effect.  Dirt Mound indicates its radius.  
+  - Sanv Tas'dal indicates the radius of his Overflowing hatred.  Netherwalkers, when visible in the first place, have improved visibility.  
   - Mark of the Highlord decurse explosion given rough area of effect indication.  
   - Trash:
     - Karazhan Protectors indicate Spell Reflect with green coloring.  
@@ -57,7 +64,9 @@ The highlights are summarised below:
   - Gave Totemic Recall a different sound than totem placement.  
 
 - **Other:**
-  - Removed obnoxious green tinting from Decaying Flesh debuff.  
+  - Removed obnoxious green tinting from: Decaying Flesh debuff, Corrosive and Deadly Poison, Poison Spit pet attack.  
+  - Removed distracting stones from Earthquake.  
+  - Small tooltip fix for Spirit of the Ancients.  
 
 - **Credits:** These contributors did not ask to be credited but should be mentioned.  
   - **Incantation / Fauna** – Major visual improvement to Anomalus soak zones.  
@@ -99,8 +108,8 @@ Each change object must have a `type` field, which may be `update`, `insert` or 
 - **update** – Locate a row where `key_column` (default 0) matches `key`, then change the specified fields.
 - **insert** – Create a new row with all columns initialised to zero.  Set values from the `values` mapping.  
 You can include `key` and `key_column` to assign a primary key unless it is supplied in `values`.
-- **copy** – Duplicate an existing row identified by `key`/`key_column`, then apply the `updates` mapping.  
-If you omit the primary key from `updates`, it is inherited from the original, so you should normally include a new `ID`.
+- **copy** – Duplicate an existing row identified by `key`/`key_column`, then apply the `values` mapping.  
+If you omit the primary key from `values`, it is inherited from the original, so you should normally include a new `ID`.
 
 Field identifiers may be either numeric strings (zero‑based column numbers) or names defined in the schema.  
 Values may be integers, strings or floats; floats are converted to their 32‑bit representations on write.

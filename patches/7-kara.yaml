@@ -120,7 +120,7 @@ SpellVisualKit.dbc:
       # red coloring to self-desruct
       CharProc_1: 13
       CharParamZero_1: 16716055.0
-      CharParamOne_1: 10.0 # hold time
+      CharParamOne_1: 6.0 # hold time
       CharParamTwo_1: 1.0 # fade out time
       # todo, fix texture edge bleed
 

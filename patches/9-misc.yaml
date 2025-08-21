@@ -1,9 +1,5 @@
 #foo 8800 base
 
-# todo remove or reduce the visual effect of corrosive poison on mobs
-# todo determine if snake/scorpid pet poison does this as well
-# they do
-
 #######################################################
 # remove the obnoxious green effect from Decaying Flesh
 #######################################################
@@ -26,23 +22,64 @@ Spell.dbc:
       SpellVisualID_1: 8800
 #######################################################
 
+# todo, check dissolvent
+#######################################################
+# remove the tinting for deadly and corrosive poisons, very noisy in raid
+SpellVisual.dbc:
+  - type: update
+    key: 5100
+    values:
+      StateKit: 0
+#######################################################
 
-# corehound scale
+#######################################################
+# remove the tinting for pet poison spit, use same visual as scorpid
+Spell.dbc:
+  - type: update
+    key: 46271 #poison spit 1
+    values:
+      SpellVisualID_1: 19
+  - type: update
+    key: 46272 #poison spit 2
+    values:
+      SpellVisualID_1: 19
+  - type: update
+    key: 46273 #poison spit 3
+    values:
+      SpellVisualID_1: 19
+#######################################################
 
-# aquatic miasma, blue
+#######################################################
+# remove the rocks from earthquake
+SpellVisualEffectName.dbc:
+  - type: copy
+    key: 4464
+    values:
+      ID: 8801
+      FileName: Spells\DangerZone_W10_S10_EarthQuake.m2
+      
+SpellVisual.dbc:
+  - type: update
+    key: 7976 #earthquake
+    values:
+      AreaModel: 8801
 
-# hunter's mark
-# 3239	0	478	0	2950	0	0	0	0	1	0	0	0	0	0	0
+#######################################################
 
-# SpellVisualEffectName.dbc:
-#   - type: update
-#     key: 1562
-#     values:
-#       Scale: 3.0
-#   - type: update
-#     key: 1563
-#     values:
-#       Scale: 3.0
+### Spirit of the Ancients ############################
+# just a small tooltip fix. #todo, remove this if devs fix it
+Spell.dbc:
+  - type: update
+    key: 53219
+    values:
+      AuraDescription_lang_0: Generating $/10;s1 Rage per second.
+  - type: update
+    key: 53220
+    values:
+      AuraDescription_lang_0: Generating $/10;s1 Rage per second.
+#######################################################
+
+
 
 # todo, brainwashers should have a light beam
 # todo, mailboxes should have a light beam

@@ -184,6 +184,13 @@ SpellVisualEffectName.dbc:
       FileName: Spells\DangerZone_W8_S30.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
+  - type: insert
+    key: 4909
+    values:
+      Name: Anubisath Explosion 4.5y
+      FileName: Spells\DangerZone_W4_S7_Flame.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
 
   - type: insert
     key: 4910

@@ -8,3 +8,63 @@ SpellVisual.dbc:
     values:
       StateKit: 6372
 ##################################################
+
+### Captain Drenn ################################
+# Lightning Cloud radius
+SpellVisualKit.dbc:
+  - type: copy
+    key: 700
+    values:
+      ID: 8300
+      WorldEffect: 328 #cloud moved to impact site
+SpellVisualKit.dbc:
+  - type: copy
+    key: 700
+    values:
+      ID: 8301
+      WorldEffect: 328 #cloud moved to impact site
+
+SpellVisual.dbc:
+  - type: copy
+    key: 125
+    values:
+      ID: 8300
+      StateKit: 8301
+      HasMissile: 1
+      MissileModel: 157
+      HasArea: 1
+      AreaKit: 8300
+      AreaModel: 4708 #23y
+
+Spell.dbc:
+  - type: update
+    key: 26550 # lightning cloud
+    values:
+      SpellVisualID_1: 8300
+      Speed: 255.0
+
+##################################################
+
+### Anubisath Defender / Guardian ################################
+# Explode radius
+SpellVisualKit.dbc:
+  - type: copy
+    key: 6466
+    values:
+      ID: 8305
+      BaseEffect: 4909
+
+SpellVisual.dbc:
+  - type: copy
+    key: 103
+    values:
+      ID: 8305
+      CastKit: 8305
+
+Spell.dbc:
+  - type: update
+    key: 25698 # explode
+    values:
+      SpellVisualID_1: 8305
+
+##################################################

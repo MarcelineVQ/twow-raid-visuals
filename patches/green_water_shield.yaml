@@ -15,6 +15,9 @@
 # 13: color where arg1 is hold time and arg2 is fade out time. useful for fading state-effects
 # 14: opacity, multiple parameters
 
+# 9, if arg 1 is 2.0 it's lightning strikes, arg2 is the count
+# 9, if art 1 is 4.0 is choses death and decay effect wherr arg2 is the count of bubbles
+
 # combine procedure 1 and a color from schema/spell_colors.json to colorize a stateffect
 
 # 8 really is weapon trails, this is a red trail, args unknown, 10000 possibly duration
@@ -45,17 +48,23 @@ SpellVisualEffectName.dbc:
 #       SpecialAttachPoint: 0.0 # actually works, 1 is head I think, 0 is ground
 #       Scale: 1.0
 
-# SpellVisual.dbc:
+##################################
+# shadowguard weirdness seems to be a model texture property
+# 834	Unholy Shield State Base	Spells\ShadowShield_State_Base.mdx	0	0
+# SpellVisualKit.dbc:
 #   - type: update
-#     key: 7976
+#     key: 1186
 #     values:
-#       AreaModel: 10000
+#       KitType: 0
+#       # ID: 90000
+#       # AreaModel: 10000
 
-Spell.dbc:
-  # - type: update
-    # key: 48308
-    # updates:
-      # SpellVisualID_1: 0
+# Spell.dbc:
+#   - type: update
+#     key: 51526
+#     values:
+#       SpellVisualID_1: 2476
+##################################
 
 # Spell.dbc:
   # - type: update
@@ -115,28 +124,32 @@ Spell.dbc:
 Spell.dbc:
   # - type: update
   #   key: 51536
-  #   updates:
-  #     SpellVisualID_1: 7976
+  #   values:
+  #     SpellVisualID_1: 8416
   # - type: update
   #   key: 51526
-  #   updates:
-  #     SpellVisualID_1: 875
+  #   values:
+  #     SpellVisualID_1: 8417
 
 # aoe tests on mage, blizz rank 1,2,flamestrike rank 1
-# Spell.dbc:
-#   - type: update
-#     key: 10
-#     values:
-#       SpellVisualID_1: 8000
-#   - type: update
-#     key: 6141
-#     values:
-#       SpellVisualID_1: 8100
-#   - type: update
-#     key: 2120
-#     values:
-#       SpellVisualID_1: 8200
-# aoe tests on mage, blizz rank 1,2,flamestrike rank 1
+Spell.dbc:
+  # - type: update
+  #   key: 10
+  #   values:
+  #     SpellVisualID_1: 70
+  # - type: update
+  #   key: 6141
+  #   values:
+  #     SpellVisualID_1: 2255
+  # - type: update
+  #   key: 2120
+  #   values:
+  #     SpellVisualID_1: 8415
+  # - type: update
+  #   key: 2121
+  #   values:
+  #     SpellVisualID_1: 7970
+# aoe tests on mage, blizz rank 1,2,flamestrike rank 1,2
 
 # #######################################################
 # # ancestral spirit
@@ -243,6 +256,24 @@ Spell.dbc:
 #     values:
 #       SpellVisualID_1: 9901
 # #######################################################
+
+# SpellVisual.dbc:
+#   - type: copy
+#     key: 7362
+#     values:
+#       Id: 100001
+#       StateKit: 215
+#   - type: copy
+#     key: 7362
+#     values:
+#       Id: 100002
+#       StateKit: 107
+
+# Spell.dbc:
+#   - type: update
+#     key: 51536
+#     values:
+#       SpellVisualID_1: 19
 
 # replace spells temporarily for testing
 Spell.dbc:

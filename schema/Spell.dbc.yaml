@@ -128,23 +128,24 @@ fields:
   - SpellIconID
   - ActiveIconID
   - SpellPriority
-  - Name_lang_0
+  - Name_lang_0 #enUs
   - Name_lang_1
   - Name_lang_2
-  - Name_lang_3
-  - Name_lang_4
+  - Name_lang_3 #de
+  - Name_lang_4 #cn
   - Name_lang_5
-  - Name_lang_6
-  - Name_lang_7
-  - Name_lang_8
-  - Name_lang_9
-  - Name_lang_10
-  - Name_lang_11
-  - Name_lang_12
-  - Name_lang_13
-  - Name_lang_14
-  - Name_lang_15
-  - Name_lang_16
+  - Name_lang_6 #es1?
+  - Name_lang_7 #es2?
+  - Name_lang_Mask
+  # - Name_lang_8
+  # - Name_lang_9
+  # - Name_lang_10
+  # - Name_lang_11
+  # - Name_lang_12
+  # - Name_lang_13
+  # - Name_lang_14
+  # - Name_lang_15
+  # - Name_lang_16
   - NameSubtext_lang_0
   - NameSubtext_lang_1
   - NameSubtext_lang_2
@@ -153,15 +154,16 @@ fields:
   - NameSubtext_lang_5
   - NameSubtext_lang_6
   - NameSubtext_lang_7
-  - NameSubtext_lang_8
-  - NameSubtext_lang_9
-  - NameSubtext_lang_10
-  - NameSubtext_lang_11
-  - NameSubtext_lang_12
-  - NameSubtext_lang_13
-  - NameSubtext_lang_14
-  - NameSubtext_lang_15
-  - NameSubtext_lang_16
+  - NameSubtext_lang_Mask
+  # - NameSubtext_lang_8
+  # - NameSubtext_lang_9
+  # - NameSubtext_lang_10
+  # - NameSubtext_lang_11
+  # - NameSubtext_lang_12
+  # - NameSubtext_lang_13
+  # - NameSubtext_lang_14
+  # - NameSubtext_lang_15
+  # - NameSubtext_lang_16
   - Description_lang_0
   - Description_lang_1
   - Description_lang_2
@@ -170,15 +172,16 @@ fields:
   - Description_lang_5
   - Description_lang_6
   - Description_lang_7
-  - Description_lang_8
-  - Description_lang_9
-  - Description_lang_10
-  - Description_lang_11
-  - Description_lang_12
-  - Description_lang_13
-  - Description_lang_14
-  - Description_lang_15
-  - Description_lang_16
+  - Description_lang_Mask
+  # - Description_lang_8
+  # - Description_lang_9
+  # - Description_lang_10
+  # - Description_lang_11
+  # - Description_lang_12
+  # - Description_lang_13
+  # - Description_lang_14
+  # - Description_lang_15
+  # - Description_lang_16
   - AuraDescription_lang_0
   - AuraDescription_lang_1
   - AuraDescription_lang_2
@@ -187,15 +190,16 @@ fields:
   - AuraDescription_lang_5
   - AuraDescription_lang_6
   - AuraDescription_lang_7
-  - AuraDescription_lang_8
-  - AuraDescription_lang_9
-  - AuraDescription_lang_10
-  - AuraDescription_lang_11
-  - AuraDescription_lang_12
-  - AuraDescription_lang_13
-  - AuraDescription_lang_14
-  - AuraDescription_lang_15
-  - AuraDescription_lang_16
+  - AuraDescription_lang_Mask
+  # - AuraDescription_lang_8
+  # - AuraDescription_lang_9
+  # - AuraDescription_lang_10
+  # - AuraDescription_lang_11
+  # - AuraDescription_lang_12
+  # - AuraDescription_lang_13
+  # - AuraDescription_lang_14
+  # - AuraDescription_lang_15
+  # - AuraDescription_lang_16
   - ManaCostPct
   - StartRecoveryCategory
   - StartRecoveryTime
