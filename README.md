@@ -68,6 +68,13 @@ The highlights are summarised below:
   - Gave Concussion Blow a different sound than Shield Slam.  
   - Gave Totemic Recall a different sound than totem placement.  
 
+- **Geometry:**
+  - Covered a pitfall on the ramp out of the magma in Blackrock Mountain.
+  - Molten Core: Added geometry for players to rest on when climbing back up after being knocked off Thaurissan's platform.
+  - Karazhan: Various changes, mainly better stair geometry to prevent players falling off.
+  - Sanv arena: Players of all sizes can now walk through the side fabric of the arena.
+  - Durotar to Kargath zeppelin: Removed a pitfall when boarding.
+
 - **Other:**
   - Removed obnoxious green tinting from: Decaying Flesh debuff, Corrosive and Deadly Poison, Poison Spit pet attack, Gift of Arthas.  
   - Removed distracting stones from Earthquake.  
