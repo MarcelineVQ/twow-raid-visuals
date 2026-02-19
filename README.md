@@ -20,7 +20,7 @@ The highlights are summarised below:
   - Golem Twins indicate Molten Bulwark.  
   - Sorcerer-Thane Thaurissan
     - Indicates his rune debuffs on the player.  
-    - Rescaled Rune of Power ground effect.   
+    - Rescaled Rune of Power ground effect.  
     - Changed Rune of Power icon to be distinct from Rune of Detonation.  
 
 - **Blackwing Lair:** Warlocks and Spellbinders indicate the radius of their AoE damage.  
@@ -61,19 +61,17 @@ The highlights are summarised below:
 
 - **Sound:**
   - Silenced the looping Baby Murloc dance sound.  
-  - Silenced the looping Duck quacks.  
-  - - Was unable to make them just quack randomly as they lack fidget animations.  
   - Quieted Carvan Kodo footsteps.  
   - Quieted Repair Bot movement.  
   - Gave Concussion Blow a different sound than Shield Slam.  
   - Gave Totemic Recall a different sound than totem placement.  
 
 - **Geometry:**
-  - Covered a pitfall on the ramp out of the magma in Blackrock Mountain.
-  - Molten Core: Added geometry for players to rest on when climbing back up after being knocked off Thaurissan's platform.
-  - Karazhan: Various changes, mainly better stair geometry to prevent players falling off.
-  - Sanv arena: Players of all sizes can now walk through the side fabric of the arena.
-  - Durotar to Kargath zeppelin: Removed a pitfall when boarding.
+  - Adjusted pitfall on the ramp out of the magma in Blackrock Mountain.  
+  - Molten Core: Added geometry for players to rest on when climbing back up after being unfairly knocked off Thaurissan's platform.  
+  - Tower of Karazhan: Various changes, mainly better stair geometry to prevent players falling off. Restored entrance model as the TW one was a broken import.  
+  - Sanv arena: Players of all sizes can now walk through the side fabric of the arena.  
+  - Durotar to Kargath zeppelin: Removed a pitfalls when boarding.  
 
 - **Other:**
   - Removed obnoxious green tinting from: Decaying Flesh debuff, Corrosive and Deadly Poison, Poison Spit pet attack, Gift of Arthas.  
