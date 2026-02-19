@@ -31,10 +31,3 @@ Spell.dbc:
     values:
       SpellVisualID_1: 8100
       Speed: 255.0
-
-# todo for some reason dragging people in raid frame drops frames bad fr me, not sure when that started
-
-# todo make signups
-
-# rupturan sizes were perrrrfect, maybe a tiny bit wider on smaller adds, anomaly needs changing
-# rupturan affects faded a little fast

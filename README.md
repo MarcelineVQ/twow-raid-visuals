@@ -79,8 +79,9 @@ The highlights are summarised below:
   - Removed transparancy from Reality Fracture.  
   - Small tooltip fix for Spirit of the Ancients.  
 
-- **Credits:** These contributors did not ask to be credited but should be mentioned.  
-  - **Incantation / Fauna** – Major visual improvement to Anomalus soak zones.  
+- **Credits:** These contributors did not ask to be credited but should be mentioned.
+  - **Incantation / Fauna** – Major visual improvement to Anomalus soak zones.
+  - **Any custom assets in this project are entirely fair use and do not need credit.**
 
 ---
 ## What this tool does
