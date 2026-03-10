@@ -1,0 +1,3 @@
+## Title: Twow Raid Visuals
+## Version: 1.4.8
+## Website: https://github.com/MarcelineVQ/twow-raid-visuals
