@@ -103,11 +103,12 @@ Spell.dbc:
 ###################################
 
 # turns out these don't spam too much
+# still annoying
 ### duck ############################
 # tried to switch from loop to various fidget timings to randomize the quack but duck has no fidgets
-# CreatureSoundData.dbc:
-#   - type: update
-#     key: 5012
-#     values:
-#       LoopSoundID: 0
-#####################################
+CreatureSoundData.dbc:
+  - type: update
+    key: 5012
+    values:
+      LoopSoundID: 0
+
