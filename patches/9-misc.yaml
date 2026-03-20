@@ -103,45 +103,12 @@ Spell.dbc:
       SpellVisualID_1: 8803
 #######################################################
 
-### Spirit of the Ancients ############################
-# just a small tooltip fix. #todo, remove this if devs fix it
-# Spell.dbc:
-#   - type: update
-#     key: 53219
-#     values:
-#       AuraDescription_lang_0: Generating $/10;s1 Rage per second.
-#   - type: update
-#     key: 53220
-#     values:
-#       AuraDescription_lang_0: Generating $/10;s1 Rage per second.
 #######################################################
-
-# #######################################################
-# # mailbox
-# #######################################################
-# SpellVisualKit.dbc:
-#   - type: copy
-#     key: 6448
-#     values:
-#       Id: 8805
-#       WorldEffect: 2989
-
-# SpellVisual.dbc:
-#   - type: copy
-#     key: 88
-#     values:
-#       Id: 8805
-#       CastKit: 8805
-#       Flags: 2
-
+# guild teleport casting kit - they added an animation anyway
+#######################################################
 # Spell.dbc:
 #   - type: update
-#     key: 45513
+#     key: 46010 #teleport to guild house
 #     values:
-#       SpellVisualID_1: 8805
-#       DurationIndex: 15 #5mins
-# #######################################################
-
-# todo see if you can affect hurricane translucency
-# todo check shadowguard for why it renders weird. it's the model itself
-# check out ghostwolf circular effect
+#       SpellVisualID_1: 2936 #holy light
+#######################################################

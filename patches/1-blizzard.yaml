@@ -1,20 +1,20 @@
-#foo 8000 base
+#foo 8900 base
 
 SpellVisualKit.dbc:
   - type: copy
     key: 609
     values:
-      ID: 8000
+      ID: 8900
       WorldEffect: 4800 #add a prehit animation, slightly speeds up players seeing the effect
 
 SpellVisual.dbc:
   - type: copy
     key: 259
     values:
-      ID: 8000
+      ID: 8900
       StateKit: 668
       AreaModel: 4920
-      AreaKit: 8000
+      AreaKit: 8900
       HasMissile: 1 #disable secondary ground effect renderings
       MissileModel: 234
       # MissileDestinationAttachment: 2
@@ -24,15 +24,15 @@ Spell.dbc:
   - type: update
     key: 51180 #incantagos(51180)
     values:
-      SpellVisualID_1: 8000
+      SpellVisualID_1: 8900
       Speed: 255.0 #speed determines missile speed, and thus when the prehit occurs
   - type: update
     key: 57657 #arcanist(57657)
     values:
-      SpellVisualID_1: 8000
+      SpellVisualID_1: 8900
       Speed: 255.0
   - type: update
     key: 26607 #vek'lor(26607)
     values:
-      SpellVisualID_1: 8000
+      SpellVisualID_1: 8900
       Speed: 255.0
