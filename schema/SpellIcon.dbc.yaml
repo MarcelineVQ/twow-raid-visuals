@@ -1,0 +1,7 @@
+# Default schema for SpellIcon.dbc (WoW 1.12.1 5875)
+# Derived from WDBXEditor Classic 1.12.1 definitions.  This table
+# describes how spells are visualised; fields correspond to the DBC
+# columns in order.
+fields:
+  - ID
+  - TextureFilename

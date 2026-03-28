@@ -211,6 +211,22 @@ Spell.dbc:
 ###################################
 
 
+### Broodcommander Axelus ################################
+# Burning Chains - replace generic immolate icon with
+# fiery chain links icon
+SpellIcon.dbc:
+  - type: insert
+    key: 3000
+    values:
+      ID: 3000
+      TextureFilename: Interface\Icons\Spell_BurningChains
+Spell.dbc:
+  - type: update
+    key: 47411
+    values:
+      SpellIconID: 3000
+###########################################
+
 ### blackwing warlock #####################
 # rof provided in rain_of_fire.yaml
 ###########################################

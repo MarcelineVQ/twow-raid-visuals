@@ -23,7 +23,9 @@ The highlights are summarised below:
     - Rescaled Rune of Power ground effect.  
     - Changed Rune of Power icon to be distinct from Rune of Detonation.  
 
-- **Blackwing Lair:** Warlocks and Spellbinders indicate the radius of their AoE damage.  
+- **Onyxia:** Burning Chains now has a proper fiery chains icon.
+
+- **Blackwing Lair:** Warlocks and Spellbinders indicate the radius of their AoE damage.
 
 - **AQ 40:**
   - Anubisath Sentinels have additional visual cues to help mageless compositions.  
@@ -61,6 +63,7 @@ The highlights are summarised below:
 
 - **Sound:**
   - Silenced the looping Baby Murloc dance sound.  
+  - Silenced the annoying duck quack loop.  
   - Quieted Carvan Kodo footsteps.  
   - Quieted Repair Bot movement.  
   - Gave Concussion Blow a different sound than Shield Slam.  
