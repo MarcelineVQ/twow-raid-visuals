@@ -110,3 +110,11 @@ CreatureSoundData.dbc: #re-enabled, he's too goddamn annoying
     values:
       LoopSoundID: 0
 #####################################
+
+### Moth Buzzing ###################
+SoundEntries.dbc:
+  - type: update
+    key: 4594 # SilithidWaspLoop
+    values:
+      VolumeFloat: 0.0
+#####################################
