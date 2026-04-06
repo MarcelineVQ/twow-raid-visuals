@@ -72,6 +72,13 @@ SpellVisualEffectName.dbc:
       FileName: Spells\DangerZone_W12_S30.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
+  - type: insert
+    key: 4710
+    values:
+      Name: Danger Zone 18y
+      FileName: Spells\DangerZone_W18_S30.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
 
   - type: insert
     key: 4750

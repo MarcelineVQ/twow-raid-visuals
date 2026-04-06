@@ -243,7 +243,7 @@ SpellVisualKit.dbc:
     key: 653
     values:
       ID: 8606
-      BaseEffect: 4701 # 15y ring, unsure of exact extent. spell data claims 10y but that seems too small to me
+      BaseEffect: 4710 # 18y ring
 
 SpellVisual.dbc:
   - type: copy

@@ -212,8 +212,7 @@ Spell.dbc:
 
 
 ### Broodcommander Axelus ################################
-# Burning Chains - replace generic immolate icon with
-# fiery chain links icon
+# Burning Chains - replace generic icons with fiery chain links
 SpellIcon.dbc:
   - type: insert
     key: 3000
@@ -222,7 +221,7 @@ SpellIcon.dbc:
       TextureFilename: Interface\Icons\Spell_BurningChains
 Spell.dbc:
   - type: update
-    key: 47411
+    key: 47406 # searing chains (belt icon)
     values:
       SpellIconID: 3000
 ###########################################

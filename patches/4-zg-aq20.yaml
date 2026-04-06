@@ -68,3 +68,31 @@ Spell.dbc:
       SpellVisualID_1: 8305
 
 ##################################################
+
+
+### Timbermaw Hold ################################
+#foo 8350 base
+
+# icicle crash with icy bolt missile
+SpellVisualEffectName.dbc:
+  - type: insert
+    key: 8350
+    values:
+      ID: 8350
+      Name: DeathBolt Ice Missile
+      FileName: Spells\DeathBolt_Ice.m2
+      Scale: 1.0
+
+SpellVisual.dbc:
+  - type: copy
+    key: 7947 # icicle crash
+    values:
+      ID: 8350
+      MissileModel: 8350 # our icy recolor
+
+Spell.dbc:
+  - type: update
+    key: 34722 # icicle crash
+    values:
+      SpellVisualID_1: 8350
+##################################################

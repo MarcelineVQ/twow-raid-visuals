@@ -112,3 +112,19 @@ Spell.dbc:
 #     values:
 #       SpellVisualID_1: 2936 #holy light
 #######################################################
+
+#######################################################
+# Thundercall - the storm area effect is too obnoxious,
+# replace with thunderclap's ground shockwave
+SpellVisual.dbc:
+  - type: copy
+    key: 125 # thundercall
+    values:
+      ID: 8804
+      AreaModel: 349 # thunderclap ground shockwave
+Spell.dbc:
+  - type: update
+    key: 52872 # thundercall
+    values:
+      SpellVisualID_1: 8804
+#######################################################
