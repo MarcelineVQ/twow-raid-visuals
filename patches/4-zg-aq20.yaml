@@ -120,6 +120,33 @@ Spell.dbc:
       SpellVisualID_1: 8354
 ##################################################
 
+### Withered Defiling (52796) Withermaw Defiler ##
+# tint afflicted target bright green and show a 12y poison radius ring
+SpellVisualKit.dbc:
+  - type: copy
+    key: 288 # original poison state kit
+    values:
+      ID: 8355
+      BaseEffect: 4713 # 12y jagged ring
+      CharProc_1: 1
+      CharParamZero_1: 1199505408 # pure bright green (0x00FF00)
+      CharParamOne_1: 2.0
+      CharParamTwo_1: 2.0
+
+SpellVisual.dbc:
+  - type: copy
+    key: 139 # original poison cloud visual
+    values:
+      ID: 8355
+      StateKit: 8355
+
+Spell.dbc:
+  - type: update
+    key: 52796 # withered defiling
+    values:
+      SpellVisualID_1: 8355
+##################################################
+
 ### Dream Fever (34772) ##########################
 # highlord's curse style explosion, retinted bright green poison
 # 12y ring to match "nearby" spread on dispel

@@ -61,6 +61,13 @@ The highlights are summarised below:
     - Lingering Arcanists indicate their Blizzard area of effect.  
     - Arcane Anomaly indicates the application range of its stacking debuff.  
 
+- **Timbermaw Hold:**
+  - Loktanag's Infected Secretion indicates its radius.  
+  - Xavian Image's Dream Fever indicates its spread range.  
+  - Rotgrowl's Volley of Arrows indicates its radius.  
+  - Withermaw Defiler's Poison Cloud and Withered Defiling indicate their range
+  - Defiler poison clouds indicate their radius.  
+
 - **Sound:**
   - Silenced the looping Baby Murloc dance sound.  
   - Silenced the annoying duck quack loop.  

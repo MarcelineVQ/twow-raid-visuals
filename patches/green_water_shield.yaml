@@ -1,1 +1,9 @@
 #foo 10000 base
+
+### test: withered defiling on water shield ######
+# Spell.dbc:
+#   - type: update
+#     key: 51536 # water shield r5
+#     values:
+#       SpellVisualID_1: 8355
+##################################################
