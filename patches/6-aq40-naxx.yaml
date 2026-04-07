@@ -24,7 +24,7 @@ SpellVisual.dbc:
     values:
       ID: 8500
       AreaKit: 8500
-      AreaModel: 4905
+      AreaModel: 4714 # 20y kri jagged
       MissileModel: 675 # avoids launching a empty box
       HasMissile: 1 #disable secondary ground effect renderings
 
@@ -41,7 +41,7 @@ SpellVisualKit.dbc:
   - type: insert
     key: 8501
     values:
-      BaseEffect: 4906 #12y white, can't color a WorldEffect
+      BaseEffect: 4713 #12y jagged, can't color a WorldEffect
       WorldEffect: 2968
       CharProc_1: 1
       CharParamZero_1: 1217603104 # green
@@ -81,8 +81,11 @@ SpellVisualKit.dbc:
     key: 854
     values:
       ID: 8502
-      BaseEffect: 4907  # 17y ring
+      BaseEffect: 4715  # 17y jagged ring
       WorldEffect: 4801 # 10y X
+      CharProc_1: 1
+      CharParamZero_1: 16716055.0 # red tint
+      CharParamOne_1: 1.0
 
 SpellVisual.dbc:
   - type: copy

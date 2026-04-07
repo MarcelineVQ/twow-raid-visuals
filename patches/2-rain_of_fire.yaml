@@ -31,3 +31,8 @@ Spell.dbc:
     values:
       SpellVisualID_1: 8100
       Speed: 255.0
+  - type: update
+    key: 41372 #selenaxx foulheart rain of destruction
+    values:
+      SpellVisualID_1: 8100
+      Speed: 255.0

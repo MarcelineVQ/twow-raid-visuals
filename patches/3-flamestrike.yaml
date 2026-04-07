@@ -69,7 +69,7 @@ SpellVisual.dbc:
     values:
       ID: 8211
       StateKit: 668
-      AreaKit: 8200
+      AreaKit: 8201 # 5y X
       AreaModel: 4910 # 20y, 12s, spelldata claims 10y though
       HasMissile: 1 #disable secondary ground effect renderings
       MissileModel: 1179

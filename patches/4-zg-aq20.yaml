@@ -70,29 +70,136 @@ Spell.dbc:
 ##################################################
 
 
-### Timbermaw Hold ################################
-#foo 8350 base
-
-# icicle crash with icy bolt missile
+### Infected Secretion (52813) ###################
+# 10y radius - dual quad model overlays acid burn with danger zone marker
 SpellVisualEffectName.dbc:
   - type: insert
-    key: 8350
+    key: 8353
     values:
-      ID: 8350
-      Name: DeathBolt Ice Missile
-      FileName: Spells\DeathBolt_Ice.m2
+      ID: 8353
+      Name: Infected Secretion Marked
+      FileName: Spells\InfectedSecretion_Marked.m2
       Scale: 1.0
 
 SpellVisual.dbc:
   - type: copy
-    key: 7947 # icicle crash
+    key: 7997
     values:
-      ID: 8350
-      MissileModel: 8350 # our icy recolor
+      ID: 8353
+      AreaModel: 8353
 
 Spell.dbc:
   - type: update
-    key: 34722 # icicle crash
+    key: 52813 # infected secretion
     values:
-      SpellVisualID_1: 8350
+      SpellVisualID_1: 8353
+##################################################
+
+### Volley of Arrows (49047) Rotgrowl ############
+# spell data claims 8y but actual in-game radius is larger,
+# using 12y for now. verify in game and adjust if needed.
+# TODO: custom arrow texture
+SpellVisualKit.dbc:
+  - type: copy
+    key: 3229 # original volley of arrows area kit
+    values:
+      ID: 8354
+      WorldEffect: 4709 # 12y ground indicator (TODO: arrow texture)
+
+SpellVisual.dbc:
+  - type: copy
+    key: 3300 # original volley of arrows visual
+    values:
+      ID: 8354
+      AreaKit: 8354
+
+Spell.dbc:
+  - type: update
+    key: 49047 # volley of arrows
+    values:
+      SpellVisualID_1: 8354
+##################################################
+
+### Dream Fever (34772) ##########################
+# highlord's curse style explosion, retinted bright green poison
+# 12y ring to match "nearby" spread on dispel
+SpellVisualKit.dbc:
+  - type: copy
+    key: 653
+    values:
+      ID: 8352
+      BaseEffect: 4711 # 12y ring, 60s duration
+      CharParamZero_1: 1199505408 # pure bright green (0x00FF00)
+
+SpellVisual.dbc:
+  - type: copy
+    key: 561
+    values:
+      ID: 8352
+      StateKit: 8352
+
+Spell.dbc:
+  - type: update
+    key: 34772 # dream fever
+    values:
+      SpellVisualID_1: 8352
+##################################################
+
+### Poison Cloud (52866) #########################
+# 8y radius, mirrors viscidus toxin treatment
+SpellVisualKit.dbc:
+  - type: insert
+    key: 8351
+    values:
+      BaseEffect: 4712 # 8y jagged ring
+      WorldEffect: 2968
+      CharProc_1: 1
+      CharParamZero_1: 1217603104 # green
+      CharParamOne_1: 0.5
+      CharParamTwo_1: 1.0
+
+SpellVisual.dbc:
+  - type: copy
+    key: 7080 # poison cloud base
+    values:
+      ID: 8351
+      AreaKit: 8351
+      AreaModel: 0
+      MissileModel: 675 # avoids launching an empty box
+      HasMissile: 1 # disable secondary ground effect renderings
+
+Spell.dbc:
+  - type: update
+    key: 52866 # poison cloud
+    values:
+      SpellVisualID_1: 8351
+      Speed: 255.0
+##################################################
+
+# so this actually doesn't seem to work, the visual isn't one of these spells he casts
+# it's some sort of scripted spell so I'm not sure we can really get the id without something like
+# logging the spell sent from the server
+### Trioch the Devourer ################################
+# icicle crash with icy bolt missile
+# SpellVisualEffectName.dbc:
+#   - type: insert
+#     key: 8350
+#     values:
+#       ID: 8350
+#       Name: DeathBolt Ice Missile
+#       FileName: Spells\DeathBolt_Ice.m2
+#       Scale: 1.0
+
+# SpellVisual.dbc:
+#   - type: copy
+#     key: 7947 # icicle crash
+#     values:
+#       ID: 8350
+#       MissileModel: 8350 # our icy recolor
+
+# Spell.dbc:
+#   - type: update
+#     key: 34722 # icicle crash
+#     values:
+#       SpellVisualID_1: 8350
 ##################################################

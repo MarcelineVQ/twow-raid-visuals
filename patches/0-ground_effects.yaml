@@ -79,6 +79,41 @@ SpellVisualEffectName.dbc:
       FileName: Spells\DangerZone_W18_S30.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
+  - type: insert
+    key: 4711
+    values:
+      Name: Danger Zone 12y 60s
+      FileName: Spells\DangerZone_W12_S60.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+  - type: insert
+    key: 4712
+    values:
+      Name: Danger Zone 8y Jagged
+      FileName: Spells\DangerZone_W8_S30_Jagged.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+  - type: insert
+    key: 4713
+    values:
+      Name: Danger Zone 12y Jagged
+      FileName: Spells\DangerZone_W12_S30_Jagged.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+  - type: insert
+    key: 4714
+    values:
+      Name: Kri Cloud Jagged
+      FileName: Spells\DangerZone_W20_S120_Jagged.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+  - type: insert
+    key: 4715
+    values:
+      Name: Bug Explode 17y Jagged
+      FileName: Spells\DangerZone_W17_S30_Jagged.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
 
   - type: insert
     key: 4750
@@ -172,9 +207,9 @@ SpellVisualEffectName.dbc:
       Scale: 1.0
   - type: insert
     key: 4906
-    values: # made longer than debuff time, or fades too often
+    values:
       Name: Visc Cloud
-      FileName: Spells\DangerZone_W12_S20_White.m2
+      FileName: Spells\DangerZone_W12_S30_White.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
   - type: insert
@@ -203,14 +238,14 @@ SpellVisualEffectName.dbc:
     key: 4910
     values:
       Name: Ignite Rock
-      FileName: Spells\DangerZone_W20_S12.m2 # change this to the flame decal, make it last a little longer
+      FileName: Spells\DangerZone_W20_S12_Flame.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
   - type: insert
     key: 4911
     values:
       Name: Ignite Earth
-      FileName: Spells\DangerZone_W20_S18.m2 # change this to the flame decal, make it last a little longer
+      FileName: Spells\DangerZone_W20_S18_Flame.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
 
