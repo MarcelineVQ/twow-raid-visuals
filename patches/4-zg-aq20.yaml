@@ -147,6 +147,30 @@ Spell.dbc:
       SpellVisualID_1: 8355
 ##################################################
 
+### Seed of Corruption (33046) ###################
+# kruul effect with medivh's base ring and color
+SpellVisualKit.dbc:
+  - type: copy
+    key: 653 # kruul / mark of highlord base kit
+    values:
+      ID: 8356
+      BaseEffect: 4752 # medivh's 15y white ring
+      CharParamZero_1: 1257505040 # medivh's color
+
+SpellVisual.dbc:
+  - type: copy
+    key: 5981 # corruption of medivh visual
+    values:
+      ID: 8356
+      StateKit: 8356
+
+Spell.dbc:
+  - type: update
+    key: 33046 # seed of corruption
+    values:
+      SpellVisualID_1: 8356
+##################################################
+
 ### Dream Fever (34772) ##########################
 # highlord's curse style explosion, retinted bright green poison
 # 12y ring to match "nearby" spread on dispel
