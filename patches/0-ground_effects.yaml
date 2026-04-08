@@ -114,6 +114,13 @@ SpellVisualEffectName.dbc:
       FileName: Spells\DangerZone_W17_S30_Jagged.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
+  - type: insert
+    key: 4716
+    values:
+      Name: Danger Zone 12y Jagged Green
+      FileName: Spells\DangerZone_W12_S30_JaggedG.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
 
   - type: insert
     key: 4750

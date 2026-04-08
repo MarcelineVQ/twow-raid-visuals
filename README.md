@@ -67,6 +67,7 @@ The highlights are summarised below:
   - Loktanag's Infected Secretion indicates its radius.  
   - Xavian Image's Dream Fever indicates its spread range.  
   - Withermaw Defiler's Poison Cloud and Withered Defiling indicate their range
+  - Peroth'arn's Flames of Purgation indicates its radius.  
 
 - **Sound:**
   - Silenced the looping Baby Murloc dance sound.  

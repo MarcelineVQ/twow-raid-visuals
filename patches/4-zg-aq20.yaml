@@ -147,6 +147,31 @@ Spell.dbc:
       SpellVisualID_1: 8355
 ##################################################
 
+### Flames of Purgation (36825) Peroth'arn #######
+# copy state kit, swap base effect to a 10y fire ring
+# existing fire tint is kept inherited
+SpellVisualKit.dbc:
+  - type: copy
+    key: 7038 # flames of purgation state kit
+    values:
+      ID: 8357
+      BaseEffect: 4903 # 10y geddon inferno flame ring
+      ChestEffect: 297 # immolate state base
+
+SpellVisual.dbc:
+  - type: copy
+    key: 8025 # flames of purgation visual
+    values:
+      ID: 8357
+      StateKit: 8357
+
+Spell.dbc:
+  - type: update
+    key: 36825 # flames of purgation
+    values:
+      SpellVisualID_1: 8357
+##################################################
+
 ### Seed of Corruption (33046) ###################
 # kruul effect with medivh's base ring and color
 SpellVisualKit.dbc:
@@ -197,13 +222,13 @@ Spell.dbc:
 ##################################################
 
 ### Poison Cloud (52866) #########################
-# 8y radius, mirrors viscidus toxin treatment
+# 8y radius, place the ring at the cast location (not the caster)
 SpellVisualKit.dbc:
   - type: insert
     key: 8351
     values:
-      BaseEffect: 4712 # 8y jagged ring
-      WorldEffect: 2968
+      # BaseEffect: 4712 # 8y jagged ring
+      WorldEffect: 4716 # 12y green jagged ring at cast location
       CharProc_1: 1
       CharParamZero_1: 1217603104 # green
       CharParamOne_1: 0.5
@@ -215,7 +240,7 @@ SpellVisual.dbc:
     values:
       ID: 8351
       AreaKit: 8351
-      AreaModel: 0
+      AreaModel: 2968
       MissileModel: 675 # avoids launching an empty box
       HasMissile: 1 # disable secondary ground effect renderings
 

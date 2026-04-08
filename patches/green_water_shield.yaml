@@ -1,9 +1,9 @@
 #foo 10000 base
 
-### test: seed of corruption on water shield #####
+### test: flames of purgation on demon armor #####
 # Spell.dbc:
 #   - type: update
-#     key: 51536 # water shield r5
+#     key: 11734 # demon armor rank 6
 #     values:
-#       SpellVisualID_1: 8356 # kruul/medivh hybrid
+#       SpellVisualID_1: 8357 # flames of purgation
 ##################################################
