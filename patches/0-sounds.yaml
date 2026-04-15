@@ -1,3 +1,5 @@
+#foo 9500 base (SpellVisual/Kit), 90000 base (SoundEntries)
+
 ### baby murloc dance ###############
 # silence a weird murloc sound glitch
 SoundEntries.dbc:
@@ -41,21 +43,21 @@ SpellVisualKit.dbc:
   - type: copy
     key: 352 # totem drop
     values:
-      ID: 9000
+      ID: 9500
       SoundID: 90000 #yes really
 
 SpellVisual.dbc:
   - type: copy
     key: 319 # totem drop
     values:
-      ID: 9000
-      CastKit: 9000
+      ID: 9500
+      CastKit: 9500
 
 Spell.dbc:
   - type: update
     key: 45513
     values:
-      SpellVisualID_1: 9000
+      SpellVisualID_1: 9500
 ###################################
 
 ### concussion blow ###############
@@ -73,33 +75,33 @@ SpellVisualKit.dbc:
   - type: copy
     key: 1666
     values:
-      ID: 9001
+      ID: 9501
       SoundID: 90001 #yes really
 
 SpellVisual.dbc: # don't clobber other users of 2719
   - type: copy
     key: 2719
     values:
-      ID: 9001
-      ImpactKit: 9001
+      ID: 9501
+      ImpactKit: 9501
 
 Spell.dbc:
   - type: update
     key: 1809
     values:
-      SpellVisualID_1: 9001
+      SpellVisualID_1: 9501
   - type: update
     key: 51600
     values:
-      SpellVisualID_1: 9001
+      SpellVisualID_1: 9501
   - type: update
     key: 51601
     values:
-      SpellVisualID_1: 9001
+      SpellVisualID_1: 9501
   - type: update
     key: 51602
     values:
-      SpellVisualID_1: 9001
+      SpellVisualID_1: 9501
 ###################################
 
 ### duck ############################

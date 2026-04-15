@@ -1,4 +1,4 @@
-#foo 8600 base
+#foo 9100 base
 
 ### garlmoon ##############################
 # removes extra spell effects from gnarlmoon red and blue moon auras
@@ -42,7 +42,7 @@ SpellVisualKit.dbc:
   - type: copy
     key: 221 #green
     values:
-      ID: 8603
+      ID: 9103
       HeadEffect: 2963 #arrow over head
       ChestEffect: 1562 #hunter mark
       BaseEffect: 4707 #35y ring
@@ -51,25 +51,25 @@ SpellVisual.dbc:
   - type: copy
     key: 5780
     values:
-      ID: 8602
+      ID: 9102
       StateKit: 668
-      AreaModel: 4707 #25y ring
+      AreaModel: 4811 #40y arrow ring
       HasMissile: 1 #disable secondary ground effect renderings
   - type: copy
     key: 277
     values:
-      ID: 8603
-      StateKit: 8603
+      ID: 9103
+      StateKit: 9103
 
 Spell.dbc:
   - type: update
     key: 51182 # guided ley beam ground effect
     values:
-      SpellVisualID_1: 8602
+      SpellVisualID_1: 9102
   - type: update
     key: 52011 # guided ley-beam pe-cast targeting
     values:
-      SpellVisualID_1: 8603
+      SpellVisualID_1: 9103
 ###########################################
 
 ### anomalus ##############################
@@ -84,7 +84,7 @@ SpellVisualKit.dbc:
   - type: copy
     key: 657
     values:
-      ID: 8600
+      ID: 9100
       HeadEffect: 397 #add a purple orb above you
       BaseEffect: 4752 #a ring under you, white base colored by aura
       ChestEffect: 300 #just a flair for visibility
@@ -93,14 +93,14 @@ SpellVisual.dbc:
   - type: copy
     key: 5981 # copy corruption of medivh visual, give it new kit
     values:
-      ID: 8600
-      StateKit: 8600
+      ID: 9100
+      StateKit: 9100
 
 Spell.dbc:
   - type: update
     key: 52674 # give corruption of medivh new visual
     values:
-      SpellVisualID_1: 8600
+      SpellVisualID_1: 9100
 #########################################
 
 ### rupturan #####################################
@@ -114,7 +114,7 @@ SpellVisualKit.dbc:
   - type: copy
     key: 60
     values:
-      ID: 8601
+      ID: 9101
       # BaseEffect: 4700 #a ring under him
       BaseEffect: 4903 #geddon ring, 10y before scaling
       # red coloring to self-desruct
@@ -128,14 +128,14 @@ SpellVisual.dbc:
   - type: copy
     key: 963
     values:
-      ID: 8601
-      PrecastKit: 8601
+      ID: 9101
+      PrecastKit: 9101
 
 Spell.dbc:
   - type: update
     key: 51203 # overflowing hatred 51203 visual 963 changed to 8013
     values:
-      SpellVisualID_1: 8601
+      SpellVisualID_1: 9101
 #######################################
 
 
@@ -146,7 +146,7 @@ SpellVisualKit.dbc:
   - type: copy
     key: 5372
     values:
-      ID: 8605
+      ID: 9105
       CharProc_1: 2
       CharParamOne_1: 2.0
       CharProc_2: 4
@@ -156,14 +156,14 @@ SpellVisual.dbc:
   - type: copy
     key: 140
     values:
-      ID: 8605
-      StateKit: 8605
+      ID: 9105
+      StateKit: 9105
 
 Spell.dbc:
   - type: update
     key: 46540 # netherwalker invisibility
     values:
-      SpellVisualID_1: 8605
+      SpellVisualID_1: 9105
 ##############################################
 
 ### arcane anomaly ##############################
@@ -174,7 +174,7 @@ SpellVisualKit.dbc:
   - type: copy
     key: 1004
     values:
-      ID: 8607
+      ID: 9107
       BaseEffect: 4930 # 15y ring after scaling, unsure of exact extent. spell data claims 15
       WorldEffect: 734 # was the base effect before
 
@@ -182,14 +182,14 @@ SpellVisual.dbc:
   - type: copy
     key: 965
     values:
-      ID: 8607
-      CastKit: 8607 #apply specifically on cast
+      ID: 9107
+      CastKit: 9107 #apply specifically on cast
 
 Spell.dbc:
   - type: update
     key: 57646 # overflowing arcana
     values:
-      SpellVisualID_1: 8607
+      SpellVisualID_1: 9107
 ########################################
 
 ### protectors ####################
@@ -198,7 +198,7 @@ SpellVisualKit.dbc:
   - type: copy
     key: 4129
     values:
-      ID: 8611
+      ID: 9111
       CharProc_1: 1
       CharParamZero_1: 16716055.0
       CharParamOne_1: 2.0
@@ -207,7 +207,7 @@ SpellVisualKit.dbc:
   - type: copy
     key: 252
     values:
-      ID: 8610
+      ID: 9110
       CharProc_1: 1
       CharParamZero_1: 65280.0
       CharParamOne_1: 2.0
@@ -217,23 +217,23 @@ SpellVisual.dbc:
   - type: copy
     key: 4760
     values:
-      ID: 8611
-      StateKit: 8611
+      ID: 9111
+      StateKit: 9111
   - type: copy
     key: 154
     values:
-      ID: 8610
-      StateKit: 8610
+      ID: 9110
+      StateKit: 9110
 
 Spell.dbc:
   - type: update
     key: 57652 # self-destruction protocol
     values:
-      SpellVisualID_1: 8611
+      SpellVisualID_1: 9111
   - type: update
     key: 57654 # reflection protocol
     values:
-      SpellVisualID_1: 8610
+      SpellVisualID_1: 9110
 ###################################
 
 ### kruul #########################
@@ -242,21 +242,21 @@ SpellVisualKit.dbc:
   - type: copy
     key: 653
     values:
-      ID: 8606
+      ID: 9106
       BaseEffect: 4710 # 18y ring
 
 SpellVisual.dbc:
   - type: copy
     key: 561
     values:
-      ID: 8606
-      StateKit: 8606
+      ID: 9106
+      StateKit: 9106
 
 Spell.dbc:
   - type: update
     key: 51166 # mark of the highlord
     values:
-      SpellVisualID_1: 8606
+      SpellVisualID_1: 9106
 ########################################
 
 ### mephistroph ###################
@@ -267,5 +267,5 @@ Spell.dbc:
   - type: update
     key: 51912 # doom of outland, give netherwalker vis improvement
     values:  
-      SpellVisualID_1: 8605
+      SpellVisualID_1: 9105
 ###################################

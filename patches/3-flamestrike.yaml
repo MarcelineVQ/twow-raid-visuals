@@ -1,4 +1,4 @@
-#foo 8200 base
+#foo 8700 base
 
 # Here’s the basic logic behind how these area effect visuals work:
 # 
@@ -26,13 +26,13 @@ SpellVisualKit.dbc:
   - type: copy
     key: 695 #flamestrike
     values:
-      ID: 8200
+      ID: 8700
       # WorldEffect: 4801 # 10y X
       WorldEffect: 420 # flamestrike
   - type: copy
     key: 695 #flamestrike
     values:
-      ID: 8201
+      ID: 8701
       WorldEffect: 4800 # 5y X
       # WorldEffect: 420 #flamestrike model is obnoxious at this size
 
@@ -41,9 +41,9 @@ SpellVisual.dbc:
   - type: copy
     key: 33
     values:
-      ID: 8200
+      ID: 8700
       StateKit: 668
-      AreaKit: 8200
+      AreaKit: 8700
       AreaModel: 4912 #display a ground zone
       HasMissile: 1 #disable secondary ground effect renderings
       MissileModel: 1179
@@ -54,12 +54,12 @@ Spell.dbc:
   - type: update
     key: 22275 #spellbinder/hatcher flamestike (22275)
     values:
-      SpellVisualID_1: 8200
+      SpellVisualID_1: 8700
       Speed: 255.0
   - type: update
     key: 51113 # flamestrike of medivh, use old style visual + our indicator
     values:
-      SpellVisualID_1: 8200
+      SpellVisualID_1: 8700
       Speed: 255.0
 
 #rupturan and fragments
@@ -67,9 +67,9 @@ SpellVisual.dbc:
   - type: copy #fragments
     key: 33
     values:
-      ID: 8211
+      ID: 8711
       StateKit: 668
-      AreaKit: 8201 # 5y X
+      AreaKit: 8701 # 5y X
       AreaModel: 4910 # 20y, 12s, spelldata claims 10y though
       HasMissile: 1 #disable secondary ground effect renderings
       MissileModel: 1179
@@ -78,9 +78,9 @@ SpellVisual.dbc:
   - type: copy #rupturan
     key: 33
     values:
-      ID: 8212
+      ID: 8712
       StateKit: 668
-      AreaKit: 8201
+      AreaKit: 8701
       AreaModel: 4911 # 20y, 18s, spelldata claims 10y though
       HasMissile: 1 #disable secondary ground effect renderings
       MissileModel: 1179
@@ -91,11 +91,11 @@ Spell.dbc:
   - type: update
     key: 51298 #ignite rock (51298)
     values:
-      SpellVisualID_1: 8211
+      SpellVisualID_1: 8711
       # Speed: 255.0
       Speed: 255.0
   - type: update
     key: 52040 #ignite earth (52040)
     values:
-      SpellVisualID_1: 8212
+      SpellVisualID_1: 8712
       Speed: 255.0 #projectile speed, required to triggeer some visual effects

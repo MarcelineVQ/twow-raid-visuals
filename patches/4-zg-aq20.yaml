@@ -1,4 +1,4 @@
-#foo 8300 base
+#foo 8800 base
 
 ### Captain Tuubid ###############################
 # attack order given arlokk focus visual indicator
@@ -15,32 +15,32 @@ SpellVisualKit.dbc:
   - type: copy
     key: 700
     values:
-      ID: 8300
+      ID: 8800
       WorldEffect: 328 #cloud moved to impact site
 SpellVisualKit.dbc:
   - type: copy
     key: 700
     values:
-      ID: 8301
+      ID: 8801
       WorldEffect: 328 #cloud moved to impact site
 
 SpellVisual.dbc:
   - type: copy
     key: 125
     values:
-      ID: 8300
-      StateKit: 8301
+      ID: 8800
+      StateKit: 8801
       HasMissile: 1
       MissileModel: 157
       HasArea: 1
-      AreaKit: 8300
+      AreaKit: 8800
       AreaModel: 4708 #23y
 
 Spell.dbc:
   - type: update
     key: 26550 # lightning cloud
     values:
-      SpellVisualID_1: 8300
+      SpellVisualID_1: 8800
       Speed: 255.0
 
 ##################################################
@@ -51,21 +51,21 @@ SpellVisualKit.dbc:
   - type: copy
     key: 6466
     values:
-      ID: 8305
+      ID: 8805
       BaseEffect: 4909
 
 SpellVisual.dbc:
   - type: copy
     key: 103
     values:
-      ID: 8305
-      CastKit: 8305
+      ID: 8805
+      CastKit: 8805
 
 Spell.dbc:
   - type: update
     key: 25698 # explode
     values:
-      SpellVisualID_1: 8305
+      SpellVisualID_1: 8805
 
 ##################################################
 
@@ -74,9 +74,9 @@ Spell.dbc:
 # 10y radius - dual quad model overlays acid burn with danger zone marker
 SpellVisualEffectName.dbc:
   - type: insert
-    key: 8353
+    key: 8853
     values:
-      ID: 8353
+      ID: 8853
       Name: Infected Secretion Marked
       FileName: Spells\InfectedSecretion_Marked.m2
       Scale: 1.0
@@ -85,14 +85,14 @@ SpellVisual.dbc:
   - type: copy
     key: 7997
     values:
-      ID: 8353
-      AreaModel: 8353
+      ID: 8853
+      AreaModel: 8853
 
 Spell.dbc:
   - type: update
     key: 52813 # infected secretion
     values:
-      SpellVisualID_1: 8353
+      SpellVisualID_1: 8853
 ##################################################
 
 ### Volley of Arrows (49047) Rotgrowl ############
@@ -103,21 +103,21 @@ SpellVisualKit.dbc:
   - type: copy
     key: 3229 # original volley of arrows area kit
     values:
-      ID: 8354
-      WorldEffect: 4700 # 10y ground indicator (TODO: arrow texture)
+      ID: 8854
+      WorldEffect: 4810 # 10y arrow ring
 
 SpellVisual.dbc:
   - type: copy
     key: 3300 # original volley of arrows visual
     values:
-      ID: 8354
-      AreaKit: 8354
+      ID: 8854
+      AreaKit: 8854
 
 Spell.dbc:
   - type: update
     key: 49047 # volley of arrows
     values:
-      SpellVisualID_1: 8354
+      SpellVisualID_1: 8854
 ##################################################
 
 ### Withered Defiling (52796) Withermaw Defiler ##
@@ -126,7 +126,7 @@ SpellVisualKit.dbc:
   - type: copy
     key: 288 # original poison state kit
     values:
-      ID: 8355
+      ID: 8855
       BaseEffect: 4713 # 12y jagged ring
       CharProc_1: 1
       CharParamZero_1: 1199505408 # pure bright green (0x00FF00)
@@ -137,14 +137,14 @@ SpellVisual.dbc:
   - type: copy
     key: 139 # original poison cloud visual
     values:
-      ID: 8355
-      StateKit: 8355
+      ID: 8855
+      StateKit: 8855
 
 Spell.dbc:
   - type: update
     key: 52796 # withered defiling
     values:
-      SpellVisualID_1: 8355
+      SpellVisualID_1: 8855
 ##################################################
 
 ### Crush Earth (49026) Ormanon #################
@@ -154,13 +154,13 @@ SpellVisual.dbc:
   - type: copy
     key: 7976 # earthquake (unmodified at this point)
     values:
-      ID: 8358
+      ID: 8858
 
 Spell.dbc:
   - type: update
     key: 49026 # crush earth
     values:
-      SpellVisualID_1: 8358
+      SpellVisualID_1: 8858
 ##################################################
 
 ### Flames of Purgation (36825) Peroth'arn #######
@@ -170,7 +170,7 @@ SpellVisualKit.dbc:
   - type: copy
     key: 7038 # flames of purgation state kit
     values:
-      ID: 8357
+      ID: 8857
       BaseEffect: 4903 # 10y geddon inferno flame ring
       ChestEffect: 297 # immolate state base
 
@@ -178,14 +178,14 @@ SpellVisual.dbc:
   - type: copy
     key: 8025 # flames of purgation visual
     values:
-      ID: 8357
-      StateKit: 8357
+      ID: 8857
+      StateKit: 8857
 
 Spell.dbc:
   - type: update
     key: 36825 # flames of purgation
     values:
-      SpellVisualID_1: 8357
+      SpellVisualID_1: 8857
 ##################################################
 
 ### Seed of Corruption (33046) ###################
@@ -194,7 +194,7 @@ SpellVisualKit.dbc:
   - type: copy
     key: 653 # kruul / mark of highlord base kit
     values:
-      ID: 8356
+      ID: 8856
       BaseEffect: 4752 # medivh's 15y white ring
       CharParamZero_1: 1257505040 # medivh's color
 
@@ -202,14 +202,14 @@ SpellVisual.dbc:
   - type: copy
     key: 5981 # corruption of medivh visual
     values:
-      ID: 8356
-      StateKit: 8356
+      ID: 8856
+      StateKit: 8856
 
 Spell.dbc:
   - type: update
     key: 33046 # seed of corruption
     values:
-      SpellVisualID_1: 8356
+      SpellVisualID_1: 8856
 ##################################################
 
 ### Dream Fever (34772) ##########################
@@ -219,7 +219,7 @@ SpellVisualKit.dbc:
   - type: copy
     key: 653
     values:
-      ID: 8352
+      ID: 8852
       BaseEffect: 4711 # 12y ring, 60s duration
       CharParamZero_1: 1199505408 # pure bright green (0x00FF00)
 
@@ -227,23 +227,22 @@ SpellVisual.dbc:
   - type: copy
     key: 561
     values:
-      ID: 8352
-      StateKit: 8352
+      ID: 8852
+      StateKit: 8852
 
 Spell.dbc:
   - type: update
     key: 34772 # dream fever
     values:
-      SpellVisualID_1: 8352
+      SpellVisualID_1: 8852
 ##################################################
 
 ### Poison Cloud (52866) #########################
 # 8y radius, place the ring at the cast location (not the caster)
 SpellVisualKit.dbc:
   - type: insert
-    key: 8351
+    key: 8851
     values:
-      # BaseEffect: 4712 # 8y jagged ring
       WorldEffect: 4716 # 12y green jagged ring at cast location
       CharProc_1: 1
       CharParamZero_1: 1217603104 # green
@@ -254,8 +253,8 @@ SpellVisual.dbc:
   - type: copy
     key: 7080 # poison cloud base
     values:
-      ID: 8351
-      AreaKit: 8351
+      ID: 8851
+      AreaKit: 8851
       AreaModel: 2968
       MissileModel: 675 # avoids launching an empty box
       HasMissile: 1 # disable secondary ground effect renderings
@@ -264,7 +263,7 @@ Spell.dbc:
   - type: update
     key: 52866 # poison cloud
     values:
-      SpellVisualID_1: 8351
+      SpellVisualID_1: 8851
       Speed: 255.0
 ##################################################
 
@@ -275,9 +274,9 @@ Spell.dbc:
 # icicle crash with icy bolt missile
 # SpellVisualEffectName.dbc:
 #   - type: insert
-#     key: 8350
+#     key: 8850
 #     values:
-#       ID: 8350
+#       ID: 8850
 #       Name: DeathBolt Ice Missile
 #       FileName: Spells\DeathBolt_Ice.m2
 #       Scale: 1.0
@@ -286,12 +285,12 @@ Spell.dbc:
 #   - type: copy
 #     key: 7947 # icicle crash
 #     values:
-#       ID: 8350
-#       MissileModel: 8350 # our icy recolor
+#       ID: 8850
+#       MissileModel: 8850 # our icy recolor
 
 # Spell.dbc:
 #   - type: update
 #     key: 34722 # icicle crash
 #     values:
-#       SpellVisualID_1: 8350
+#       SpellVisualID_1: 8850
 ##################################################

@@ -1,3 +1,5 @@
+#foo 4700 base
+
 # ground effects for other spells
 
 SpellVisualEffectName.dbc:
@@ -157,6 +159,22 @@ SpellVisualEffectName.dbc:
     values:
       Name: 10y X, quickfade
       FileName: Spells\DangerZone_W10_S2_X.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+
+  # arrows
+  - type: insert
+    key: 4810
+    values:
+      Name: Danger Zone 10y Arrow
+      FileName: Spells\DangerZone_W10_S30_Arrow.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
+  - type: insert
+    key: 4811
+    values:
+      Name: Danger Zone 40y Arrow
+      FileName: Spells\DangerZone_W40_S30_Arrow.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
 

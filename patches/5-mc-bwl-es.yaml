@@ -1,10 +1,10 @@
-#foo 8400 base
+#foo 8900 base
 
 ### baron geddon ##################
 # infero #
 SpellVisualKit.dbc:
   - type: insert
-    key: 8400
+    key: 8900
     values:
       KitType: 2
       ChestEffect: 1562
@@ -14,21 +14,21 @@ SpellVisual.dbc:
   - type: copy
     key: 781
     values:
-      ID: 8400
-      StateKit: 8400
+      ID: 8900
+      StateKit: 8900
 
 Spell.dbc:
   - type: update
     key: 19695 #baron Inferno 19695
     values:
-      SpellVisualID_1: 8400
+      SpellVisualID_1: 8900
 
 # living bomb #
 SpellVisualKit.dbc:
   - type: copy
     key: 3351
     values:
-      ID: 8401
+      ID: 8901
       HeadEffect: 2963
       ChestEffect: 1015
       BaseEffect: 4707
@@ -42,14 +42,14 @@ SpellVisual.dbc:
   - type: copy
     key: 4486
     values:
-      ID: 8401
-      StateKit: 8401
+      ID: 8901
+      StateKit: 8901
 
 Spell.dbc:
   - type: update
     key: 20475 #baron living bomb 20475
     values:
-      SpellVisualID_1: 8401
+      SpellVisualID_1: 8901
 ###################################
 
 ### incindis ##################
@@ -60,7 +60,7 @@ SpellVisualKit.dbc:
   - type: copy
     key: 60
     values:
-      ID: 8410
+      ID: 8910
       BaseEffect: 4904 #flame ring, 7y before scaling
       # red coloring to self-desruct
       CharProc_1: 13
@@ -73,14 +73,14 @@ SpellVisual.dbc:
   - type: copy
     key: 963
     values:
-      ID: 8410
-      PrecastKit: 8410
+      ID: 8910
+      PrecastKit: 8910
 
 Spell.dbc:
   - type: update
     key: 42037 #fire nova
     values:
-      SpellVisualID_1: 8410
+      SpellVisualID_1: 8910
 ###################################
 
 ### golem twins ###################
@@ -88,7 +88,7 @@ Spell.dbc:
 SpellVisualKit.dbc:
   - type: insert
     values:
-      ID: 8412
+      ID: 8912
       BaseEffect: 2942 #fap effect
       CharProc_1: 1
       CharParamZero_1: 16716055.0
@@ -97,14 +97,14 @@ SpellVisual.dbc:
   - type: copy
     key: 290
     values:
-      ID: 8412
-      StateKit: 8412
+      ID: 8912
+      StateKit: 8912
 
 Spell.dbc:
   - type: update
     key: 47375 #molten bulwark
     values:
-      SpellVisualID_1: 8412
+      SpellVisualID_1: 8912
 ###################################
 
 ### thaurrisan ##################
@@ -116,7 +116,7 @@ SpellVisualEffectName.dbc:
   - type: copy
     key: 4454
     values:
-      ID: 8415
+      ID: 8915
       Name: Danger Zone 15y
       FileName: Spells\DangerZone_W25_S13_Arcane.m2
       SpecialAttachPoint: 0.0
@@ -126,8 +126,8 @@ SpellVisual.dbc:
   - type: copy
     key: 7970 #must copy, anomalus uses this as well and as far as I know that one is accurate
     values:
-      ID: 8415
-      AreaModel: 8415
+      ID: 8915
+      AreaModel: 8915
       HasMissile: 1 #disable secondary ground effect renderings
 
 # thaurrisan casts two zones with different id's at once for some reason
@@ -141,7 +141,7 @@ Spell.dbc:
   - type: update
     key: 52729 #zone2
     values:
-      SpellVisualID_1: 8415
+      SpellVisualID_1: 8915
       SpellIconID: 2381 #icons are MUCH too similar
       # Speed: 255.0
 
@@ -150,7 +150,7 @@ SpellVisualKit.dbc:
   - type: copy
     key: 235 #melt armor state
     values:
-      ID: 8416
+      ID: 8916
       # HeadEffect: 297 #flame
       HeadEffect: 212 #flame
       BaseEffect: 1015 #flamewalk
@@ -163,21 +163,21 @@ SpellVisual.dbc:
   - type: copy
     key: 46 #melt armor
     values:
-      ID: 8416
-      StateKit: 8416
+      ID: 8916
+      StateKit: 8916
 
 Spell.dbc:
   - type: update
     key: 52726 # rune of combusion, in
     values:
-      SpellVisualID_1: 8416
+      SpellVisualID_1: 8916
 
 # rune of detonation, out
 SpellVisualKit.dbc:
   - type: insert
     # key: 695 #flamestrike
     values:
-      ID: 8417
+      ID: 8917
       # WorldEffect: 4702 # 10y X
       HeadEffect: 1544 #orb
       # BaseEffect: 297 #flame
@@ -198,15 +198,15 @@ SpellVisual.dbc:
   - type: copy
     key: 2756
     values:
-      ID: 8417
-      StateKit: 8417
-      # ImpactKit: 8420
+      ID: 8917
+      StateKit: 8917
+      # ImpactKit: 8920
 
 Spell.dbc:
   - type: update
     key: 52725 # rune of detonation, out
     values:
-      SpellVisualID_1: 8417
+      SpellVisualID_1: 8917
 
 ###################################
 

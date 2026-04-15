@@ -1,38 +1,38 @@
-#foo 8100 base
+#foo 8600 base
 
 SpellVisualKit.dbc:
   - type: copy
     key: 692
     values:
-      ID: 8100
+      ID: 8600
       WorldEffect: 4801 #add a prehit animation, slightly speeds up players seeing the RoF
 
 SpellVisual.dbc:
   - type: copy
     key: 329
     values:
-      ID: 8100
+      ID: 8600
       StateKit: 668
       AreaModel: 4902
       MissileModel: 1179
       # MissilePathType: 2
       # MissileDestinationAttachment: 0
-      AreaKit: 8100
+      AreaKit: 8600
       HasMissile: 1 #disable secondary ground effect renderings
 
 Spell.dbc:
   - type: update
     key: 19717 #gehennas and blackwing warlockk(19717)
     values:
-      SpellVisualID_1: 8100
+      SpellVisualID_1: 8600
       Speed: 255.0
   - type: update
     key: 28794 #faerlina and bovar'kez(28794)
     values:
-      SpellVisualID_1: 8100
+      SpellVisualID_1: 8600
       Speed: 255.0
   - type: update
     key: 41372 #selenaxx foulheart rain of destruction
     values:
-      SpellVisualID_1: 8100
+      SpellVisualID_1: 8600
       Speed: 255.0

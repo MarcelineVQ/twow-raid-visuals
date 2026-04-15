@@ -1,10 +1,55 @@
 #foo 10000 base
 
-### test: crush earth on rof rank 1 ##############
+### test: arrow rings on shields ###########
+# SpellVisualKit.dbc:
+#   - type: copy
+#     key: 653
+#     values:
+#       ID: 10000
+#       BaseEffect: 4810 #12y arrow ring
+#   - type: copy
+#     key: 653
+#     values:
+#       ID: 10001
+#       BaseEffect: 4811 #40y arrow ring
+
+# SpellVisual.dbc:
+#   - type: copy
+#     key: 277
+#     values:
+#       ID: 10000
+#       StateKit: 10000
+#   - type: copy
+#     key: 277
+#     values:
+#       ID: 10001
+#       StateKit: 10001
+
 # Spell.dbc:
-  # - type: update
-  #   key: 5740 # rain of fire rank 1
-  #   values:
-  #     SpellVisualID_1: 8358 # crush earth (preserved earthquake)
-  #     Speed: 255.0
+#   - type: update
+#     key: 51536 # water shield r5
+#     values:
+#       SpellVisualID_1: 10000
+#   - type: update
+#     key: 51526 # earth shield r3
+#     values:
+#       SpellVisualID_1: 10001
+##################################################
+
+### test: flamestrike r1 with poison cloud visual ##
+# Spell.dbc:
+#   - type: update
+#     key: 2120 # flamestrike rank 1
+#     values:
+#       SpellVisualID_1: 8851
+
+#   - type: update
+#     key: 5740 # warlock rain of fire rank 1 (testing projection-off ring)
+#     values:
+#       SpellVisualID_1: 8853
+
+#   - type: update
+#     key: 6219 # warlock rain of fire rank 2 (testing timbermaw poison cloud)
+#     values:
+#       SpellVisualID_1: 8851
 ##################################################

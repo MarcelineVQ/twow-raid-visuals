@@ -1,4 +1,4 @@
-#foo 8700 base
+#foo 9200 base
 
 #scholo
 
@@ -9,18 +9,18 @@
 #   - type: copy
 #     key: 668
 #     values:
-#       Id: 8700
+#       Id: 9200
 #       HeadEffect: 2963
 #       ChestEffect: 1562
 # SpellVisual.dbc:
 #   - type: copy
 #     key: 870
 #     values:
-#       Id: 8700
-#       StateKit: 8700
+#       Id: 9200
+#       StateKit: 9200
 # Spell.dbc:
 #   - type: update
 #     key: 12021
 #     values:
-#       SpellVisualID_1: 8700
+#       SpellVisualID_1: 9200
 ##################################################

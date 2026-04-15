@@ -1,4 +1,4 @@
-#foo 8800 base
+#foo 9300 base
 
 #######################################################
 # remove the obnoxious green effect from Decaying Flesh
@@ -7,19 +7,19 @@ SpellVisualKit.dbc:
   - type: copy
     key: 293
     values:
-      Id: 8800
+      Id: 9300
       CharProc_1: 0 #remove coloring
 SpellVisual.dbc:
   - type: copy
     key: 177
     values:
-      Id: 8800
-      StateKit: 8800
+      Id: 9300
+      StateKit: 9300
 Spell.dbc:
   - type: update
     key: 42025
     values:
-      SpellVisualID_1: 8800
+      SpellVisualID_1: 9300
 #######################################################
 
 # todo, check dissolvent
@@ -55,14 +55,14 @@ SpellVisualEffectName.dbc:
   - type: copy
     key: 4464
     values:
-      ID: 8801
+      ID: 9301
       FileName: Spells\DangerZone_W10_S10_EarthQuake.m2
       
 SpellVisual.dbc:
   - type: update
     key: 7976 #earthquake
     values:
-      AreaModel: 8801
+      AreaModel: 9301
 
 #######################################################
 
@@ -72,13 +72,13 @@ SpellVisual.dbc:
   - type: copy
     key: 72
     values:
-      Id: 8802
+      Id: 9302
       StateKit: 0
 Spell.dbc:
   - type: update
     key: 52593
     values:
-      SpellVisualID_1: 8802
+      SpellVisualID_1: 9302
 #######################################################
 
 #######################################################
@@ -88,19 +88,19 @@ SpellVisualKit.dbc:
   - type: copy
     key: 564
     values:
-      Id: 8803
+      Id: 9303
       CharProc_1: 0 #remove coloring
 SpellVisual.dbc:
   - type: copy
     key: 2226
     values:
-      Id: 8803
-      StateKit: 8803
+      Id: 9303
+      StateKit: 9303
 Spell.dbc:
   - type: update
     key: 11374
     values:
-      SpellVisualID_1: 8803
+      SpellVisualID_1: 9303
 #######################################################
 
 #######################################################
@@ -120,11 +120,11 @@ SpellVisual.dbc:
   - type: copy
     key: 125 # thundercall
     values:
-      ID: 8804
+      ID: 9304
       AreaModel: 349 # thunderclap ground shockwave
 Spell.dbc:
   - type: update
     key: 52872 # thundercall
     values:
-      SpellVisualID_1: 8804
+      SpellVisualID_1: 9304
 #######################################################
