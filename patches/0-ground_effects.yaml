@@ -177,6 +177,13 @@ SpellVisualEffectName.dbc:
       FileName: Spells\DangerZone_W40_S30_Arrow.m2
       SpecialAttachPoint: 0.0
       Scale: 1.0
+  - type: insert
+    key: 4812
+    values:
+      Name: Danger Zone 8y Arrow
+      FileName: Spells\DangerZone_W8_S30_Arrow.m2
+      SpecialAttachPoint: 0.0
+      Scale: 1.0
 
   # specifically tailored spells
   - type: insert

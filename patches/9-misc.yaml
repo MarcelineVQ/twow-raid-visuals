@@ -128,3 +128,23 @@ Spell.dbc:
     values:
       SpellVisualID_1: 9304
 #######################################################
+
+#######################################################
+# Naxxramas entrance portal (EPL) - re-center AT 4055
+# onto the portal GameObject 181476 (3132.78, -3731.29)
+# and switch from a 10.03 axis-aligned cube to a 9 yd
+# sphere that matches the round visual of the portal.
+# Box fields are zeroed since the server/client uses
+# radius-mode when radius > 0. Max on-axis reach (9.0)
+# stays within the server's box+5.0f slack (10.015)
+AreaTrigger.dbc:
+  - type: update
+    key: 4055 # Naxxramas - Entrance
+    values:
+      X: 3132.78
+      Y: -3731.29
+      Radius: 8.0
+      BoxLength: 0.0
+      BoxWidth: 0.0
+      BoxHeight: 0.0
+#######################################################

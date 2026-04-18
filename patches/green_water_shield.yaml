@@ -36,12 +36,20 @@
 #       SpellVisualID_1: 10001
 ##################################################
 
-### test: flamestrike r1 with poison cloud visual ##
+### test: point flamestrike r1 + blizzard r1 at the poison cloud
+### visual (SpellVisualID 8851 from 4-zg-aq20.yaml) so we can
+### iterate on the poison cloud texture with easy cast testing.
 # Spell.dbc:
 #   - type: update
 #     key: 2120 # flamestrike rank 1
 #     values:
 #       SpellVisualID_1: 8851
+#       Speed: 255.0 # enable missile travel so AreaKit fires on impact
+#   - type: update
+#     key: 10 # blizzard rank 1
+#     values:
+#       SpellVisualID_1: 8851
+#       Speed: 255.0
 
 #   - type: update
 #     key: 5740 # warlock rain of fire rank 1 (testing projection-off ring)

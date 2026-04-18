@@ -96,15 +96,12 @@ Spell.dbc:
 ##################################################
 
 ### Volley of Arrows (49047) Rotgrowl ############
-# spell data claims 8y but actual in-game radius is larger,
-# using 12y for now. verify in game and adjust if needed.
-# TODO: custom arrow texture
 SpellVisualKit.dbc:
   - type: copy
     key: 3229 # original volley of arrows area kit
     values:
       ID: 8854
-      WorldEffect: 4810 # 10y arrow ring
+      WorldEffect: 4812 # 8y arrow ring
 
 SpellVisual.dbc:
   - type: copy
@@ -127,7 +124,7 @@ SpellVisualKit.dbc:
     key: 288 # original poison state kit
     values:
       ID: 8855
-      BaseEffect: 4713 # 12y jagged ring
+      BaseEffect: 4716 # 12y jagged ring
       CharProc_1: 1
       CharParamZero_1: 1199505408 # pure bright green (0x00FF00)
       CharParamOne_1: 2.0
@@ -243,7 +240,7 @@ SpellVisualKit.dbc:
   - type: insert
     key: 8851
     values:
-      WorldEffect: 4716 # 12y green jagged ring at cast location
+      WorldEffect: 2968 # 12y green jagged ring at cast location
       CharProc_1: 1
       CharParamZero_1: 1217603104 # green
       CharParamOne_1: 0.5
@@ -255,7 +252,7 @@ SpellVisual.dbc:
     values:
       ID: 8851
       AreaKit: 8851
-      AreaModel: 2968
+      AreaModel: 4714
       MissileModel: 675 # avoids launching an empty box
       HasMissile: 1 # disable secondary ground effect renderings
 

@@ -1,7 +1,7 @@
 use anyhow::{Context, Result};
 use clap::{Parser, Subcommand};
 use serde_yaml;
-use std::collections::{HashMap, HashSet};
+use std::collections::{BTreeSet, HashMap};
 use std::fs;
 use std::fs::File;
 use std::path::{Path, PathBuf};
@@ -165,7 +165,9 @@ fn apply_values_to_record(
     pf_origin: &str,
     record_key: u32,
 ) {
-    for (field_name, value) in values {
+    let mut sorted_fields: Vec<_> = values.iter().collect();
+    sorted_fields.sort_by_key(|(k, _)| (*k).clone());
+    for (field_name, value) in sorted_fields {
         let field_idx = match resolve_field_index(field_name, schema_map) {
             Some(i) => i,
             None => {
@@ -244,7 +246,7 @@ fn main() -> Result<()> {
             // load them from the dbc_dir directory.
             let dbc_paths: Vec<PathBuf> = if dbc_files.is_empty() {
                 let patch_map = load_patches(&patch_paths)?;
-                let mut set: HashSet<String> = HashSet::new();
+                let mut set: BTreeSet<String> = BTreeSet::new();
                 for key in patch_map.keys() {
                     set.insert(key.clone());
                 }
@@ -305,7 +307,7 @@ fn main() -> Result<()> {
             // Determine input DBC files for building.  Same logic as apply.
             let dbc_paths: Vec<PathBuf> = if dbc_files.is_empty() {
                 let patch_map = load_patches(&patch_paths)?;
-                let mut set: HashSet<String> = HashSet::new();
+                let mut set: BTreeSet<String> = BTreeSet::new();
                 for key in patch_map.keys() {
                     set.insert(key.clone());
                 }
@@ -867,7 +869,8 @@ fn build_command(
 
     // Include additional files from includes_dir, preserving relative paths
     if includes_dir.exists() {
-        // Recursively gather all files
+        // Recursively gather all files, then sort for deterministic ordering
+        let mut include_files: Vec<PathBuf> = Vec::new();
         let mut stack: Vec<PathBuf> = vec![includes_dir.to_path_buf()];
         while let Some(dir) = stack.pop() {
             for entry in fs::read_dir(&dir)? {
@@ -876,21 +879,24 @@ fn build_command(
                 if path.is_dir() {
                     stack.push(path);
                 } else {
-                    // Determine archive name by stripping the includes_dir prefix
-                    let rel = path
-                        .strip_prefix(includes_dir)
-                        .unwrap_or(&path);
-                    let mut dest = String::new();
-                    for component in rel.components() {
-                        let part = component.as_os_str().to_string_lossy();
-                        if !dest.is_empty() {
-                            dest.push('/');
-                        }
-                        dest.push_str(&part);
-                    }
-                    builder = builder.add_file(&path, &dest);
+                    include_files.push(path);
                 }
             }
+        }
+        include_files.sort();
+        for path in &include_files {
+            let rel = path
+                .strip_prefix(includes_dir)
+                .unwrap_or(path);
+            let mut dest = String::new();
+            for component in rel.components() {
+                let part = component.as_os_str().to_string_lossy();
+                if !dest.is_empty() {
+                    dest.push('/');
+                }
+                dest.push_str(&part);
+            }
+            builder = builder.add_file(path, &dest);
         }
     }
 

@@ -18,7 +18,7 @@ def write_u32(data, off, val): struct.pack_into("<I", data, off, val)
 def read_str(data, off): end = data.find(b'\x00', off); return data[off:end].decode('ascii', errors='ignore')
 def write_bytes(data, off, bts): data[off:off+len(bts)] = bts
 
-# Resize quad vertices
+# Resize quad vertices and update bounding boxes
 def resize_quad(data, diameter, orig_half):
     import struct as _s
     pat = _s.pack("<3f", -orig_half, -orig_half, 0.0)
@@ -33,6 +33,17 @@ def resize_quad(data, diameter, orig_half):
     for i, pos in enumerate(positions):
         off = idx + i * M2_VERTEX_STRIDE
         data[off:off+12] = _s.pack("<3f", *pos)
+    # Scale bounding boxes proportionally to the resize
+    scale = half / orig_half
+    for bb_off in (0xB4, 0xD0):  # bb_min and col_bb_min
+        x, y, z = _s.unpack_from("<3f", data, bb_off)
+        _s.pack_into("<3f", data, bb_off, x * scale, y * scale, z * scale)
+    for bb_off in (0xC0, 0xDC):  # bb_max and col_bb_max
+        x, y, z = _s.unpack_from("<3f", data, bb_off)
+        _s.pack_into("<3f", data, bb_off, x * scale, y * scale, z * scale)
+    for r_off in (0xCC, 0xE8):  # bb_radius and col_bb_radius
+        r = _s.unpack_from("<f", data, r_off)[0]
+        _s.pack_into("<f", data, r_off, r * scale)
     return idx, positions
 
 # Patch full manual times

@@ -1,0 +1,27 @@
+# Default schema for AreaTrigger.dbc (WoW 1.12.1 5875)
+# Derived from WDBXEditor Classic 1.12.1 definitions.
+# Records a trigger volume on a map used for teleports, taverns, quests, etc.
+
+fields:
+  - ID
+  - MapID
+  - X
+  - Y
+  - Z
+  - Radius
+  - BoxLength
+  - BoxWidth
+  - BoxHeight
+  - BoxYaw
+
+  # <Table Name="AreaTrigger" Build="5875">
+  #   <Field Name="ID" Type="int" IsIndex="true" />
+  #   <Field Name="MapID" Type="int" />
+  #   <Field Name="X" Type="float" />
+  #   <Field Name="Y" Type="float" />
+  #   <Field Name="Z" Type="float" />
+  #   <Field Name="Radius" Type="float" />
+  #   <Field Name="BoxLength" Type="float" />
+  #   <Field Name="BoxWidth" Type="float" />
+  #   <Field Name="BoxHeight" Type="float" />
+  #   <Field Name="BoxYaw" Type="float" />
